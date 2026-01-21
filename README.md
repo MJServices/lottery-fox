@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lottery Fox App
+
+A Bitcoin lottery application built with Next.js, TypeScript, and Tailwind CSS, designed to match the exact Figma specifications.
+
+## Features
+
+- **Responsive Design**: Pixel-perfect implementation of the Figma design
+- **Modern UI**: Dark theme with gradient backgrounds and glassmorphism effects
+- **Interactive Components**: 
+  - Header with navigation and authentication buttons
+  - Sidebar with navigation items and Lucky Hour display
+  - Main lottery section with Bitcoin integration
+  - Live chat component
+  - Previous wins table
+  - Footer with links and information
+
+## Tech Stack
+
+- **Next.js 16.1.4** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS 4** - Styling
+- **Custom Fonts**: Luckiest Guy, Montserrat, Gilroy
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── Header.tsx          # Top navigation bar
+│   │   ├── Sidebar.tsx         # Left navigation sidebar
+│   │   ├── MainContent.tsx     # Main lottery content area
+│   │   ├── Chat.tsx           # Live chat component
+│   │   ├── Footer.tsx         # Footer with links
+│   │   └── PreviousWins.tsx   # Previous wins table
+│   ├── globals.css            # Global styles and fonts
+│   ├── layout.tsx             # Root layout
+│   └── page.tsx               # Home page
+├── public/
+│   └── images/                # Figma exported images
+└── tailwind.config.ts         # Tailwind configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Design Implementation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project implements the exact design from the provided Figma file:
+- **100% accurate colors** using exact hex values from Figma
+- **Precise typography** with custom font families and weights
+- **Exact spacing and dimensions** matching Figma specifications
+- **Gradient backgrounds** and visual effects as designed
+- **Interactive elements** with proper hover states
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Available Scripts
 
-## Learn More
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-To learn more about Next.js, take a look at the following resources:
+## Browser Support
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is private and proprietary.
