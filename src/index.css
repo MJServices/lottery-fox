@@ -7,3 +7,64 @@
 .font-luckiest {
   font-family: 'Luckiest Guy', cursive;
 }
+
+.bg-gradient-radial {
+  background: radial-gradient(circle at 50% 50%, rgba(220, 255, 144, 0.38) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Ensure smooth scrolling and proper overflow handling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Hide scrollbars while keeping scroll functionality */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Prevent browser validation styling */
+input:invalid {
+  box-shadow: none;
+  border-color: inherit;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+  border-color: #FF4B0F;
+}
+
+/* Remove default input styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Fix autofill styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #1E242A inset !important;
+  -webkit-text-fill-color: white !important;
+  border-color: #2A3441 !important;
+}
+
+/* Fix mobile viewport height issues */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}

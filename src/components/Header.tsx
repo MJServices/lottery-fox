@@ -1,15 +1,33 @@
+import { User } from '../types';
 import { TwitterIcon, DiscordIcon } from './SocialIcons';
 import { GameIcon, ChatQuestionIcon, CursorInfoIcon, CheckmarkBadgeIcon } from './Icons';
 
 interface HeaderProps {
   onLogout?: () => void;
+  user?: User;
+  onNavigateToWallet?: () => void;
+  onNavigateToHistory?: () => void;
+  onNavigateToSettings?: () => void;
+  onToggleMobileSidebar?: () => void;
 }
 
-export default function Header({ onLogout }: HeaderProps) {
+export default function Header({ onLogout, onToggleMobileSidebar }: HeaderProps) {
   return (
     <header className="w-full h-[60px] md:h-[74px] bg-[#13181D] border-b border-[#242D36] flex items-center justify-between px-3 md:px-6">
       {/* Left side - Logo and Navigation */}
       <div className="flex items-center">
+        {/* Mobile Sidebar Toggle - Only visible on mobile */}
+        {onToggleMobileSidebar && (
+          <button 
+            onClick={onToggleMobileSidebar}
+            className="lg:hidden mr-3 p-2 text-white hover:text-gray-300 transition-colors"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        )}
+
         {/* Logo */}
         <div className="flex items-center mr-4 md:mr-12">
           <img

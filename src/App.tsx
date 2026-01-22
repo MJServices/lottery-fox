@@ -1,9 +1,15 @@
 import { useState } from 'react';
 import AuthFlow from './components/AuthFlow';
 import Home from './components/Home';
+import Results from './components/Results';
+import Lottery from './components/Lottery';
+import Affiliate from './components/Affiliate';
+
+type Page = 'home' | 'results' | 'lottery' | 'leaders' | 'affiliate' | 'faq';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [currentPage, setCurrentPage] = useState<Page>('home');
 
   const handleAuthSuccess = () => {
     setIsAuthenticated(true);
@@ -13,11 +19,29 @@ function App() {
     setIsAuthenticated(false);
   };
 
+  const handleNavigate = (page: Page) => {
+    setCurrentPage(page);
+  };
+
   if (!isAuthenticated) {
     return <AuthFlow onAuthSuccess={handleAuthSuccess} />;
   }
 
-  return <Home onLogout={handleLogout} />;
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'results':
+        return <Results onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
+      case 'lottery':
+        return <Lottery onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
+      case 'affiliate':
+        return <Affiliate onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
+      case 'home':
+      default:
+        return <Home onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
+    }
+  };
+
+  return renderPage();
 }
 
 export default App;
