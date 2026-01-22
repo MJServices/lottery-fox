@@ -15,25 +15,25 @@ export default function MobileNavbar({ onNavigate, currentPage }: MobileNavbarPr
   ];
 
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#13181D] border-t border-[#242D36] z-30">
-      <div className="flex justify-around items-center py-2">
+    <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#13181D] border-t border-[#242D36] z-30 safe-area-inset-bottom">
+      <div className="flex justify-around items-center py-2 sm:py-3 px-2">
         {navItems.map((item) => (
           <button
             key={item.page}
             onClick={() => onNavigate(item.page)}
-            className={`flex flex-col items-center justify-center p-2 rounded-lg transition-colors ${
+            className={`flex flex-col items-center justify-center p-2 sm:p-3 rounded-lg transition-all duration-200 min-w-0 flex-1 max-w-[80px] ${
               currentPage === item.page
-                ? 'text-[#FF4B0F]'
-                : 'text-gray-400 hover:text-white'
+                ? 'text-[#FF4B0F] scale-105'
+                : 'text-gray-400 hover:text-white hover:scale-105'
             }`}
           >
-            <div className={`w-6 h-6 mb-1 flex items-center justify-center ${
-              currentPage === item.page ? 'opacity-100' : 'opacity-70'
+            <div className={`w-5 h-5 sm:w-6 sm:h-6 mb-1 flex items-center justify-center transition-all duration-200 ${
+              currentPage === item.page ? 'opacity-100 scale-110' : 'opacity-70'
             }`}>
               <img 
                 src={item.icon} 
                 alt={item.label} 
-                className="w-5 h-5 object-contain"
+                className="w-full h-full object-contain"
                 style={{
                   filter: currentPage === item.page 
                     ? 'brightness(0) saturate(100%) invert(45%) sepia(100%) saturate(2000%) hue-rotate(15deg) brightness(100%) contrast(100%)'
@@ -41,7 +41,11 @@ export default function MobileNavbar({ onNavigate, currentPage }: MobileNavbarPr
                 }}
               />
             </div>
-            <span className="text-xs font-medium">{item.label}</span>
+            <span className={`text-[10px] sm:text-xs font-medium leading-tight text-center transition-all duration-200 ${
+              currentPage === item.page ? 'font-bold' : 'font-normal'
+            }`}>
+              {item.label}
+            </span>
           </button>
         ))}
       </div>

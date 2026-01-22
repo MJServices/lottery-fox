@@ -12,13 +12,35 @@
   background: radial-gradient(circle at 50% 50%, rgba(220, 255, 144, 0.38) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* Ensure smooth scrolling and proper overflow handling */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  overflow-x: hidden;
+/* Enhanced responsive design utilities */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  
+  body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Responsive font scaling */
+  @media (max-width: 375px) {
+    html { font-size: 14px; }
+  }
+  
+  @media (min-width: 768px) {
+    html { font-size: 16px; }
+  }
+  
+  @media (min-width: 1024px) {
+    html { font-size: 17px; }
+  }
+  
+  @media (min-width: 1440px) {
+    html { font-size: 18px; }
+  }
 }
 
 /* Hide scrollbars while keeping scroll functionality */
@@ -62,9 +84,89 @@ input:-webkit-autofill:focus {
   border-color: #2A3441 !important;
 }
 
+/* Remove any unwanted outlines, highlights, or debug styling */
+* {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+/* Remove any potential debug borders or highlights */
+*:not(input):not(button):not(a):not(svg) {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Specifically target header and main containers */
+header, main, div, section {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Ensure no unwanted background highlights */
+body, html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Remove any inspector or debug highlights */
+*[style*="border"],
+*[style*="outline"] {
+  border: none !important;
+  outline: none !important;
+}
+
 /* Fix mobile viewport height issues */
 @supports (-webkit-touch-callout: none) {
   .min-h-screen {
     min-height: -webkit-fill-available;
+  }
+}
+
+/* Enhanced responsive utilities */
+@layer utilities {
+  .container-responsive {
+    @apply w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8;
+  }
+  
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm md:text-base;
+  }
+  
+  .text-responsive-sm {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  .padding-responsive {
+    @apply p-3 sm:p-4 md:p-6 lg:p-8;
+  }
+  
+  .gap-responsive {
+    @apply gap-3 sm:gap-4 md:gap-6 lg:gap-8;
+  }
+  
+  .rounded-responsive {
+    @apply rounded-lg sm:rounded-xl md:rounded-2xl;
   }
 }
