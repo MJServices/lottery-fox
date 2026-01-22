@@ -4,8 +4,9 @@ import Home from './components/Home';
 import Results from './components/Results';
 import Lottery from './components/Lottery';
 import Affiliate from './components/Affiliate';
+import Deposit from './components/Deposit';
 
-type Page = 'home' | 'results' | 'lottery' | 'leaders' | 'affiliate' | 'faq';
+type Page = 'home' | 'results' | 'lottery' | 'leaders' | 'affiliate' | 'faq' | 'deposit';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -23,6 +24,14 @@ function App() {
     setCurrentPage(page);
   };
 
+  const handleDepositClick = () => {
+    setCurrentPage('deposit');
+  };
+
+  const handleBackFromDeposit = () => {
+    setCurrentPage('home');
+  };
+
   if (!isAuthenticated) {
     return <AuthFlow onAuthSuccess={handleAuthSuccess} />;
   }
@@ -35,9 +44,11 @@ function App() {
         return <Lottery onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
       case 'affiliate':
         return <Affiliate onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
+      case 'deposit':
+        return <Deposit onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} onBack={handleBackFromDeposit} />;
       case 'home':
       default:
-        return <Home onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
+        return <Home onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} onDepositClick={handleDepositClick} />;
     }
   };
 

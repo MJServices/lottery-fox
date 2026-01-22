@@ -522,12 +522,20 @@ export default function Lottery({ onLogout, onNavigate, currentPage }: LotteryPr
           {/* Lottery Content */}
           <div className="flex-1 p-3 sm:p-4 lg:p-6 xl:p-8">
             {/* Hero Section */}
-            <div className="relative mb-6 sm:mb-8 rounded-xl overflow-hidden h-32 sm:h-40 md:h-48">
-              {/* Banner Background Image */}
+            <div className="relative mb-6 sm:mb-8 w-full">
+              {/* Banner Background Image - Full width */}
               <img 
                 src="/images/lottery-banner.png" 
                 alt="Lottery Banner" 
-                className="w-full h-full object-cover"
+                className="w-full h-auto rounded-xl"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  objectPosition: 'center',
+                  display: 'block',
+                  maxWidth: '100%'
+                }}
               />
             </div>
 

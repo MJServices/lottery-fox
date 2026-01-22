@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { User } from '../types';
 import { TwitterIcon, DiscordIcon } from './SocialIcons';
 import { GameIcon, ChatQuestionIcon, CursorInfoIcon, CheckmarkBadgeIcon } from './Icons';
+import WalletModal from './WalletModal';
 
 interface HeaderProps {
   onLogout?: () => void;
@@ -9,9 +11,22 @@ interface HeaderProps {
   onNavigateToHistory?: () => void;
   onNavigateToSettings?: () => void;
   onToggleMobileSidebar?: () => void;
+  onDepositClick?: () => void;
 }
 
-export default function Header({ onLogout, onToggleMobileSidebar }: HeaderProps) {
+export default function Header({ onLogout, onToggleMobileSidebar, onDepositClick }: HeaderProps) {
+  const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
+  const [walletModalTab, setWalletModalTab] = useState<'deposit' | 'withdraw'>('deposit');
+
+  const handleDepositClick = () => {
+    setWalletModalTab('deposit');
+    setIsWalletModalOpen(true);
+  };
+
+  const handleWalletClick = () => {
+    setWalletModalTab('withdraw');
+    setIsWalletModalOpen(true);
+  };
   return (
     <header className="w-full h-[60px] md:h-[74px] bg-[#13181D] border-b border-[#242D36] flex items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8">
       {/* Left side - Logo and Navigation */}
@@ -66,6 +81,14 @@ export default function Header({ onLogout, onToggleMobileSidebar }: HeaderProps)
 
       {/* Right side - Auth buttons and social icons */}
       <div className="flex items-center gap-1 sm:gap-2 md:gap-3 flex-shrink-0">
+        {/* Wallet button */}
+        <button 
+          onClick={handleWalletClick}
+          className="px-2 sm:px-3 md:px-4 lg:px-6 py-2 md:py-3 lg:py-[14px] bg-gradient-to-b from-[#1F1813] to-[#E36826] border border-[#FF833F] rounded-lg text-[10px] sm:text-[12px] md:text-[14px] font-bold text-[#FFF0C4] hover:opacity-90 transition-opacity whitespace-nowrap"
+        >
+          Wallet
+        </button>
+
         {/* Log out button */}
         <button 
           onClick={onLogout}
@@ -75,7 +98,10 @@ export default function Header({ onLogout, onToggleMobileSidebar }: HeaderProps)
         </button>
         
         {/* Deposit button */}
-        <button className="px-2 sm:px-3 md:px-4 lg:px-6 py-2 md:py-3 lg:py-[14px] bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-lg text-[10px] sm:text-[12px] md:text-[14px] font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap">
+        <button 
+          onClick={handleDepositClick}
+          className="px-2 sm:px-3 md:px-4 lg:px-6 py-2 md:py-3 lg:py-[14px] bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-lg text-[10px] sm:text-[12px] md:text-[14px] font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap"
+        >
           Deposit
         </button>
         
@@ -98,6 +124,13 @@ export default function Header({ onLogout, onToggleMobileSidebar }: HeaderProps)
           />
         </div>
       </div>
+
+      {/* Wallet Modal */}
+      <WalletModal
+        isOpen={isWalletModalOpen}
+        onClose={() => setIsWalletModalOpen(false)}
+        initialTab={walletModalTab}
+      />
     </header>
   );
 }

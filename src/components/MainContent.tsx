@@ -5,13 +5,12 @@ import LuckyHourCard from './LuckyHourCard';
 export default function MainContent() {
   return (
     <main className="flex-1 bg-[#13181D] p-3 md:p-4 lg:p-6">
-      <div className="max-w-[1200px] mx-auto">
-        {/* Main Content Grid - Responsive Layout */}
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
-          {/* Left Column - Main Lottery Card */}
-          <div className="xl:col-span-2">
-            <FigmaLotteryCard />
-          </div>
+      {/* Main Content Grid - Responsive Layout */}
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
+        {/* Left Column - Main Lottery Card - Full width on mobile, no overflow issues */}
+        <div className="xl:col-span-2 w-full overflow-visible max-w-full">
+          <FigmaLotteryCard />
+        </div>
           
           {/* Right Column */}
           <div className="xl:col-span-1 flex flex-col gap-4 md:gap-6">
@@ -195,7 +194,6 @@ export default function MainContent() {
 
         {/* Previous Wins Section */}
         <PreviousWins />
-      </div>
     </main>
   );
 }

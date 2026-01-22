@@ -21,15 +21,16 @@ interface HomeProps {
   onTicketPurchase?: (numbers: number[], powerball?: number, ticketCount?: number) => void;
   selectedGame?: LotteryGame | null;
   user?: User;
+  onDepositClick?: () => void;
 }
 
-export default function Home({ onLogout, onNavigate, currentPage }: HomeProps) {
+export default function Home({ onLogout, onNavigate, currentPage, onDepositClick }: HomeProps) {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#13181D] text-white">
       {/* Header */}
-      <Header onLogout={onLogout} onToggleMobileSidebar={() => setIsMobileSidebarOpen(true)} />
+      <Header onLogout={onLogout} onToggleMobileSidebar={() => setIsMobileSidebarOpen(true)} onDepositClick={onDepositClick} />
       
       {/* Mobile Sidebar Overlay */}
       {isMobileSidebarOpen && (

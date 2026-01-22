@@ -368,12 +368,20 @@ export default function Results({ onLogout, onNavigate, currentPage }: ResultsPr
           {/* Results Content */}
           <div className="flex-1 p-4 lg:p-6 xl:p-8">
             {/* Hero Section */}
-            <div className="relative mb-8 rounded-xl overflow-hidden h-48">
-              {/* Banner Background Image */}
+            <div className="relative mb-8 w-full">
+              {/* Banner Background Image - Full width without container */}
               <img 
-                src="/images/banner.png" 
+                src="/images/lottery-banner.png" 
                 alt="Results Banner" 
-                className="w-full h-full object-cover"
+                className="w-full h-auto rounded-xl"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  objectPosition: 'center',
+                  display: 'block',
+                  maxWidth: '100%'
+                }}
               />
             </div>
 

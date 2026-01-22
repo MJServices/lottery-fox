@@ -25,6 +25,11 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  /* Prevent any layout shifts or overflow issues */
+  * {
+    box-sizing: border-box;
+  }
+  
   /* Responsive font scaling */
   @media (max-width: 375px) {
     html { font-size: 14px; }
@@ -168,5 +173,164 @@ body, html {
   
   .rounded-responsive {
     @apply rounded-lg sm:rounded-xl md:rounded-2xl;
+  }
+  
+  /* Lottery card image - fully visible and responsive */
+  .lottery-card-image {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+  }
+  
+  /* Ensure all images are responsive and fully visible */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Lottery card container - no cropping, full visibility */
+  .lottery-card-container {
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Responsive container that maintains image visibility */
+  .lottery-card-container > div {
+    width: 100% !important;
+    overflow: visible !important;
+    max-width: 100% !important;
+  }
+  
+  /* Mobile-specific adjustments for optimal image display */
+  @media (max-width: 640px) {
+    .lottery-card-container {
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+    }
+    
+    .lottery-card-container > div {
+      min-height: auto !important;
+      width: 100% !important;
+    }
+    
+    .lottery-card-container > div > div {
+      padding: 4px !important;
+      width: 100% !important;
+    }
+    
+    .lottery-card-image {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+    }
+  }
+  
+  /* Small mobile devices - full width */
+  @media (max-width: 375px) {
+    .lottery-card-container > div > div {
+      padding: 2px !important;
+    }
+    
+    .lottery-card-image {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+  
+  /* Results page banner image - responsive sizing */
+  .results-banner-container {
+    overflow: visible !important;
+    width: 100% !important;
+  }
+  
+  .results-banner-container img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+  
+  /* Results banner responsive aspect ratios */
+  .results-banner-aspect {
+    aspect-ratio: 16/9;
+  }
+  
+  @media (min-width: 640px) {
+    .results-banner-aspect {
+      aspect-ratio: 20/9;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .results-banner-aspect {
+      aspect-ratio: 24/9;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .results-banner-aspect {
+      aspect-ratio: 28/9;
+    }
+  }
+  
+  /* Lottery page banner - responsive and fully visible */
+  .lottery-banner-container {
+    overflow: visible !important;
+    width: 100% !important;
+  }
+  
+  .lottery-banner-container img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+  
+  /* Lottery banner responsive aspect ratios */
+  .lottery-banner-aspect {
+    aspect-ratio: 16/9;
+  }
+  
+  @media (min-width: 640px) {
+    .lottery-banner-aspect {
+      aspect-ratio: 20/9;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .lottery-banner-aspect {
+      aspect-ratio: 24/9;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .lottery-banner-aspect {
+      aspect-ratio: 28/9;
+    }
+  }
+  
+  /* Tablet adjustments */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .lottery-card-container > div > div {
+      padding: 12px !important;
+    }
+  }
+  
+  /* Desktop adjustments */
+  @media (min-width: 1025px) {
+    .lottery-card-container > div > div {
+      padding: 16px !important;
+    }
   }
 }
