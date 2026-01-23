@@ -27,7 +27,7 @@ export default function Header({ onLogout, onToggleMobileSidebar }: HeaderProps)
     setIsWalletModalOpen(true);
   };
   return (
-    <header className="w-full h-[60px] md:h-[74px] bg-[#13181D] border-b border-[#242D36] flex items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8">
+    <header className="w-full h-[60px] md:h-[74px] bg-[#13181D] border-b border-[#242D36] flex items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
       {/* Left side - Logo and Navigation */}
       <div className="flex items-center min-w-0 flex-1">
         {/* Mobile Sidebar Toggle - Only visible on mobile */}
@@ -43,47 +43,47 @@ export default function Header({ onLogout, onToggleMobileSidebar }: HeaderProps)
         )}
 
         {/* Logo */}
-        <div className="flex items-center mr-2 sm:mr-4 md:mr-8 lg:mr-12 min-w-0">
+        <div className="flex items-center mr-2 sm:mr-4 md:mr-6 lg:mr-8 min-w-0">
           <img
             src="/images/fox-logo.svg"
             alt="Fox Logo"
-            className="mr-1 sm:mr-2 md:mr-3 w-[60px] h-[22px] sm:w-[80px] sm:h-[30px] md:w-[100px] md:h-[36px] lg:w-[120px] lg:h-[43px] flex-shrink-0"
+            className="mr-1 sm:mr-2 md:mr-3 w-[50px] h-[18px] sm:w-[70px] sm:h-[25px] md:w-[90px] md:h-[32px] lg:w-[110px] lg:h-[40px] flex-shrink-0"
           />
-          <span className="text-[16px] sm:text-[20px] md:text-[24px] lg:text-[30px] font-black text-[#FFFDF8] tracking-[-1%] font-luckiest truncate">
+          <span className="text-[14px] sm:text-[18px] md:text-[22px] lg:text-[28px] font-black text-[#FFFDF8] tracking-[-1%] font-luckiest truncate">
             LOTTERY
           </span>
         </div>
 
         {/* Navigation Menu - Hidden on mobile and tablet */}
-        <nav className="hidden xl:flex items-center gap-6 2xl:gap-12 min-w-0">
+        <nav className="hidden xl:flex items-center gap-4 lg:gap-6 2xl:gap-8 min-w-0">
           <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
             <GameIcon className="w-4 h-4 flex-shrink-0" />
-            <span className="text-[13px] lg:text-[14px] font-bold text-white whitespace-nowrap">Play now</span>
+            <span className="text-[12px] lg:text-[13px] font-bold text-white whitespace-nowrap">Play now</span>
           </div>
           
           <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
             <ChatQuestionIcon className="w-4 h-4 flex-shrink-0" />
-            <span className="text-[13px] lg:text-[14px] font-bold text-[#A2B4C6] whitespace-nowrap">How it works</span>
+            <span className="text-[12px] lg:text-[13px] font-bold text-[#A2B4C6] whitespace-nowrap">How it works</span>
           </div>
           
           <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
             <CursorInfoIcon className="w-4 h-4 flex-shrink-0" />
-            <span className="text-[13px] lg:text-[14px] font-bold text-[#A2B4C6] whitespace-nowrap">FAQ</span>
+            <span className="text-[12px] lg:text-[13px] font-bold text-[#A2B4C6] whitespace-nowrap">FAQ</span>
           </div>
           
           <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
             <CheckmarkBadgeIcon className="w-4 h-4 flex-shrink-0" />
-            <span className="text-[13px] lg:text-[14px] font-bold text-[#A2B4C6] whitespace-nowrap">Verify results</span>
+            <span className="text-[12px] lg:text-[13px] font-bold text-[#A2B4C6] whitespace-nowrap">Verify results</span>
           </div>
         </nav>
       </div>
 
       {/* Right side - Auth buttons and social icons */}
-      <div className="flex items-center gap-1 sm:gap-2 md:gap-3 flex-shrink-0">
+      <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
         {/* Wallet button */}
         <button 
           onClick={handleWalletClick}
-          className="px-2 sm:px-3 md:px-4 lg:px-6 py-2 md:py-3 lg:py-[14px] bg-gradient-to-b from-[#1F1813] to-[#E36826] border border-[#FF833F] rounded-lg text-[10px] sm:text-[12px] md:text-[14px] font-bold text-[#FFF0C4] hover:opacity-90 transition-opacity whitespace-nowrap"
+          className="px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#1F1813] to-[#E36826] border border-[#FF833F] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-[#FFF0C4] hover:opacity-90 transition-opacity whitespace-nowrap"
         >
           Wallet
         </button>
@@ -91,7 +91,7 @@ export default function Header({ onLogout, onToggleMobileSidebar }: HeaderProps)
         {/* Log out button */}
         <button 
           onClick={onLogout}
-          className="px-2 sm:px-3 md:px-4 lg:px-6 py-2 md:py-3 lg:py-[14px] bg-gradient-to-b from-[#1F1813] to-[#E36826] border border-[#FF833F] rounded-lg text-[10px] sm:text-[12px] md:text-[14px] font-bold text-[#FFF0C4] hover:opacity-90 transition-opacity whitespace-nowrap"
+          className="px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#1F1813] to-[#E36826] border border-[#FF833F] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-[#FFF0C4] hover:opacity-90 transition-opacity whitespace-nowrap"
         >
           Log out
         </button>
@@ -99,23 +99,23 @@ export default function Header({ onLogout, onToggleMobileSidebar }: HeaderProps)
         {/* Deposit button */}
         <button 
           onClick={handleDepositClick}
-          className="px-2 sm:px-3 md:px-4 lg:px-6 py-2 md:py-3 lg:py-[14px] bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-lg text-[10px] sm:text-[12px] md:text-[14px] font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap"
+          className="px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap"
         >
           Deposit
         </button>
         
         {/* Social icons - Hidden on mobile */}
-        <div className="hidden md:flex gap-1 lg:gap-2 ml-1 lg:ml-3">
-          <div className="w-8 h-8 lg:w-11 lg:h-11 bg-gradient-to-b from-[#00AAFF] to-[#90DAFF] rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer">
-            <TwitterIcon className="w-4 h-4 lg:w-7 lg:h-7 text-white" />
+        <div className="hidden md:flex gap-1 lg:gap-2 ml-1 lg:ml-2">
+          <div className="w-7 h-7 lg:w-9 lg:h-9 bg-gradient-to-b from-[#00AAFF] to-[#90DAFF] rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer">
+            <TwitterIcon className="w-3.5 h-3.5 lg:w-5 lg:h-5 text-white" />
           </div>
-          <div className="w-8 h-8 lg:w-11 lg:h-11 bg-gradient-to-b from-[#9A76FF] to-[#C8B4FF] rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer">
-            <DiscordIcon className="w-4 h-4 lg:w-7 lg:h-7 text-white" />
+          <div className="w-7 h-7 lg:w-9 lg:h-9 bg-gradient-to-b from-[#9A76FF] to-[#C8B4FF] rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer">
+            <DiscordIcon className="w-3.5 h-3.5 lg:w-5 lg:h-5 text-white" />
           </div>
         </div>
         
         {/* Profile image */}
-        <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 ml-1 sm:ml-2 md:ml-3 flex-shrink-0">
+        <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 ml-1 sm:ml-2 flex-shrink-0">
           <img
             src="/images/profile-avatar.png"
             alt="Profile Avatar"
