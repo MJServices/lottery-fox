@@ -43,13 +43,13 @@ export default function Header({ onLogout, onToggleMobileSidebar }: HeaderProps)
         )}
 
         {/* Logo */}
-        <div className="flex items-center mr-2 sm:mr-4 md:mr-6 lg:mr-8 min-w-0">
+        <div className="flex items-center mr-2 sm:mr-4 md:mr-6 lg:mr-8 min-w-0 flex-shrink-0">
           <img
             src="/images/fox-logo.svg"
             alt="Fox Logo"
-            className="mr-1 sm:mr-2 md:mr-3 w-[50px] h-[18px] sm:w-[70px] sm:h-[25px] md:w-[90px] md:h-[32px] lg:w-[110px] lg:h-[40px] flex-shrink-0"
+            className="mr-1 sm:mr-2 md:mr-3 w-[40px] h-[14px] sm:w-[60px] sm:h-[22px] md:w-[80px] md:h-[29px] lg:w-[100px] lg:h-[36px] flex-shrink-0"
           />
-          <span className="text-[14px] sm:text-[18px] md:text-[22px] lg:text-[28px] font-black text-[#FFFDF8] tracking-[-1%] font-luckiest truncate">
+          <span className="text-[12px] sm:text-[16px] md:text-[20px] lg:text-[24px] xl:text-[28px] font-black text-[#FFFDF8] tracking-[-1%] font-luckiest whitespace-nowrap">
             LOTTERY
           </span>
         </div>
