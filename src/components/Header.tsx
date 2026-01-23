@@ -114,8 +114,8 @@ export default function Header({ onLogout, onToggleMobileSidebar }: HeaderProps)
           </div>
         </div>
         
-        {/* Profile image */}
-        <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 ml-1 sm:ml-2 flex-shrink-0">
+        {/* Profile image - Hidden on mobile */}
+        <div className="hidden sm:block w-7 h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 ml-1 sm:ml-2 flex-shrink-0">
           <img
             src="/images/profile-avatar.png"
             alt="Profile Avatar"
