@@ -3,9 +3,8 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import Chat from './Chat';
 import Footer from './Footer';
+import { Page } from '../types';
 import MobileNavbar from './MobileNavbar';
-
-type Page = 'home' | 'results' | 'lottery' | 'leaders' | 'affiliate' | 'faq';
 
 interface LotteryProps {
   onLogout: () => void;

@@ -5,15 +5,14 @@ import Chat from './Chat';
 import Footer from './Footer';
 import MobileNavbar from './MobileNavbar';
 import ResponsiveLayout from './ResponsiveLayout';
+import { Page } from '../types';
 
-type Page = 'home' | 'results' | 'lottery' | 'leaders' | 'affiliate' | 'faq' | 'deposit';
 type DepositMethod = 'bitcoin' | 'ethereum' | 'usdt' | 'card';
 
 interface DepositProps {
   onLogout: () => void;
   onNavigate: (page: Page) => void;
   currentPage: Page;
-  onBack?: () => void;
 }
 
 interface PaymentMethod {
@@ -70,7 +69,7 @@ const paymentMethods: PaymentMethod[] = [
   }
 ];
 
-export default function Deposit({ onLogout, onNavigate, currentPage, onBack }: DepositProps) {
+export default function Deposit({ onLogout, onNavigate, currentPage }: DepositProps) {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const [selectedMethod, setSelectedMethod] = useState<DepositMethod | null>(null);
   const [step, setStep] = useState<'select' | 'form'>('select');
@@ -84,8 +83,8 @@ export default function Deposit({ onLogout, onNavigate, currentPage, onBack }: D
     if (step === 'form') {
       setStep('select');
       setSelectedMethod(null);
-    } else if (onBack) {
-      onBack();
+    } else {
+      onNavigate('home');
     }
   };
 
@@ -226,7 +225,6 @@ export default function Deposit({ onLogout, onNavigate, currentPage, onBack }: D
                   selectedMethod && (
                     <DepositForm 
                       method={paymentMethods.find(m => m.id === selectedMethod)!}
-                      onBack={() => setStep('select')}
                     />
                   )
                 )}
@@ -262,10 +260,9 @@ export default function Deposit({ onLogout, onNavigate, currentPage, onBack }: D
 
 interface DepositFormProps {
   method: PaymentMethod;
-  onBack: () => void;
 }
 
-function DepositForm({ method, onBack }: DepositFormProps) {
+function DepositForm({ method }: DepositFormProps) {
   const [amount, setAmount] = useState('');
   const [address, setAddress] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);

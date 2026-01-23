@@ -1,6 +1,5 @@
 import { DoorIcon } from './Icons';
-
-type Page = 'home' | 'results' | 'lottery' | 'leaders' | 'affiliate' | 'faq';
+import { Page } from '../types';
 
 interface SidebarProps {
   onNavigate: (page: Page) => void;

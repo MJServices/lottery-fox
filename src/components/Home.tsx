@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LotteryGame, User } from '../types/index';
+import { LotteryGame, User, Page } from '../types/index';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import MainContent from './MainContent';
@@ -7,8 +7,6 @@ import Chat from './Chat';
 import Footer from './Footer';
 import MobileNavbar from './MobileNavbar';
 import ResponsiveLayout from './ResponsiveLayout';
-
-type Page = 'home' | 'results' | 'lottery' | 'leaders' | 'affiliate' | 'faq';
 
 interface HomeProps {
   onLogout: () => void;
@@ -21,16 +19,15 @@ interface HomeProps {
   onTicketPurchase?: (numbers: number[], powerball?: number, ticketCount?: number) => void;
   selectedGame?: LotteryGame | null;
   user?: User;
-  onDepositClick?: () => void;
 }
 
-export default function Home({ onLogout, onNavigate, currentPage, onDepositClick }: HomeProps) {
+export default function Home({ onLogout, onNavigate, currentPage }: HomeProps) {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#13181D] text-white">
       {/* Header */}
-      <Header onLogout={onLogout} onToggleMobileSidebar={() => setIsMobileSidebarOpen(true)} onDepositClick={onDepositClick} />
+      <Header onLogout={onLogout} onToggleMobileSidebar={() => setIsMobileSidebarOpen(true)} />
       
       {/* Mobile Sidebar Overlay */}
       {isMobileSidebarOpen && (

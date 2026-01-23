@@ -24,14 +24,6 @@ function App() {
     setCurrentPage(page);
   };
 
-  const handleDepositClick = () => {
-    setCurrentPage('deposit');
-  };
-
-  const handleBackFromDeposit = () => {
-    setCurrentPage('home');
-  };
-
   if (!isAuthenticated) {
     return <AuthFlow onAuthSuccess={handleAuthSuccess} />;
   }
@@ -45,10 +37,10 @@ function App() {
       case 'affiliate':
         return <Affiliate onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
       case 'deposit':
-        return <Deposit onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} onBack={handleBackFromDeposit} />;
+        return <Deposit onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
       case 'home':
       default:
-        return <Home onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} onDepositClick={handleDepositClick} />;
+        return <Home onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
     }
   };
 

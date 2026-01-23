@@ -10,44 +10,12 @@ type Tab = 'deposit' | 'withdraw';
 type Coin = 'bitcoin' | 'ethereum' | 'usdt';
 type Chain = 'bitcoin' | 'ethereum' | 'tron';
 
-interface CoinOption {
-  id: Coin;
-  name: string;
-  symbol: string;
-  icon: string;
-}
-
-interface ChainOption {
-  id: Chain;
-  name: string;
-  symbol: string;
-  icon: string;
-}
-
-const coinOptions: CoinOption[] = [
-  {
-    id: 'bitcoin',
-    name: 'Bitcoin',
-    symbol: 'BTC',
-    icon: '/images/bitcoin-icon.png'
-  }
-];
-
-const chainOptions: ChainOption[] = [
-  {
-    id: 'bitcoin',
-    name: 'Bitcoin',
-    symbol: 'BTC',
-    icon: '/images/bitcoin-icon.png'
-  }
-];
-
 const quickAmounts = [25, 50, 100, 125, 150, 200, 250];
 
 export default function WalletModal({ isOpen, onClose, initialTab = 'deposit' }: WalletModalProps) {
   const [activeTab, setActiveTab] = useState<Tab>(initialTab);
-  const [selectedCoin, setSelectedCoin] = useState<Coin>('bitcoin');
-  const [selectedChain, setSelectedChain] = useState<Chain>('bitcoin');
+  const [selectedCoin] = useState<Coin>('bitcoin');
+  const [selectedChain] = useState<Chain>('bitcoin');
   const [walletAddress, setWalletAddress] = useState('');
   const [amount, setAmount] = useState('100');
   const [balance] = useState('233 390 USDT');

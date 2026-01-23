@@ -1,3 +1,5 @@
+export type Page = 'home' | 'results' | 'lottery' | 'leaders' | 'affiliate' | 'faq' | 'deposit';
+
 export interface User {
   id: string;
   email?: string;

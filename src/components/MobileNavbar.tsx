@@ -1,4 +1,4 @@
-type Page = 'home' | 'results' | 'lottery' | 'leaders' | 'affiliate' | 'faq';
+import { Page } from '../types';
 
 interface MobileNavbarProps {
   onNavigate: (page: Page) => void;

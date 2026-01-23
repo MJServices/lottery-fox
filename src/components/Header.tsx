@@ -11,10 +11,9 @@ interface HeaderProps {
   onNavigateToHistory?: () => void;
   onNavigateToSettings?: () => void;
   onToggleMobileSidebar?: () => void;
-  onDepositClick?: () => void;
 }
 
-export default function Header({ onLogout, onToggleMobileSidebar, onDepositClick }: HeaderProps) {
+export default function Header({ onLogout, onToggleMobileSidebar }: HeaderProps) {
   const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
   const [walletModalTab, setWalletModalTab] = useState<'deposit' | 'withdraw'>('deposit');
 
