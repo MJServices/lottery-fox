@@ -208,22 +208,45 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
           <Sidebar onNavigate={onNavigate} currentPage={currentPage} />
         </div>
         
+        {/* Hero Section - Full width on mobile (outside all containers) */}
+        <div className="w-full h-[300px] sm:h-[380px] md:h-[450px] lg:hidden">
+          <img 
+            src="/images/post.png" 
+            alt="Affiliate Post" 
+            className="w-full h-full"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'center',
+              display: 'block'
+            }}
+          />
+        </div>
+        
         {/* Main Content - Full width on mobile, flexible on desktop */}
         <div className="flex-1 flex flex-col xl:flex-row min-h-0">
           {/* Affiliate Content */}
-          <div className="flex-1 overflow-y-auto p-3 sm:p-4 md:p-6 lg:p-8 pb-28 lg:pb-8">
-            {/* Main Container */}
-            <div className="max-w-7xl mx-auto w-full">
-              <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8">
-                {/* Hero Section */}
-                <div className="w-full lg:w-[360px] xl:w-[420px] 2xl:w-[480px] h-[300px] sm:h-[380px] md:h-[450px] lg:h-[500px] xl:h-[580px] 2xl:h-[640px] bg-gradient-to-b from-[#80B300] to-[#93C90C] rounded-2xl relative overflow-hidden flex-shrink-0">
-                  {/* Post Image - Full container */}
-                  <img 
-                    src="/images/post.png" 
-                    alt="Affiliate Post" 
-                    className="w-full h-full object-cover rounded-2xl"
-                  />
-                </div>
+          <div className="flex-1 overflow-y-auto pb-28 lg:pb-8">
+            {/* Main Container with padding for form and desktop layout */}
+            <div className="p-3 sm:p-4 md:p-6 lg:p-8">
+              <div className="max-w-7xl mx-auto w-full">
+                <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8">
+                  {/* Hero Section - Desktop only */}
+                  <div className="hidden lg:block lg:w-[360px] xl:w-[420px] 2xl:w-[480px] lg:h-[500px] xl:h-[580px] 2xl:h-[640px] flex-shrink-0">
+                    <img 
+                      src="/images/post.png" 
+                      alt="Affiliate Post" 
+                      className="w-full h-full rounded-2xl"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'contain',
+                        objectPosition: 'center',
+                        display: 'block'
+                      }}
+                    />
+                  </div>
 
                 {/* Form Section */}
                 <div className="flex-1 min-w-0 w-full">
@@ -377,6 +400,7 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                       </div>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
             </div>
