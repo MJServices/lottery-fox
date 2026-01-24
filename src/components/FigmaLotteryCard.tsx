@@ -1,11 +1,11 @@
 export default function FigmaLotteryCard() {
   return (
-    <div className="relative w-full mx-auto lottery-card-container">
+    <div className="relative w-full mx-auto lottery-card-container overflow-hidden">
       {/* Image without background container - Full width */}
       <img 
         src="/images/main-lottery-card.png" 
         alt="Bitcoin Lottery Card - Complete View" 
-        className="lottery-card-image w-full h-auto rounded-xl"
+        className="lottery-card-image w-full h-auto rounded-xl max-w-full"
         style={{
           height: 'auto',
           objectFit: 'contain',

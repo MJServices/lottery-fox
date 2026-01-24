@@ -174,7 +174,7 @@ export default function Awards({ onLogout, onNavigate, currentPage }: AwardsProp
       <div className="flex flex-1 relative">
         {/* Desktop Sidebar */}
         <div className="hidden lg:block">
-          <Sidebar onNavigate={onNavigate} currentPage={currentPage} />
+          <Sidebar onNavigate={onNavigate} currentPage={currentPage} onLogout={onLogout} />
         </div>
 
         {/* Mobile Sidebar Overlay */}
@@ -182,7 +182,7 @@ export default function Awards({ onLogout, onNavigate, currentPage }: AwardsProp
           <div className="lg:hidden fixed inset-0 z-50 flex">
             <div className="fixed inset-0 bg-black bg-opacity-50" onClick={toggleMobileSidebar}></div>
             <div className="relative bg-[#13181D] w-80 max-w-sm">
-              <Sidebar onNavigate={onNavigate} currentPage={currentPage} />
+              <Sidebar onNavigate={onNavigate} currentPage={currentPage} onLogout={onLogout} />
             </div>
           </div>
         )}
@@ -191,6 +191,13 @@ export default function Awards({ onLogout, onNavigate, currentPage }: AwardsProp
         <main className="flex-1 lg:ml-0 relative">
           <div className="w-full px-2 sm:px-4 lg:px-6 xl:px-8 pb-20 lg:pb-0">
             
+            {/* Page Title - Moved to top */}
+            <div className="py-4 sm:py-6 lg:py-8">
+              <h1 className="text-[28px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-black leading-tight text-transparent bg-gradient-to-r from-[#D5FFA8] to-[#FFFFFF] bg-clip-text text-center">
+                Lottery Awards
+              </h1>
+            </div>
+
             {/* Hero Banner Section - Responsive Design */}
             <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[452px] mb-6 sm:mb-8 overflow-hidden">
               {/* Background with gradient overlay */}
@@ -284,13 +291,6 @@ export default function Awards({ onLogout, onNavigate, currentPage }: AwardsProp
                     className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[280px] md:h-[280px] lg:w-[350px] lg:h-[350px] xl:w-[400px] xl:h-[400px] object-contain drop-shadow-2xl"
                   />
                 </div>
-              </div>
-
-              {/* Title - Responsive */}
-              <div className="absolute top-4 sm:top-6 md:top-8 lg:top-[50px] left-1/2 transform -translate-x-1/2">
-                <h1 className="text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] font-black leading-tight text-transparent bg-gradient-to-r from-[#D5FFA8] to-[#FFFFFF] bg-clip-text text-center whitespace-nowrap">
-                  Lottery Awards
-                </h1>
               </div>
 
               {/* Tab Navigation - Responsive positioning */}

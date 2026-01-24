@@ -130,7 +130,7 @@ export default function CreateTicket({ onLogout, onNavigate, currentPage, onBack
       <div className="flex flex-col lg:flex-row min-h-[calc(100vh-60px)] md:min-h-[calc(100vh-74px)]">
         {/* Desktop Sidebar - Hidden on mobile, visible on desktop */}
         <div className="hidden lg:block">
-          <Sidebar onNavigate={onNavigate} currentPage={currentPage} />
+          <Sidebar onNavigate={onNavigate} currentPage={currentPage} onLogout={onLogout} />
         </div>
         
         {/* Main Content - Full width on mobile, flexible on desktop */}

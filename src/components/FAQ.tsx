@@ -91,7 +91,7 @@ export default function FAQ({ onLogout, onNavigate, currentPage }: FAQProps) {
       {isMobileSidebarOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-black bg-opacity-50" onClick={() => setIsMobileSidebarOpen(false)}>
           <div className="w-64 h-full bg-[#13181D]" onClick={(e) => e.stopPropagation()}>
-            <Sidebar onNavigate={onNavigate} currentPage={currentPage} />
+            <Sidebar onNavigate={onNavigate} currentPage={currentPage} onLogout={onLogout} />
           </div>
         </div>
       )}
@@ -99,7 +99,7 @@ export default function FAQ({ onLogout, onNavigate, currentPage }: FAQProps) {
       <div className="flex flex-col lg:flex-row min-h-[calc(100vh-60px)] md:min-h-[calc(100vh-74px)]">
         {/* Desktop Sidebar - Hidden on mobile, visible on desktop */}
         <div className="hidden lg:block">
-          <Sidebar onNavigate={onNavigate} currentPage={currentPage} />
+          <Sidebar onNavigate={onNavigate} currentPage={currentPage} onLogout={onLogout} />
         </div>
         
         {/* Main Content - Full width on mobile, flexible on desktop */}

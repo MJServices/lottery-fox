@@ -205,22 +205,15 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
       <div className="flex flex-col lg:flex-row min-h-[calc(100vh-60px)] md:min-h-[calc(100vh-74px)]">
         {/* Desktop Sidebar - Hidden on mobile, visible on desktop */}
         <div className="hidden lg:block">
-          <Sidebar onNavigate={onNavigate} currentPage={currentPage} />
+          <Sidebar onNavigate={onNavigate} currentPage={currentPage} onLogout={onLogout} />
         </div>
         
         {/* Hero Section - Full width on mobile (outside all containers) */}
-        <div className="w-full h-[300px] sm:h-[380px] md:h-[450px] lg:hidden">
+        <div className="w-full h-[280px] sm:h-[320px] md:h-[380px] lg:hidden overflow-hidden">
           <img 
             src="/images/post.png" 
             alt="Affiliate Post" 
-            className="w-full h-full"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'contain',
-              objectPosition: 'center',
-              display: 'block'
-            }}
+            className="w-full h-full object-cover"
           />
         </div>
         
@@ -233,167 +226,162 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
               <div className="max-w-7xl mx-auto w-full">
                 <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8">
                   {/* Hero Section - Desktop only */}
-                  <div className="hidden lg:block lg:w-[360px] xl:w-[420px] 2xl:w-[480px] lg:h-[500px] xl:h-[580px] 2xl:h-[640px] flex-shrink-0">
-                    <img 
-                      src="/images/post.png" 
-                      alt="Affiliate Post" 
-                      className="w-full h-full rounded-2xl"
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain',
-                        objectPosition: 'center',
-                        display: 'block'
-                      }}
-                    />
+                  <div className="hidden lg:block lg:w-[360px] xl:w-[420px] 2xl:w-[480px] flex-shrink-0">
+                    <div className="w-full h-[480px] xl:h-[520px] 2xl:h-[560px] overflow-hidden rounded-2xl">
+                      <img 
+                        src="/images/post.png" 
+                        alt="Affiliate Post" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
 
                 {/* Form Section */}
-                <div className="flex-1 min-w-0 w-full">
-                  <div className="bg-[#11161B] border border-[#25253F] rounded-2xl p-4 sm:p-6 md:p-8 w-full" style={{
+                <div className="flex-1 min-w-0 w-full max-w-lg">
+                  <div className="bg-[#11161B] border border-[#25253F] rounded-lg p-2 sm:p-3 md:p-4 w-full" style={{
                     background: 'linear-gradient(180deg, rgba(37, 37, 63, 1) 0%, rgba(62, 65, 89, 1) 100%)',
                     boxShadow: '0px 2px 0px 0px rgba(40, 40, 69, 0.37)'
                   }}>
                     {/* Form Header */}
-                    <div className="flex justify-between items-center mb-6 sm:mb-8">
-                      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight">Apply for Affiliate program</h2>
-                      <button className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-[#D0D2E9] rounded-xl flex items-center justify-center flex-shrink-0 hover:bg-[#B8BAD1] transition-colors">
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="sm:w-4 sm:h-4 md:w-5 md:h-5">
+                    <div className="flex justify-between items-center mb-3 sm:mb-4">
+                      <h2 className="text-sm sm:text-base md:text-lg font-bold text-white leading-tight">Apply for Affiliate program</h2>
+                      <button className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-[#D0D2E9] rounded-md flex items-center justify-center flex-shrink-0 hover:bg-[#B8BAD1] transition-colors">
+                        <svg width="10" height="10" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="sm:w-2.5 sm:h-2.5 md:w-3 md:h-3">
                           <path d="M12 4L4 12M4 4L12 12" stroke="#525D68" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </button>
                     </div>
 
                     {/* Form Fields */}
-                    <div className="space-y-4 sm:space-y-6">
+                    <div className="space-y-2 sm:space-y-3">
                       {/* First Row - First Name & Last Name */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                        <div className="space-y-2">
-                          <label className="text-sm sm:text-base font-semibold text-[#A2B4C6] tracking-tight block">First name</label>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
+                        <div className="space-y-1">
+                          <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">First name</label>
                           <input
                             type="text"
                             placeholder="Enter name"
                             value={formData.firstName}
                             onChange={(e) => handleInputChange('firstName', e.target.value)}
-                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-xl px-4 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 text-sm sm:text-base font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-2 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                           />
                         </div>
-                        <div className="space-y-2">
-                          <label className="text-sm sm:text-base font-semibold text-[#A2B4C6] tracking-tight block">Last name</label>
+                        <div className="space-y-1">
+                          <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Last name</label>
                           <input
                             type="text"
                             placeholder="Enter name"
                             value={formData.lastName}
                             onChange={(e) => handleInputChange('lastName', e.target.value)}
-                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-xl px-4 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 text-sm sm:text-base font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-2 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                           />
                         </div>
                       </div>
 
                       {/* Second Row - Mobile Phone & WhatsApp */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                        <div className="space-y-2">
-                          <label className="text-sm sm:text-base font-semibold text-[#A2B4C6] tracking-tight block">Mobile phone</label>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
+                        <div className="space-y-1">
+                          <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Mobile phone</label>
                           <input
                             type="tel"
                             placeholder="Enter number"
                             value={formData.mobilePhone}
                             onChange={(e) => handleInputChange('mobilePhone', e.target.value)}
-                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-xl px-4 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 text-sm sm:text-base font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-2 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                           />
                         </div>
-                        <div className="space-y-2">
-                          <label className="text-sm sm:text-base font-semibold text-[#A2B4C6] tracking-tight block">Whatsapp</label>
+                        <div className="space-y-1">
+                          <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Whatsapp</label>
                           <input
                             type="tel"
                             placeholder="Enter number"
                             value={formData.whatsapp}
                             onChange={(e) => handleInputChange('whatsapp', e.target.value)}
-                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-xl px-4 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 text-sm sm:text-base font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-2 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                           />
                         </div>
                       </div>
 
                       {/* Third Row - Telegram */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                        <div className="space-y-2">
-                          <label className="text-sm sm:text-base font-semibold text-[#A2B4C6] tracking-tight block">Telegram</label>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
+                        <div className="space-y-1">
+                          <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Telegram</label>
                           <input
                             type="text"
                             placeholder="Enter telegram"
                             value={formData.telegram}
                             onChange={(e) => handleInputChange('telegram', e.target.value)}
-                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-xl px-4 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 text-sm sm:text-base font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-2 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                           />
                         </div>
                         <div className="hidden md:block"></div>
                       </div>
 
                       {/* Fourth Row - Website & Email */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                        <div className="space-y-2">
-                          <label className="text-sm sm:text-base font-semibold text-[#A2B4C6] tracking-tight block">Website</label>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
+                        <div className="space-y-1">
+                          <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Website</label>
                           <input
                             type="url"
                             placeholder="Enter website"
                             value={formData.website}
                             onChange={(e) => handleInputChange('website', e.target.value)}
-                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-xl px-4 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 text-sm sm:text-base font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-2 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                           />
                         </div>
-                        <div className="space-y-2">
-                          <label className="text-sm sm:text-base font-semibold text-[#A2B4C6] tracking-tight block">E-mail</label>
+                        <div className="space-y-1">
+                          <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">E-mail</label>
                           <input
                             type="email"
                             placeholder="Enter e-mail"
                             value={formData.email}
                             onChange={(e) => handleInputChange('email', e.target.value)}
-                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-xl px-4 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 text-sm sm:text-base font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-2 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                           />
                         </div>
                       </div>
 
                       {/* Fifth Row - How do you plan to promote */}
-                      <div className="space-y-2">
-                        <label className="text-sm sm:text-base font-semibold text-[#A2B4C6] tracking-tight block">How do you plan to promote?</label>
+                      <div className="space-y-1">
+                        <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">How do you plan to promote?</label>
                         <input
                           type="text"
                           placeholder="Enter Subject"
                           value={formData.promotion}
                           onChange={(e) => handleInputChange('promotion', e.target.value)}
-                          className="w-full bg-[#1E242A] border border-[#2A3441] rounded-xl px-4 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 text-sm sm:text-base font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-2 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                          className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                         />
                       </div>
 
                       {/* Sixth Row - Password & Repeat Password */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                        <div className="space-y-2">
-                          <label className="text-sm sm:text-base font-semibold text-[#A2B4C6] tracking-tight block">Password</label>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
+                        <div className="space-y-1">
+                          <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Password</label>
                           <input
                             type="password"
                             placeholder="Enter here"
                             value={formData.password}
                             onChange={(e) => handleInputChange('password', e.target.value)}
-                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-xl px-4 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 text-sm sm:text-base font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-2 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                           />
                         </div>
-                        <div className="space-y-2">
-                          <label className="text-sm sm:text-base font-semibold text-[#A2B4C6] tracking-tight block">Repeat password</label>
+                        <div className="space-y-1">
+                          <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Repeat password</label>
                           <input
                             type="password"
                             placeholder="Enter here"
                             value={formData.repeatPassword}
                             onChange={(e) => handleInputChange('repeatPassword', e.target.value)}
-                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-xl px-4 sm:px-5 md:px-6 py-3 sm:py-4 md:py-5 text-sm sm:text-base font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-2 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                           />
                         </div>
                       </div>
 
                       {/* Submit Button */}
-                      <div className="pt-4 sm:pt-6">
+                      <div className="pt-2 sm:pt-3">
                         <button
                           onClick={handleSubmit}
-                          className="w-full bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-xl px-6 py-4 sm:py-5 md:py-6 text-base sm:text-lg md:text-xl font-extrabold text-white hover:opacity-90 transition-all active:scale-95 shadow-lg"
+                          className="w-full bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-md px-3 py-2.5 sm:py-3 text-xs sm:text-sm font-extrabold text-white hover:opacity-90 transition-all active:scale-95 shadow-lg"
                         >
                           Send Request
                         </button>

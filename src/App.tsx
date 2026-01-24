@@ -11,6 +11,7 @@ import FAQ from './components/FAQ';
 import VerifyResults from './components/VerifyResults';
 import HowItWorks from './components/HowItWorks';
 import Awards from './components/Awards';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import { Page } from './types';
 
 function App() {
@@ -55,6 +56,8 @@ function App() {
         return <HowItWorks onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
       case 'awards':
         return <Awards onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
+      case 'privacy-policy':
+        return <PrivacyPolicy onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;
       case 'home':
       default:
         return <Home onLogout={handleLogout} onNavigate={handleNavigate} currentPage={currentPage} />;

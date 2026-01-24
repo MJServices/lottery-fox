@@ -184,29 +184,29 @@ export default function Home({ onLogout, onNavigate, currentPage }: HomeProps) {
         </div>
       )}
       
-      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-60px)] md:min-h-[calc(100vh-74px)]">
+      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-60px)] md:min-h-[calc(100vh-74px)] relative">
         {/* Desktop Sidebar - Hidden on mobile, visible on desktop */}
-        <div className="hidden lg:block">
-          <Sidebar onNavigate={onNavigate} currentPage={currentPage} />
+        <div className="hidden lg:block flex-shrink-0">
+          <Sidebar onNavigate={onNavigate} currentPage={currentPage} onLogout={onLogout} />
         </div>
         
         {/* Main Content - Full width on mobile, flexible on desktop */}
-        <div className="flex-1 flex flex-col xl:flex-row min-h-0">
+        <div className="flex-1 flex flex-col xl:flex-row min-h-0 w-full overflow-hidden">
           {/* Home Content */}
-          <div className="flex-1 overflow-y-auto pb-20 lg:pb-0">
+          <div className="flex-1 overflow-y-auto pb-20 lg:pb-0 w-full">
             <ResponsiveLayout>
               <MainContent />
             </ResponsiveLayout>
           </div>
           
           {/* Chat - Hidden on mobile/tablet, visible on desktop */}
-          <div className="hidden xl:block">
+          <div className="hidden xl:block flex-shrink-0">
             <Chat />
           </div>
         </div>
         
         {/* Mobile Chat Button - Show on mobile only */}
-        <div className="xl:hidden border-t border-[#242D36] bg-[#13181D] p-3 sm:p-4">
+        <div className="xl:hidden border-t border-[#242D36] bg-[#13181D] p-3 sm:p-4 absolute bottom-0 left-0 right-0 z-10">
           <button className="w-full p-3 sm:p-4 text-left text-white font-bold text-sm sm:text-base bg-gradient-to-r from-[#9726E3] to-[#FF4B0F] rounded-lg hover:opacity-90 transition-opacity flex items-center justify-between">
             <span>💬 Open Chat</span>
             <span className="text-xs sm:text-sm opacity-80">544 online</span>

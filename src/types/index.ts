@@ -1,4 +1,4 @@
-export type Page = 'home' | 'results' | 'lottery' | 'leaders' | 'affiliate' | 'faq' | 'deposit' | 'profile' | 'hallOfFame' | 'verify-results' | 'how-it-works' | 'awards';
+export type Page = 'home' | 'results' | 'lottery' | 'leaders' | 'affiliate' | 'faq' | 'deposit' | 'profile' | 'hallOfFame' | 'verify-results' | 'how-it-works' | 'awards' | 'privacy-policy';
 
 export interface User {
   id: string;

@@ -4,21 +4,25 @@ import LuckyHourCard from './LuckyHourCard';
 
 export default function MainContent() {
   return (
-    <main className="flex-1 bg-[#13181D] p-3 md:p-4 lg:p-6">
+    <main className="flex-1 bg-[#13181D] p-3 md:p-4 lg:p-6 overflow-x-hidden">
       {/* Main Content Grid - Responsive Layout */}
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8 w-full">
         {/* Left Column - Main Lottery Card - Full width on mobile, no overflow issues */}
-        <div className="xl:col-span-2 w-full overflow-visible max-w-full">
-          <FigmaLotteryCard />
+        <div className="xl:col-span-2 w-full max-w-full overflow-hidden">
+          <div className="relative w-full">
+            <FigmaLotteryCard />
+          </div>
         </div>
           
           {/* Right Column */}
-          <div className="xl:col-span-1 flex flex-col gap-4 md:gap-6">
+          <div className="xl:col-span-1 flex flex-col gap-4 md:gap-6 w-full max-w-full">
             {/* Lucky Hour Card - 100% Accurate Figma Design */}
-            <LuckyHourCard /> 
+            <div className="w-full overflow-hidden">
+              <LuckyHourCard />
+            </div>
             
             {/* Latest Bitcoin Block */}
-            <div className="bg-gradient-to-br from-[#1A2027] to-[#242D36] rounded-xl p-3 md:p-4 border border-[#2A3441] relative overflow-hidden">
+            <div className="bg-gradient-to-br from-[#1A2027] to-[#242D36] rounded-xl p-3 md:p-4 border border-[#2A3441] relative overflow-hidden w-full">
               {/* Background decorative elements */}
               <div className="absolute right-2 top-2 w-3 h-3 bg-[#FFB366] rounded-full opacity-40 blur-sm"></div>
               <div className="absolute right-5 bottom-2 w-2 h-2 bg-[#FF8962] rounded-full opacity-30 blur-sm"></div>
