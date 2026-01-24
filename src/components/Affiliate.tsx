@@ -52,7 +52,7 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
   return (
     <div className="min-h-screen bg-[#13181D] text-white">
       {/* Header */}
-      <Header onLogout={onLogout} onToggleMobileSidebar={() => setIsMobileSidebarOpen(true)} />
+      <Header onLogout={onLogout} onNavigate={onNavigate} currentPage={currentPage} />
       
       {/* Mobile Sidebar Overlay */}
       {isMobileSidebarOpen && (
@@ -80,7 +80,7 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                     <div className="w-full h-6 sm:h-8 flex items-center justify-center mb-1">
                       <img src="/images/lucky-hour-avatar-1db0ff.png" alt="Lucky Hour" className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-full" />
                     </div>
-                    <div className="text-white text-xs sm:text-sm font-black">HOUR</div>
+                    
                   </div>
                 </div>
 

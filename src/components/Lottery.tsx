@@ -360,7 +360,7 @@ export default function Lottery({ onLogout, onNavigate, currentPage }: LotteryPr
   return (
     <div className="min-h-screen bg-[#13181D] text-white">
       {/* Header */}
-      <Header onLogout={onLogout} onToggleMobileSidebar={() => setIsMobileSidebarOpen(true)} />
+      <Header onLogout={onLogout} onNavigate={onNavigate} currentPage={currentPage} />
       
       {/* Mobile Sidebar Overlay */}
       {isMobileSidebarOpen && (

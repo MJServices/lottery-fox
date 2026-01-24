@@ -15,36 +15,54 @@ export default function MainContent() {
           {/* Right Column */}
           <div className="xl:col-span-1 flex flex-col gap-4 md:gap-6">
             {/* Lucky Hour Card - 100% Accurate Figma Design */}
-            <LuckyHourCard />
+            <LuckyHourCard /> 
             
             {/* Latest Bitcoin Block */}
-            <div className="bg-gradient-to-br from-[#13181D] to-[#1F262E] rounded-xl p-4 md:p-6 border border-[#242D36] min-h-[140px] md:h-[160px] relative overflow-hidden">
-              {/* Background glow effect */}
-              <div className="absolute right-0 top-0 w-32 md:w-40 h-32 md:h-40 bg-[#BEFF25] rounded-full blur-[80px] md:blur-[100px] opacity-30"></div>
+            <div className="bg-gradient-to-br from-[#1A2027] to-[#242D36] rounded-xl p-3 md:p-4 border border-[#2A3441] relative overflow-hidden">
+              {/* Background decorative elements */}
+              <div className="absolute right-2 top-2 w-3 h-3 bg-[#FFB366] rounded-full opacity-40 blur-sm"></div>
+              <div className="absolute right-5 bottom-2 w-2 h-2 bg-[#FF8962] rounded-full opacity-30 blur-sm"></div>
               
               <div className="relative z-10">
+                {/* Header Section */}
                 <div className="flex items-center gap-2 mb-2">
-                  <img src="/images/bitcoin-icon.png" alt="Bitcoin" className="w-4 md:w-5 h-4 md:h-5" />
-                  <h3 className="text-[#A2B4C6] text-[14px] md:text-[16px] font-extrabold tracking-wide">LATEST BITCOIN BLOCK #</h3>
+                  <div className="w-5 h-5 bg-gradient-to-br from-[#FF6B35] to-[#FF8962] rounded-lg flex items-center justify-center">
+                    <img src="/images/bitcoin-icon.png" alt="Bitcoin" className="w-3 h-3" />
+                  </div>
+                  <h3 className="text-[#A2B4C6] text-[10px] md:text-[11px] font-bold uppercase tracking-wider">LATEST BITCOIN BLOCK</h3>
                 </div>
-                <div className="text-white text-[24px] md:text-[28px] font-extrabold mb-3 md:mb-4 tracking-tight">4390J3</div>
                 
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex gap-1 overflow-x-auto">
+                {/* Block Number */}
+                <div className="mb-2">
+                  <div className="text-white text-[18px] md:text-[20px] font-extrabold tracking-tight">4390J3</div>
+                </div>
+                
+                {/* Winning Digits */}
+                <div className="mb-2">
+                  <div className="flex gap-0.5 mb-1">
                     {['5', '3', '8', '9', 'K', 'J'].map((digit, i) => (
-                      <div key={i} className="w-[28px] md:w-[32px] h-[24px] md:h-[28px] bg-gradient-to-b from-[#1F1813] to-[#E36826] rounded border border-[#FF8962] flex items-center justify-center flex-shrink-0">
-                        <span className="text-[#FFF0C4] text-[12px] md:text-[14px] font-bold">{digit}</span>
+                      <div key={i} className="w-[16px] md:w-[18px] h-[14px] md:h-[16px] bg-gradient-to-b from-[#1F1813] to-[#E36826] rounded border border-[#FF8962] flex items-center justify-center">
+                        <span className="text-[#FFF0C4] text-[8px] md:text-[9px] font-bold">{digit}</span>
                       </div>
                     ))}
                   </div>
-                  <button className="bg-gradient-to-r from-[#8FD811] to-[#E1FF75] text-[#253703] px-3 md:px-4 py-2 rounded-lg text-[12px] md:text-[14px] font-bold border border-[#BEFF25] flex items-center gap-1 md:gap-2 whitespace-nowrap">
-                    <img src="/images/checkmark-badge-icon.svg" alt="Verify" className="w-3 md:w-4 h-3 md:h-4" />
-                    <span className="hidden sm:inline">Verify</span>
-                    <span className="sm:hidden">✓</span>
-                  </button>
+                  <div className="text-[#A2B4C6] text-[8px] md:text-[9px] font-medium">Winning digits</div>
                 </div>
                 
-                <div className="text-[#A2B4C6] text-[12px] md:text-[14px] font-bold mt-2 md:mt-3">Winning digits</div>
+                {/* Action Section */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1">
+                    <div className="w-1 h-1 bg-[#8FD811] rounded-full animate-pulse"></div>
+                    <span className="text-[#8FD811] text-[8px] md:text-[9px] font-medium">Live</span>
+                  </div>
+                  
+                  <button className="bg-gradient-to-r from-[#8FD811] to-[#E1FF75] text-[#253703] px-2.5 py-1 rounded text-[9px] md:text-[10px] font-bold border border-[#BEFF25] hover:opacity-90 transition-all flex items-center gap-1">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Verify
+                  </button>
+                </div>
               </div>
             </div>
           </div>

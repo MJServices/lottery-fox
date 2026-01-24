@@ -31,23 +31,26 @@ export default function SignIn({ onSwitchToSignUp, onSignInSuccess, onForgotPass
   };
 
   return (
-    <div className="min-h-screen bg-[#13181D] flex items-center justify-center p-1 xs:p-2 sm:p-4">
-      <div className="w-full max-w-sm xs:max-w-md sm:max-w-2xl md:max-w-4xl lg:max-w-7xl flex flex-col lg:flex-row bg-[#1A1F25] rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl min-h-screen xs:min-h-[90vh] sm:min-h-[600px] lg:min-h-[700px]">
+    <div className="h-screen bg-[#13181D] flex items-center justify-center p-0">
+      <div className="w-full h-full max-w-none flex flex-col lg:flex-row bg-[#1A1F25] overflow-hidden shadow-2xl">
         
         {/* Left Side - Promotional Card */}
-        <div className="w-full lg:w-1/2 bg-gradient-to-br from-[#8FD811] to-[#E1FF75] p-2 xs:p-3 sm:p-6 lg:p-8 flex flex-col justify-center items-center relative overflow-hidden min-h-[180px] xs:min-h-[220px] sm:min-h-[300px] lg:min-h-[600px]">
+        <div className="w-full lg:w-1/2 bg-gradient-to-br from-[#8FD811] to-[#E1FF75] p-2 sm:p-4 lg:p-6 flex flex-col justify-center items-center relative overflow-hidden">
           <div className="w-full h-full flex items-center justify-center">
             <img 
               src="/images/image.png" 
               alt="Fox Character - Sign In Promotion" 
-              className="w-full h-full object-cover rounded-md sm:rounded-lg max-h-[140px] xs:max-h-[180px] sm:max-h-[250px] lg:max-h-none"
+              className="w-full h-full object-contain max-w-none max-h-none"
+              style={{ 
+                imageRendering: '-webkit-optimize-contrast'
+              }}
             />
           </div>
         </div>
 
         {/* Right Side - Sign In Form */}
-        <div className="w-full lg:w-1/2 p-2 xs:p-3 sm:p-6 lg:p-8 bg-[#242D36] flex flex-col justify-center">
-          <div className="w-full max-w-xs xs:max-w-sm sm:max-w-md mx-auto">
+        <div className="w-full lg:w-1/2 p-4 sm:p-6 lg:p-8 bg-[#242D36] flex flex-col justify-center overflow-y-auto">
+          <div className="w-full max-w-md mx-auto">
             
             {/* Header */}
             <div className="flex justify-between items-center mb-3 xs:mb-4 sm:mb-6 lg:mb-8">

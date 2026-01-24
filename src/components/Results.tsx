@@ -207,7 +207,7 @@ export default function Results({ onLogout, onNavigate, currentPage }: ResultsPr
   return (
     <div className="min-h-screen bg-[#13181D] text-white">
       {/* Header */}
-      <Header onLogout={onLogout} onToggleMobileSidebar={() => setIsMobileSidebarOpen(true)} />
+      <Header onLogout={onLogout} onNavigate={onNavigate} currentPage={currentPage} />
       
       {/* Mobile Sidebar Overlay */}
       {isMobileSidebarOpen && (
@@ -371,7 +371,7 @@ export default function Results({ onLogout, onNavigate, currentPage }: ResultsPr
             <div className="relative mb-8 w-full">
               {/* Banner Background Image - Full width without container */}
               <img 
-                src="/images/lottery-banner.png" 
+                src="/images/banner-1.png" 
                 alt="Results Banner" 
                 className="w-full h-auto rounded-xl"
                 style={{

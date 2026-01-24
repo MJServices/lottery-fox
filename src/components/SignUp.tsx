@@ -38,12 +38,15 @@ export default function SignUp({ onSwitchToSignIn, onSignUpSuccess }: SignUpProp
       <div className="w-full max-w-sm xs:max-w-md sm:max-w-2xl md:max-w-4xl lg:max-w-7xl flex flex-col lg:flex-row bg-[#1A1F25] rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl min-h-screen xs:min-h-[95vh] sm:min-h-[600px] lg:min-h-[700px]">
         
         {/* Left Side - Promotional Card */}
-        <div className="w-full lg:w-1/2 bg-gradient-to-br from-[#8FD811] to-[#E1FF75] p-2 xs:p-3 sm:p-6 lg:p-8 flex flex-col justify-center items-center relative overflow-hidden min-h-[160px] xs:min-h-[200px] sm:min-h-[300px] lg:min-h-[600px]">
+        <div className="w-full lg:w-1/2 bg-gradient-to-br from-[#8FD811] to-[#E1FF75] p-2 xs:p-3 sm:p-6 lg:p-8 flex flex-col justify-center items-center relative overflow-hidden min-h-[220px] xs:min-h-[260px] sm:min-h-[340px] md:min-h-[420px] lg:min-h-[600px]">
           <div className="w-full h-full flex items-center justify-center">
             <img 
               src="/images/image.png" 
               alt="Fox Character - Sign Up Promotion" 
-              className="w-full h-full object-cover rounded-md sm:rounded-lg max-h-[120px] xs:max-h-[160px] sm:max-h-[250px] lg:max-h-none"
+              className="w-full h-full object-contain rounded-md sm:rounded-lg max-w-full max-h-[180px] xs:max-h-[220px] sm:max-h-[300px] md:max-h-[400px] lg:max-h-none"
+              style={{ 
+                imageRendering: '-webkit-optimize-contrast'
+              }}
             />
           </div>
         </div>

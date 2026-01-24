@@ -10,8 +10,8 @@ export default function MobileNavbar({ onNavigate, currentPage }: MobileNavbarPr
     { page: 'home' as Page, icon: '/images/home-icon.png', label: 'Home' },
     { page: 'lottery' as Page, icon: '/images/lottery-icon.png', label: 'Lottery' },
     { page: 'results' as Page, icon: '/images/checkmark-badge-icon.svg', label: 'Results' },
-    { page: 'leaders' as Page, icon: '/images/champion-icon.svg', label: 'Leaders' },
-    { page: 'affiliate' as Page, icon: '/images/user-multiple-icon.svg', label: 'Affiliate' }
+    { page: 'faq' as Page, icon: '/images/chat-question-icon.svg', label: 'FAQ' },
+    { page: 'profile' as Page, icon: '/images/profile-avatar.png', label: 'Profile' }
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function MobileNavbar({ onNavigate, currentPage }: MobileNavbarPr
               <img 
                 src={item.icon} 
                 alt={item.label} 
-                className="w-full h-full object-contain"
+                className={`w-full h-full object-contain ${item.page === 'profile' ? 'rounded-full' : ''}`}
                 style={{
                   filter: currentPage === item.page 
                     ? 'brightness(0) saturate(100%) invert(45%) sepia(100%) saturate(2000%) hue-rotate(15deg) brightness(100%) contrast(100%)'

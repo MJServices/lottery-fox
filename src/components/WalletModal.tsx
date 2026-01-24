@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 interface WalletModalProps {
   isOpen: boolean;
   onClose: () => void;
   initialTab?: 'deposit' | 'withdraw';
+  currentPage?: string;
 }
 
 type Tab = 'deposit' | 'withdraw';
@@ -12,13 +14,33 @@ type Chain = 'bitcoin' | 'ethereum' | 'tron';
 
 const quickAmounts = [25, 50, 100, 125, 150, 200, 250];
 
-export default function WalletModal({ isOpen, onClose, initialTab = 'deposit' }: WalletModalProps) {
+export default function WalletModal({ isOpen, onClose, initialTab = 'deposit', currentPage }: WalletModalProps) {
   const [activeTab, setActiveTab] = useState<Tab>(initialTab);
   const [selectedCoin] = useState<Coin>('bitcoin');
   const [selectedChain] = useState<Chain>('bitcoin');
   const [walletAddress, setWalletAddress] = useState('');
   const [amount, setAmount] = useState('100');
   const [balance] = useState('233 390 USDT');
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    };
+  }, [isOpen]);
 
   // Mock wallet address for deposit
   const depositAddress = '434903...430203';
@@ -38,13 +60,34 @@ export default function WalletModal({ isOpen, onClose, initialTab = 'deposit' }:
     console.log('Withdraw:', { selectedCoin, selectedChain, walletAddress, amount });
   };
 
-  if (!isOpen) return null;
+  if (!isOpen || currentPage === 'awards') return null;
 
-  return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-[#2A3441] rounded-2xl w-full max-w-md mx-auto border border-[#3A4451] shadow-2xl my-8 max-h-[90vh] overflow-y-auto">
+  const modalContent = (
+    <div 
+      className="modal-overlay fixed inset-0 z-[99999] flex items-center justify-center p-4" 
+      style={{ 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        right: 0, 
+        bottom: 0,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        isolation: 'isolate',
+        zIndex: 999999
+      }}
+      onClick={onClose}
+    >
+      <div 
+        className="modal-content bg-[#2A3441] rounded-2xl w-full max-w-md mx-auto border border-[#3A4451] shadow-2xl max-h-[90vh] overflow-y-auto"
+        style={{
+          position: 'relative',
+          zIndex: 1000000,
+          isolation: 'isolate'
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 pb-4 sticky top-0 bg-[#2A3441] z-10 rounded-t-2xl">
+        <div className="flex items-center justify-between p-6 pb-4 sticky top-0 bg-[#2A3441] rounded-t-2xl" style={{ zIndex: 1000001 }}>
           <h2 className="text-2xl font-bold text-white">Wallet</h2>
           <button
             onClick={onClose}
@@ -57,7 +100,7 @@ export default function WalletModal({ isOpen, onClose, initialTab = 'deposit' }:
         </div>
 
         {/* Tabs */}
-        <div className="flex px-6 mb-6 sticky top-[88px] bg-[#2A3441] z-10">
+        <div className="flex px-6 mb-6 sticky top-[88px] bg-[#2A3441]" style={{ zIndex: 1000001 }}>
           <button
             onClick={() => setActiveTab('deposit')}
             className={`flex-1 py-3 px-4 text-base font-bold transition-all rounded-l-lg ${
@@ -232,4 +275,7 @@ export default function WalletModal({ isOpen, onClose, initialTab = 'deposit' }:
       </div>
     </div>
   );
+
+  // Render modal using portal to document.body to bypass stacking context issues
+  return createPortal(modalContent, document.body);
 }

@@ -27,7 +27,7 @@ export default function Home({ onLogout, onNavigate, currentPage }: HomeProps) {
   return (
     <div className="min-h-screen bg-[#13181D] text-white">
       {/* Header */}
-      <Header onLogout={onLogout} onToggleMobileSidebar={() => setIsMobileSidebarOpen(true)} />
+      <Header onLogout={onLogout} onNavigate={onNavigate} currentPage={currentPage} />
       
       {/* Mobile Sidebar Overlay */}
       {isMobileSidebarOpen && (
@@ -49,15 +49,22 @@ export default function Home({ onLogout, onNavigate, currentPage }: HomeProps) {
               {/* Mobile Navigation Items */}
               <div className="space-y-3 sm:space-y-4">
                 {/* Lucky Hour Card */}
-                <div className="w-full h-20 sm:h-24 bg-gradient-to-r from-[#4CAF50] to-[#66BB6A] rounded-xl p-3 sm:p-4 relative overflow-hidden">
-                  <div className="text-center">
-                    <div className="text-white text-xs sm:text-sm font-black mb-1">LUCKY</div>
+                <button className="w-full h-20 sm:h-24 bg-gradient-to-r from-[#4CAF50] to-[#66BB6A] rounded-xl p-3 sm:p-4 relative overflow-hidden hover:from-[#5CBF60] hover:to-[#7BC87B] transition-all cursor-pointer shadow-lg">
+                  <div className="text-center relative z-10">
+                    <div className="text-white text-xs sm:text-sm font-black mb-1 drop-shadow-md">LUCKY</div>
                     <div className="w-full h-6 sm:h-8 flex items-center justify-center mb-1">
-                      <img src="/images/lucky-hour-avatar-1db0ff.png" alt="Lucky Hour" className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-full" />
+                      <img src="/images/lucky-hour-avatar-1db0ff.png" alt="Lucky Hour" className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-full border-2 border-white/30" />
                     </div>
-                    <div className="text-white text-xs sm:text-sm font-black">HOUR</div>
+                    
                   </div>
-                </div>
+                  
+                  {/* Background decorative elements for better contrast */}
+                  <div className="absolute top-2 right-2 w-3 h-3 bg-white/10 rounded-full"></div>
+                  <div className="absolute bottom-2 left-2 w-2 h-2 bg-white/15 rounded-full"></div>
+                  
+                  {/* Subtle overlay for better text visibility */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/10 rounded-xl"></div>
+                </button>
 
                 {/* Navigation Items */}
                 <div className="space-y-2 sm:space-y-3">

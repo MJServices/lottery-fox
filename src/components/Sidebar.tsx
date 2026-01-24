@@ -14,15 +14,19 @@ export default function Sidebar({ onNavigate, currentPage }: SidebarProps) {
       {/* Top section */}
       <div className="flex flex-col gap-3">
         {/* Lucky Hour Card */}
-        <div className="w-[64px] h-[80px] bg-gradient-to-b from-[#4CAF50] to-[#66BB6A] rounded-lg p-2 relative overflow-hidden">
+        <button className="w-[64px] h-[80px] bg-gradient-to-b from-[#4CAF50] to-[#66BB6A] rounded-lg p-2 relative overflow-hidden hover:from-[#5CBF60] hover:to-[#7BC87B] transition-all cursor-pointer shadow-lg hover:shadow-xl">
           <div className="text-center">
             <div className="text-white text-xs font-black mb-1">LUCKY</div>
             <div className="w-full h-8 flex items-center justify-center mb-1">
               <img src="/images/lucky-hour-avatar-1db0ff.png" alt="Lucky Hour" className="w-6 h-6 object-contain rounded-full" />
             </div>
-            <div className="text-white text-xs font-black">HOUR</div>
+
           </div>
-        </div>
+          
+          {/* Decorative elements */}
+          <div className="absolute top-1 right-1 w-2 h-2 bg-white/20 rounded-full"></div>
+          <div className="absolute bottom-1 left-1 w-1.5 h-1.5 bg-white/15 rounded-full"></div>
+        </button>
 
         {/* Navigation Items */}
         <div className="flex flex-col gap-2">
@@ -124,6 +128,23 @@ export default function Sidebar({ onNavigate, currentPage }: SidebarProps) {
               <div className={`text-xs font-bold mb-2 ${isActive('faq') ? 'text-white' : 'text-gray-400'}`}>FAQ</div>
               <div className="w-full h-8 flex items-center justify-center">
                 <img src="/images/chat-question-icon.svg" alt="FAQ" className={`w-6 h-6 object-contain ${isActive('faq') ? 'opacity-100' : 'opacity-70'}`} />
+              </div>
+            </div>
+          </div>
+
+          {/* Profile */}
+          <div 
+            onClick={() => onNavigate('profile')}
+            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${
+              isActive('profile') 
+                ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]' 
+                : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+            }`}
+          >
+            <div className="text-center">
+              <div className={`text-xs font-bold mb-2 ${isActive('profile') ? 'text-white' : 'text-gray-400'}`}>Profile</div>
+              <div className="w-full h-8 flex items-center justify-center">
+                <img src="/images/profile-avatar.png" alt="Profile" className={`w-6 h-6 object-contain rounded-full ${isActive('profile') ? 'opacity-100' : 'opacity-70'}`} />
               </div>
             </div>
           </div>
