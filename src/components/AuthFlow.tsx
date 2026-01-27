@@ -25,48 +25,48 @@ export default function AuthFlow({ onAuthSuccess }: AuthFlowProps) {
   switch (currentScreen) {
     case 'signup':
       return (
-        <SignUp 
+        <SignUp
           onSwitchToSignIn={handleSwitchToSignIn}
           onSignUpSuccess={onAuthSuccess}
         />
       );
-    
+
     case 'signin':
       return (
-        <SignIn 
+        <SignIn
           onSwitchToSignUp={handleSwitchToSignUp}
           onSignInSuccess={onAuthSuccess}
           onForgotPassword={handleForgotPassword}
         />
       );
-    
+
     case 'forgot-password':
       return (
-        <ForgotPassword 
+        <ForgotPassword
           onBack={handleBackToSignIn}
           onVerificationSent={handleVerificationSent}
         />
       );
-    
+
     case 'verification':
       return (
-        <VerificationCode 
+        <VerificationCode
           onBack={handleBackToSignIn}
           onVerificationSuccess={handleVerificationSuccess}
         />
       );
-    
+
     case 'create-password':
       return (
-        <CreateNewPassword 
+        <CreateNewPassword
           onBack={handleBackToSignIn}
           onPasswordCreated={handlePasswordCreated}
         />
       );
-    
+
     default:
       return (
-        <SignIn 
+        <SignIn
           onSwitchToSignUp={handleSwitchToSignUp}
           onSignInSuccess={onAuthSuccess}
           onForgotPassword={handleForgotPassword}

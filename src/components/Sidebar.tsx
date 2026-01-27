@@ -23,7 +23,7 @@ export default function Sidebar({ onNavigate, currentPage, onLogout }: SidebarPr
             </div>
 
           </div>
-          
+
           {/* Decorative elements */}
           <div className="absolute top-1 right-1 w-2 h-2 bg-white/20 rounded-full"></div>
           <div className="absolute bottom-1 left-1 w-1.5 h-1.5 bg-white/15 rounded-full"></div>
@@ -32,13 +32,12 @@ export default function Sidebar({ onNavigate, currentPage, onLogout }: SidebarPr
         {/* Navigation Items */}
         <div className="flex flex-col gap-2">
           {/* Home */}
-          <div 
+          <div
             onClick={() => onNavigate('home')}
-            className={`w-[64px] h-[80px] rounded-lg p-2 relative cursor-pointer transition-colors ${
-              isActive('home') 
-                ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]' 
-                : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
-            }`}
+            className={`w-[64px] h-[80px] rounded-lg p-2 relative cursor-pointer transition-colors ${isActive('home')
+              ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]'
+              : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+              }`}
           >
             <div className="text-center">
               <div className={`text-xs font-bold mb-2 ${isActive('home') ? 'text-white' : 'text-gray-400'}`}>Home</div>
@@ -49,13 +48,12 @@ export default function Sidebar({ onNavigate, currentPage, onLogout }: SidebarPr
           </div>
 
           {/* Lottery */}
-          <div 
+          <div
             onClick={() => onNavigate('lottery')}
-            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${
-              isActive('lottery') 
-                ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]' 
-                : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
-            }`}
+            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${isActive('lottery')
+              ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]'
+              : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+              }`}
           >
             <div className="text-center">
               <div className={`text-xs font-bold mb-2 ${isActive('lottery') ? 'text-white' : 'text-gray-400'}`}>Lottery</div>
@@ -66,13 +64,12 @@ export default function Sidebar({ onNavigate, currentPage, onLogout }: SidebarPr
           </div>
 
           {/* Results */}
-          <div 
+          <div
             onClick={() => onNavigate('results')}
-            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${
-              isActive('results') 
-                ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]' 
-                : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
-            }`}
+            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${isActive('results')
+              ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]'
+              : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+              }`}
           >
             <div className="text-center">
               <div className={`text-xs font-bold mb-2 ${isActive('results') ? 'text-white' : 'text-gray-400'}`}>Results</div>
@@ -82,31 +79,15 @@ export default function Sidebar({ onNavigate, currentPage, onLogout }: SidebarPr
             </div>
           </div>
 
-          {/* Leaders */}
-          <div 
-            onClick={() => onNavigate('leaders')}
-            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${
-              isActive('leaders') 
-                ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]' 
-                : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
-            }`}
-          >
-            <div className="text-center">
-              <div className={`text-xs font-bold mb-2 ${isActive('leaders') ? 'text-white' : 'text-gray-400'}`}>Leaders</div>
-              <div className="w-full h-8 flex items-center justify-center">
-                <img src="/images/champion-icon.svg" alt="Leaders" className={`w-8 h-8 object-contain ${isActive('leaders') ? 'opacity-100' : 'opacity-70'}`} />
-              </div>
-            </div>
-          </div>
+
 
           {/* Affiliate */}
-          <div 
+          <div
             onClick={() => onNavigate('affiliate')}
-            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${
-              isActive('affiliate') 
-                ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]' 
-                : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
-            }`}
+            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${isActive('affiliate')
+              ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]'
+              : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+              }`}
           >
             <div className="text-center">
               <div className={`text-xs font-bold mb-2 ${isActive('affiliate') ? 'text-white' : 'text-gray-400'}`}>Affiliate</div>
@@ -117,13 +98,12 @@ export default function Sidebar({ onNavigate, currentPage, onLogout }: SidebarPr
           </div>
 
           {/* FAQ */}
-          <div 
+          <div
             onClick={() => onNavigate('faq')}
-            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${
-              isActive('faq') 
-                ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]' 
-                : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
-            }`}
+            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${isActive('faq')
+              ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]'
+              : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+              }`}
           >
             <div className="text-center">
               <div className={`text-xs font-bold mb-2 ${isActive('faq') ? 'text-white' : 'text-gray-400'}`}>FAQ</div>
@@ -134,13 +114,12 @@ export default function Sidebar({ onNavigate, currentPage, onLogout }: SidebarPr
           </div>
 
           {/* Profile */}
-          <div 
+          <div
             onClick={() => onNavigate('profile')}
-            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${
-              isActive('profile') 
-                ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]' 
-                : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
-            }`}
+            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${isActive('profile')
+              ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]'
+              : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+              }`}
           >
             <div className="text-center">
               <div className={`text-xs font-bold mb-2 ${isActive('profile') ? 'text-white' : 'text-gray-400'}`}>Profile</div>
@@ -153,7 +132,7 @@ export default function Sidebar({ onNavigate, currentPage, onLogout }: SidebarPr
       </div>
 
       {/* Bottom section - Log out */}
-      <div 
+      <div
         onClick={onLogout}
         className="w-[64px] bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 rounded-lg p-2 flex flex-col items-center gap-1 hover:border-gray-600 transition-colors cursor-pointer"
       >
