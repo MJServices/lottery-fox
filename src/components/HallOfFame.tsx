@@ -64,7 +64,7 @@ export default function HallOfFame({ onLogout, onNavigate, currentPage }: HallOf
                 </div>
 
                 {/* Hero Section with Hall of Fame Image - Clean background only */}
-                <div className="relative rounded-lg sm:rounded-2xl mb-4 sm:mb-6 lg:mb-8 overflow-hidden" style={{ minHeight: '200px' }}>
+                <div className="relative rounded-lg sm:rounded-2xl mb-4 sm:mb-6 lg:mb-8 overflow-hidden" style={{ minHeight: '300px' }}>
                   {/* Background Image - No overlay text */}
                   <div className="absolute inset-0">
                     <img 
@@ -73,7 +73,7 @@ export default function HallOfFame({ onLogout, onNavigate, currentPage }: HallOf
                       className="w-full h-full object-cover"
                     />
                     {/* Overlay to hide the "HALL OF FAME" text in the image */}
-                    <div className="absolute top-0 left-0 w-full h-16 sm:h-24 lg:h-32 bg-gradient-to-b from-[#13181D] via-[#13181D]/80 to-transparent"></div>
+                    
                   </div>
                 </div>
 
