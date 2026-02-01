@@ -21,10 +21,9 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        'luckiest': ['"Luckiest Guy"', 'cursive'],
-        'montserrat': ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
-        'gilroy': ['Gilroy', 'sans-serif'],
-        'sans': ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
+        'montserrat': ['Inter', 'var(--font-montserrat)', 'Montserrat', 'sans-serif'],
+        'gilroy': ['Inter', 'sans-serif'],
+        'sans': ['Inter', 'var(--font-montserrat)', 'Montserrat', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(circle at 50% 50%, var(--tw-gradient-stops))',
@@ -58,7 +57,7 @@ export default {
     },
   },
   plugins: [
-    function({ addUtilities }: { addUtilities: any }) {
+    function ({ addUtilities }: { addUtilities: any }) {
       const newUtilities = {
         '.safe-area-inset-top': {
           paddingTop: 'env(safe-area-inset-top)',

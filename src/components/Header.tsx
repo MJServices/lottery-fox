@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { User } from '../types';
-import { TwitterIcon, DiscordIcon } from './SocialIcons';
+import { TwitterIcon } from './SocialIcons';
 import { GameIcon, ChatQuestionIcon, CursorInfoIcon, CheckmarkBadgeIcon } from './Icons';
 import WalletModal from './WalletModal';
 import SignUpModal from './SignUpModal';
@@ -93,7 +93,7 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
             alt="Fox Logo"
             className="mr-1 sm:mr-2 md:mr-3 w-[40px] h-[14px] sm:w-[60px] sm:h-[22px] md:w-[80px] md:h-[29px] lg:w-[100px] lg:h-[36px] flex-shrink-0"
           />
-          <span className="text-[12px] sm:text-[16px] md:text-[20px] lg:text-[24px] xl:text-[28px] font-black text-[#FFFDF8] tracking-[-1%] font-luckiest whitespace-nowrap">
+          <span className="text-[12px] sm:text-[16px] md:text-[20px] lg:text-[24px] xl:text-[28px] font-black text-[#FFFDF8] tracking-[-1%] font-sans whitespace-nowrap">
             LOTTERY
           </span>
         </div>
@@ -215,9 +215,7 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
           <div className="w-7 h-7 lg:w-9 lg:h-9 bg-gradient-to-b from-[#00AAFF] to-[#90DAFF] rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer">
             <TwitterIcon className="w-3.5 h-3.5 lg:w-5 lg:h-5 text-white" />
           </div>
-          <div className="w-7 h-7 lg:w-9 lg:h-9 bg-gradient-to-b from-[#9A76FF] to-[#C8B4FF] rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer">
-            <DiscordIcon className="w-3.5 h-3.5 lg:w-5 lg:h-5 text-white" />
-          </div>
+
         </div>
 
 

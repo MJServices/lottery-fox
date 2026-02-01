@@ -81,6 +81,22 @@ export default function Sidebar({ onNavigate, currentPage, onLogout }: SidebarPr
 
 
 
+          {/* Hall of Fame */}
+          <div
+            onClick={() => onNavigate('hallOfFame')}
+            className={`w-[64px] h-[80px] rounded-lg p-2 cursor-pointer transition-colors ${isActive('hallOfFame')
+              ? 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962]'
+              : 'bg-gradient-to-b from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+              }`}
+          >
+            <div className="text-center">
+              <div className={`text-[10px] font-bold mb-2 ${isActive('hallOfFame') ? 'text-white' : 'text-gray-400'}`}>Hall of Fame</div>
+              <div className="w-full h-8 flex items-center justify-center">
+                <img src="/images/champion-icon.svg" alt="Hall of Fame" className={`w-8 h-8 object-contain ${isActive('hallOfFame') ? 'opacity-100' : 'opacity-70'}`} />
+              </div>
+            </div>
+          </div>
+
           {/* Affiliate */}
           <div
             onClick={() => onNavigate('affiliate')}

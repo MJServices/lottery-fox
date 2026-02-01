@@ -81,12 +81,12 @@ export default function FAQ({ onLogout, onNavigate, currentPage }: FAQProps) {
 
   return (
     <div className="min-h-screen bg-[#13181D] text-white">
-      <Header 
-        onLogout={onLogout} 
+      <Header
+        onLogout={onLogout}
         onNavigate={onNavigate}
         currentPage={currentPage}
       />
-      
+
       {/* Mobile Sidebar Overlay */}
       {isMobileSidebarOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-black bg-opacity-50" onClick={() => setIsMobileSidebarOpen(false)}>
@@ -101,7 +101,7 @@ export default function FAQ({ onLogout, onNavigate, currentPage }: FAQProps) {
         <div className="hidden lg:block">
           <Sidebar onNavigate={onNavigate} currentPage={currentPage} onLogout={onLogout} />
         </div>
-        
+
         {/* Main Content - Full width on mobile, flexible on desktop */}
         <div className="flex-1 flex flex-col xl:flex-row">
           {/* FAQ Content */}
@@ -110,9 +110,9 @@ export default function FAQ({ onLogout, onNavigate, currentPage }: FAQProps) {
               <div className="max-w-7xl mx-auto">
                 {/* FAQ Banner Image */}
                 <div className="mb-8">
-                  <img 
-                    src="/images/FAQ-banner.png" 
-                    alt="FAQ Banner" 
+                  <img
+                    src="/images/FAQ-banner.png"
+                    alt="FAQ Banner"
                     className="w-full h-auto object-contain rounded-2xl"
                   />
                 </div>
@@ -122,7 +122,7 @@ export default function FAQ({ onLogout, onNavigate, currentPage }: FAQProps) {
                   <div className="flex items-center gap-2 mb-6">
                     <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-400/33">
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 1L7.09 4.26L11 4.27L8 6.14L8.91 9.09L6 7.77L3.09 9.09L4 6.14L1 4.27L4.91 4.26L6 1Z" fill="white"/>
+                        <path d="M6 1L7.09 4.26L11 4.27L8 6.14L8.91 9.09L6 7.77L3.09 9.09L4 6.14L1 4.27L4.91 4.26L6 1Z" fill="white" />
                       </svg>
                     </div>
                     <h2 className="text-xl font-bold text-white">How it works</h2>
@@ -131,41 +131,37 @@ export default function FAQ({ onLogout, onNavigate, currentPage }: FAQProps) {
                   <div className="flex gap-2 sm:gap-4 overflow-x-auto pb-2">
                     <button
                       onClick={() => setActiveTab('how-it-works')}
-                      className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-all ${
-                        activeTab === 'how-it-works'
+                      className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-all ${activeTab === 'how-it-works'
                           ? 'bg-[#8FD811] text-[#253703]'
                           : 'bg-[#2A2F36] text-[#A2B4C6] hover:bg-[#3A3F46] hover:text-white'
-                      }`}
+                        }`}
                     >
                       How it works
                     </button>
                     <button
                       onClick={() => setActiveTab('all-answers')}
-                      className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-all ${
-                        activeTab === 'all-answers'
+                      className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-all ${activeTab === 'all-answers'
                           ? 'bg-[#8FD811] text-[#253703]'
                           : 'bg-[#2A2F36] text-[#A2B4C6] hover:bg-[#3A3F46] hover:text-white'
-                      }`}
+                        }`}
                     >
                       All answers
                     </button>
                     <button
                       onClick={() => setActiveTab('wallet-questions')}
-                      className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-all ${
-                        activeTab === 'wallet-questions'
+                      className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-all ${activeTab === 'wallet-questions'
                           ? 'bg-[#8FD811] text-[#253703]'
                           : 'bg-[#2A2F36] text-[#A2B4C6] hover:bg-[#3A3F46] hover:text-white'
-                      }`}
+                        }`}
                     >
                       Wallet questions
                     </button>
                     <button
                       onClick={() => setActiveTab('lottery-functions')}
-                      className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-all ${
-                        activeTab === 'lottery-functions'
+                      className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-all ${activeTab === 'lottery-functions'
                           ? 'bg-[#8FD811] text-[#253703]'
                           : 'bg-[#2A2F36] text-[#A2B4C6] hover:bg-[#3A3F46] hover:text-white'
-                      }`}
+                        }`}
                     >
                       Lottery functions
                     </button>
@@ -188,15 +184,14 @@ export default function FAQ({ onLogout, onNavigate, currentPage }: FAQProps) {
                             {faq.question}
                           </h3>
                         </div>
-                        <div className={`flex-shrink-0 w-8 h-8 bg-[#FF6B35] rounded-lg flex items-center justify-center transition-transform ${
-                          expandedFAQ === faq.id ? 'rotate-45' : ''
-                        }`}>
+                        <div className={`flex-shrink-0 w-8 h-8 bg-[#FF6B35] rounded-lg flex items-center justify-center transition-transform ${expandedFAQ === faq.id ? 'rotate-45' : ''
+                          }`}>
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 5v14M5 12h14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M12 5v14M5 12h14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                       </button>
-                      
+
                       {expandedFAQ === faq.id && (
                         <div className="px-4 lg:px-6 pb-4 lg:pb-6">
                           <div className="pt-2 border-t border-[#2A2F36]">
@@ -212,13 +207,13 @@ export default function FAQ({ onLogout, onNavigate, currentPage }: FAQProps) {
               </div>
             </div>
           </div>
-          
+
           {/* Chat - Hidden on mobile/tablet, visible on desktop */}
           <div className="hidden xl:block">
             <Chat />
           </div>
         </div>
-        
+
         {/* Mobile Chat Button - Show on mobile only */}
         <div className="xl:hidden border-t border-[#242D36] bg-[#13181D] p-3 pb-20">
           <button className="w-full p-3 text-left text-white font-bold text-sm bg-gradient-to-r from-[#9726E3] to-[#FF4B0F] rounded-lg hover:opacity-90 transition-opacity flex items-center justify-between">
@@ -239,7 +234,7 @@ export default function FAQ({ onLogout, onNavigate, currentPage }: FAQProps) {
             <div className="sm:col-span-2 lg:col-span-1">
               <div className="flex items-center mb-4">
                 <img src="/images/fox-logo.svg" alt="Fox Logo" className="w-8 h-8 mr-3" />
-                <span className="text-xl font-bold text-white font-luckiest">LOTTERY</span>
+                <span className="text-xl font-bold text-white font-sans">LOTTERY</span>
               </div>
               <p className="text-[#A2B4C6] text-sm leading-relaxed">
                 Experience the thrill of winning with Fox Lottery. Fair, transparent, and exciting lottery games with amazing prizes.
@@ -281,17 +276,17 @@ export default function FAQ({ onLogout, onNavigate, currentPage }: FAQProps) {
               © 2024 FirstBlockLottery.com. All rights reserved.<br />
               <span className="text-xs">2024 LOTTERY FIRST BLOCK LOTTERY SERVICES LTD.</span>
             </div>
-            
+
             {/* Social Links and Support */}
             <div className="flex items-center gap-4">
               <a href="#" className="text-[#A2B4C6] hover:text-white transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
                 </svg>
               </a>
               <a href="#" className="text-[#A2B4C6] hover:text-white transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+                  <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
                 </svg>
               </a>
               <button className="bg-[#2A2F36] hover:bg-[#3A3F46] px-4 py-2 rounded-lg text-white text-sm font-medium transition-colors">

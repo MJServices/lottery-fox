@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .font-luckiest {
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Inter', sans-serif;
 }
 
 .bg-gradient-radial {
@@ -84,33 +84,36 @@
   html {
     scroll-behavior: smooth;
     font-size: 16px;
+    font-family: 'Inter', sans-serif;
   }
-  
+
   body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', sans-serif;
   }
-  
+
   /* Prevent any layout shifts or overflow issues */
   * {
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif !important;
   }
-  
+
   /* Improve image rendering quality */
   img {
     image-rendering: auto;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: optimizeQuality;
   }
-  
+
   /* Specific class for high-quality images */
   .image-crisp {
     image-rendering: auto;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: optimizeQuality;
   }
-  
+
   /* For large promotional images */
   .promo-image {
     image-rendering: auto;
@@ -119,33 +122,44 @@
     transform: translateZ(0);
     backface-visibility: hidden;
   }
-  
+
   /* Responsive font scaling */
   @media (max-width: 375px) {
-    html { font-size: 14px; }
+    html {
+      font-size: 14px;
+    }
   }
-  
+
   @media (min-width: 768px) {
-    html { font-size: 16px; }
+    html {
+      font-size: 16px;
+    }
   }
-  
+
   @media (min-width: 1024px) {
-    html { font-size: 17px; }
+    html {
+      font-size: 17px;
+    }
   }
-  
+
   @media (min-width: 1440px) {
-    html { font-size: 18px; }
+    html {
+      font-size: 18px;
+    }
   }
 }
 
 /* Hide scrollbars while keeping scroll functionality */
 * {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
 }
 
 *::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  display: none;
+  /* Safari and Chrome */
 }
 
 /* Prevent browser validation styling */
@@ -196,14 +210,18 @@ input:-webkit-autofill:focus {
 }
 
 /* Specifically target header and main containers */
-header, main, div, section {
+header,
+main,
+div,
+section {
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
 }
 
 /* Ensure no unwanted background highlights */
-body, html {
+body,
+html {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -232,39 +250,39 @@ body, html {
   .container-responsive {
     @apply w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8;
   }
-  
+
   .text-responsive-xs {
     @apply text-xs sm:text-sm md:text-base;
   }
-  
+
   .text-responsive-sm {
     @apply text-sm sm:text-base md:text-lg;
   }
-  
+
   .text-responsive-base {
     @apply text-base sm:text-lg md:text-xl;
   }
-  
+
   .text-responsive-lg {
     @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
   }
-  
+
   .text-responsive-xl {
     @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
   }
-  
+
   .padding-responsive {
     @apply p-3 sm:p-4 md:p-6 lg:p-8;
   }
-  
+
   .gap-responsive {
     @apply gap-3 sm:gap-4 md:gap-6 lg:gap-8;
   }
-  
+
   .rounded-responsive {
     @apply rounded-lg sm:rounded-xl md:rounded-2xl;
   }
-  
+
   /* Lottery card image - fully visible and responsive */
   .lottery-card-image {
     width: 100% !important;
@@ -275,27 +293,27 @@ body, html {
     max-width: 100% !important;
     min-height: auto !important;
   }
-  
+
   /* Ensure all images are responsive and fully visible */
   img {
     max-width: 100%;
     height: auto;
   }
-  
+
   /* Lottery card container - no cropping, full visibility */
   .lottery-card-container {
     overflow: visible !important;
     width: 100% !important;
     max-width: 100% !important;
   }
-  
+
   /* Responsive container that maintains image visibility */
-  .lottery-card-container > div {
+  .lottery-card-container>div {
     width: 100% !important;
     overflow: visible !important;
     max-width: 100% !important;
   }
-  
+
   /* Mobile-specific adjustments for optimal image display */
   @media (max-width: 640px) {
     .lottery-card-container {
@@ -303,17 +321,17 @@ body, html {
       margin: 0 !important;
       width: 100% !important;
     }
-    
-    .lottery-card-container > div {
+
+    .lottery-card-container>div {
       min-height: auto !important;
       width: 100% !important;
     }
-    
-    .lottery-card-container > div > div {
+
+    .lottery-card-container>div>div {
       padding: 4px !important;
       width: 100% !important;
     }
-    
+
     .lottery-card-image {
       width: 100% !important;
       max-width: 100% !important;
@@ -323,25 +341,25 @@ body, html {
       aspect-ratio: auto !important;
     }
   }
-  
+
   /* Small mobile devices - full width */
   @media (max-width: 375px) {
-    .lottery-card-container > div > div {
+    .lottery-card-container>div>div {
       padding: 2px !important;
     }
-    
+
     .lottery-card-image {
       width: 100% !important;
       max-width: 100% !important;
     }
   }
-  
+
   /* Results page banner image - responsive sizing */
   .results-banner-container {
     overflow: visible !important;
     width: 100% !important;
   }
-  
+
   .results-banner-container img {
     width: 100% !important;
     max-width: 100% !important;
@@ -349,36 +367,36 @@ body, html {
     object-fit: contain !important;
     object-position: center !important;
   }
-  
+
   /* Results banner responsive aspect ratios */
   .results-banner-aspect {
     aspect-ratio: 16/9;
   }
-  
+
   @media (min-width: 640px) {
     .results-banner-aspect {
       aspect-ratio: 20/9;
     }
   }
-  
+
   @media (min-width: 768px) {
     .results-banner-aspect {
       aspect-ratio: 24/9;
     }
   }
-  
+
   @media (min-width: 1024px) {
     .results-banner-aspect {
       aspect-ratio: 28/9;
     }
   }
-  
+
   /* Lottery page banner - responsive and fully visible */
   .lottery-banner-container {
     overflow: visible !important;
     width: 100% !important;
   }
-  
+
   .lottery-banner-container img {
     width: 100% !important;
     max-width: 100% !important;
@@ -386,40 +404,40 @@ body, html {
     object-fit: contain !important;
     object-position: center !important;
   }
-  
+
   /* Lottery banner responsive aspect ratios */
   .lottery-banner-aspect {
     aspect-ratio: 16/9;
   }
-  
+
   @media (min-width: 640px) {
     .lottery-banner-aspect {
       aspect-ratio: 20/9;
     }
   }
-  
+
   @media (min-width: 768px) {
     .lottery-banner-aspect {
       aspect-ratio: 24/9;
     }
   }
-  
+
   @media (min-width: 1024px) {
     .lottery-banner-aspect {
       aspect-ratio: 28/9;
     }
   }
-  
+
   /* Tablet adjustments */
   @media (min-width: 641px) and (max-width: 1024px) {
-    .lottery-card-container > div > div {
+    .lottery-card-container>div>div {
       padding: 12px !important;
     }
   }
-  
+
   /* Desktop adjustments */
   @media (min-width: 1025px) {
-    .lottery-card-container > div > div {
+    .lottery-card-container>div>div {
       padding: 16px !important;
     }
   }

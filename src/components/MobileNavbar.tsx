@@ -21,29 +21,26 @@ export default function MobileNavbar({ onNavigate, currentPage }: MobileNavbarPr
           <button
             key={item.page}
             onClick={() => onNavigate(item.page)}
-            className={`flex flex-col items-center justify-center p-2 sm:p-3 rounded-lg transition-all duration-200 min-w-0 flex-1 max-w-[80px] ${
-              currentPage === item.page
+            className={`flex flex-col items-center justify-center p-2 sm:p-3 rounded-lg transition-all duration-200 min-w-0 flex-1 max-w-[80px] ${currentPage === item.page
                 ? 'text-[#FF4B0F] scale-105'
                 : 'text-gray-400 hover:text-white hover:scale-105'
-            }`}
+              }`}
           >
-            <div className={`w-5 h-5 sm:w-6 sm:h-6 mb-1 flex items-center justify-center transition-all duration-200 ${
-              currentPage === item.page ? 'opacity-100 scale-110' : 'opacity-70'
-            }`}>
-              <img 
-                src={item.icon} 
-                alt={item.label} 
+            <div className={`w-5 h-5 sm:w-6 sm:h-6 mb-1 flex items-center justify-center transition-all duration-200 ${currentPage === item.page ? 'opacity-100 scale-110' : 'opacity-70'
+              }`}>
+              <img
+                src={item.icon}
+                alt={item.label}
                 className={`w-full h-full object-contain ${item.page === 'profile' ? 'rounded-full' : ''}`}
                 style={{
-                  filter: currentPage === item.page 
+                  filter: currentPage === item.page
                     ? 'brightness(0) saturate(100%) invert(45%) sepia(100%) saturate(2000%) hue-rotate(15deg) brightness(100%) contrast(100%)'
                     : 'none'
                 }}
               />
             </div>
-            <span className={`text-[10px] sm:text-xs font-medium leading-tight text-center transition-all duration-200 ${
-              currentPage === item.page ? 'font-bold' : 'font-normal'
-            }`}>
+            <span className={`text-[10px] sm:text-xs font-medium leading-tight text-center transition-all duration-200 ${currentPage === item.page ? 'font-bold' : 'font-normal'
+              }`}>
               {item.label}
             </span>
           </button>

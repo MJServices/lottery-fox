@@ -110,14 +110,14 @@ export default function MobileMenu({ isOpen, onClose, onNavigate, onLogout, curr
   const menuContent = (
     <div className="mobile-menu-overlay fixed inset-0 z-[999999] lg:hidden" style={{ zIndex: 999999, isolation: 'isolate' }}>
       {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-black/50" 
+      <div
+        className="absolute inset-0 bg-black/50"
         onClick={onClose}
         style={{ zIndex: 999999 }}
       />
-      
+
       {/* Menu Panel */}
-      <div 
+      <div
         className="mobile-menu-panel absolute left-0 top-0 bottom-0 w-[320px] bg-[#13181D] border-r border-[#242D36] flex flex-col"
         style={{ zIndex: 1000000, isolation: 'isolate', height: '100vh', maxHeight: '100vh' }}
       >
@@ -129,7 +129,7 @@ export default function MobileMenu({ isOpen, onClose, onNavigate, onLogout, curr
             className="p-2 text-gray-400 hover:text-white transition-colors"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
@@ -155,7 +155,7 @@ export default function MobileMenu({ isOpen, onClose, onNavigate, onLogout, curr
               </div>
               <div className="text-gray-400">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
             </button>
@@ -179,11 +179,9 @@ export default function MobileMenu({ isOpen, onClose, onNavigate, onLogout, curr
               <button
                 key={item.id}
                 onClick={() => handleNavigate(item.page)}
-                className={`w-full p-4 rounded-xl flex items-center gap-4 transition-all duration-200 hover:opacity-90 ${
-                  item.bgColor
-                } ${
-                  currentPage === item.page ? 'ring-2 ring-[#FF4B0F]' : ''
-                }`}
+                className={`w-full p-4 rounded-xl flex items-center gap-4 transition-all duration-200 hover:opacity-90 ${item.bgColor
+                  } ${currentPage === item.page ? 'ring-2 ring-[#FF4B0F]' : ''
+                  }`}
               >
                 <div className="text-2xl">
                   {item.icon}
@@ -215,7 +213,7 @@ export default function MobileMenu({ isOpen, onClose, onNavigate, onLogout, curr
           <div className="p-4 border-t border-[#242D36] mt-8">
             <div className="flex items-center gap-3 mb-4">
               <img src="/images/fox-logo.svg" alt="Fox Logo" className="w-8 h-8" />
-              <span className="text-lg font-bold text-white font-luckiest">LOTTERY</span>
+              <span className="text-lg font-bold text-white font-sans">LOTTERY</span>
             </div>
             <p className="text-sm text-gray-400">
               Experience the thrill of winning with Fox Lottery

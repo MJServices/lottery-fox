@@ -18,8 +18,8 @@ interface PreviousWin {
   date: string;
   ticketAmount: string;
   ticketPrice: string;
-  numbers: number[];
-  winningNumbers: number[];
+  numbers: (number | string)[];
+  winningNumbers: (number | string)[];
   result: string;
 }
 
@@ -36,93 +36,93 @@ interface LotteryCard {
 const mockPreviousWins: PreviousWin[] = [
   {
     id: '1',
-    user: 'DaxAli',
+    user: '0xA9f',
     date: '2 min ago',
     ticketAmount: '2 tickets',
-    ticketPrice: '500 USD',
-    numbers: [3, 1, 8, 4],
-    winningNumbers: [3, 1, 5, 6, 8, 4],
-    result: '1 569 USD'
+    ticketPrice: '569 USD',
+    numbers: [5, 3, 8, 9, 'K', 'J'],
+    winningNumbers: [5, 3, 8, 9, 'K', 'J'],
+    result: '569 USD'
   },
   {
     id: '2',
-    user: 'DaxAli',
+    user: '0xA9f',
     date: '2 min ago',
     ticketAmount: '2 tickets',
-    ticketPrice: '500 USD',
-    numbers: [3, 1, 8, 4],
-    winningNumbers: [3, 1, 5, 6, 8, 4],
-    result: '1 569 USD'
+    ticketPrice: '569 USD',
+    numbers: [5, 3, 8, 9, 'K', 'J'],
+    winningNumbers: [5, 3, 8, 9, 'K', 'J'],
+    result: '569 USD'
   },
   {
     id: '3',
-    user: 'DaxAli',
+    user: '0xA9f',
     date: '2 min ago',
     ticketAmount: '2 tickets',
-    ticketPrice: '500 USD',
-    numbers: [3, 1, 8, 4],
-    winningNumbers: [3, 1, 5, 6, 8, 4],
-    result: '1 569 USD'
+    ticketPrice: '569 USD',
+    numbers: [5, 3, 8, 9, 'K', 'J'],
+    winningNumbers: [5, 3, 8, 9, 'K', 'J'],
+    result: '569 USD'
   },
   {
     id: '4',
-    user: 'DaxAli',
+    user: '0xA9f',
     date: '2 min ago',
     ticketAmount: '2 tickets',
-    ticketPrice: '500 USD',
-    numbers: [3, 1, 8, 4],
-    winningNumbers: [3, 1, 5, 6, 8, 4],
-    result: '1 569 USD'
+    ticketPrice: '569 USD',
+    numbers: [5, 3, 8, 9, 'K', 'J'],
+    winningNumbers: [5, 3, 8, 9, 'K', 'J'],
+    result: '569 USD'
   },
   {
     id: '5',
-    user: 'DaxAli',
+    user: '0xA9f',
     date: '2 min ago',
     ticketAmount: '2 tickets',
-    ticketPrice: '500 USD',
-    numbers: [3, 1, 8, 4],
-    winningNumbers: [3, 1, 5, 6, 8, 4],
-    result: '1 569 USD'
+    ticketPrice: '569 USD',
+    numbers: [5, 3, 8, 9, 'K', 'J'],
+    winningNumbers: [5, 3, 8, 9, 'K', 'J'],
+    result: '569 USD'
   },
   {
     id: '6',
-    user: 'DaxAli',
+    user: '0xA9f',
     date: '2 min ago',
     ticketAmount: '2 tickets',
-    ticketPrice: '500 USD',
-    numbers: [3, 1, 8, 4],
-    winningNumbers: [3, 1, 5, 6, 8, 4],
-    result: '1 569 USD'
+    ticketPrice: '569 USD',
+    numbers: [5, 3, 8, 9, 'K', 'J'],
+    winningNumbers: [5, 3, 8, 9, 'K', 'J'],
+    result: '569 USD'
   },
   {
     id: '7',
-    user: 'DaxAli',
+    user: '0xA9f',
     date: '2 min ago',
     ticketAmount: '2 tickets',
-    ticketPrice: '500 USD',
-    numbers: [3, 1, 8, 4],
-    winningNumbers: [3, 1, 5, 6, 8, 4],
-    result: '1 569 USD'
+    ticketPrice: '569 USD',
+    numbers: [5, 3, 8, 9, 'K', 'J'],
+    winningNumbers: [5, 3, 8, 9, 'K', 'J'],
+    result: '569 USD'
   },
   {
     id: '8',
-    user: 'DaxAli',
+    user: '0xA9f',
     date: '2 min ago',
     ticketAmount: '2 tickets',
-    ticketPrice: '500 USD',
-    numbers: [3, 1, 8, 4],
-    winningNumbers: [3, 1, 5, 6, 8, 4],
-    result: '1 569 USD'
+    ticketPrice: '569 USD',
+    numbers: [5, 3, 8, 9, 'K', 'J'],
+    winningNumbers: [5, 3, 8, 9, 'K', 'J'],
+    result: '569 USD'
   },
   {
     id: '9',
-    user: 'DaxAli',
+    user: '0xA9f',
     date: '2 min ago',
     ticketAmount: '2 tickets',
-    ticketPrice: '500 USD',
-    numbers: [3, 1, 8, 4],
-    winningNumbers: [3, 1, 5, 6, 8, 4],
-    result: '1 569 USD'
+    ticketPrice: '569 USD',
+    numbers: [5, 3, 8, 9, 'K', 'J'],
+    winningNumbers: [5, 3, 8, 9, 'K', 'J'],
+    result: '569 USD'
   }
 ];
 
@@ -160,94 +160,106 @@ const mockLotteryCards: LotteryCard[] = [
 ];
 
 const PreviousWinsTable = () => (
-  <div className="bg-[#13181D] rounded-xl border border-[#242D36]">
-    {/* Header */}
-    <div className="flex items-center gap-2 p-4 sm:p-6 pb-4">
-      <div className="w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-r from-green-400 to-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-400/33">
+  <div className="w-full">
+    {/* Section Header */}
+    <div className="flex items-center justify-center gap-2 mb-6">
+      <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-400/33">
         <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 1L7.09 4.26L11 4.27L8 6.14L8.91 9.09L6 7.77L3.09 9.09L4 6.14L1 4.27L4.91 4.26L6 1Z" fill="white" />
+          <path d="M9.5 1.5H8.5V0.5H3.5V1.5H2.5C1.4 1.5 0.5 2.4 0.5 3.5C0.5 4.6 1.4 5.5 2.5 5.5H3.5V6.5C3.5 7.88 4.62 9 6 9C7.38 9 8.5 7.88 8.5 6.5V5.5H9.5C10.6 5.5 11.5 4.6 11.5 3.5C11.5 2.4 10.6 1.5 9.5 1.5ZM2.5 4.5C1.95 4.5 1.5 4.05 1.5 3.5C1.5 2.95 1.95 2.5 2.5 2.5H3.5V4.5H2.5ZM6 8C5.17 8 4.5 7.33 4.5 6.5V1.5H7.5V6.5C7.5 7.33 6.83 8 6 8ZM9.5 4.5H8.5V2.5H9.5C10.05 2.5 10.5 2.95 10.5 3.5C10.5 4.05 10.05 4.5 9.5 4.5ZM7 9.5H5V10.5H7V9.5ZM8 10.5H4V11.5H8V10.5Z" fill="white" />
         </svg>
       </div>
-      <h3 className="text-lg font-bold text-white">Previous wins</h3>
+      <h3 className="text-xl font-bold text-white">Previous wins</h3>
     </div>
 
-    {/* Tab buttons */}
-    <div className="px-4 sm:px-6 pb-4">
-      <div className="flex gap-2 sm:gap-4 overflow-x-auto">
-        <button className="text-sm font-semibold text-white border-b-2 border-[#BEFF25] pb-2 whitespace-nowrap">
-          Best drops
-        </button>
-        <button className="text-sm font-semibold text-gray-400 pb-2 whitespace-nowrap">
-          Highest wins
-        </button>
-        <button className="text-sm font-semibold text-gray-400 pb-2 whitespace-nowrap">
-          My bets
-        </button>
+    <div className="bg-[#0b0e11] rounded-2xl overflow-hidden border border-[#1A1F26] p-1">
+      {/* Tabs */}
+      <div className="flex justify-center mb-2 bg-[#0b0e11] pt-4">
+        <div className="flex gap-8">
+          <div className="relative pb-2">
+            <div className="absolute -top-4 inset-x-0 h-8 bg-gradient-to-b from-[#BEFF25]/20 to-transparent blur-md"></div>
+            <button className="relative text-white font-bold text-sm tracking-wide">
+              Best drops
+            </button>
+            <div className="absolute bottom-0 inset-x-0 h-[2px] bg-[#BEFF25] shadow-[0_0_10px_#BEFF25]"></div>
+          </div>
+
+          <button className="text-[#64748B] font-bold text-sm tracking-wide hover:text-gray-400 pb-2">
+            Highest wins
+          </button>
+          <button className="text-[#64748B] font-bold text-sm tracking-wide hover:text-gray-400 pb-2">
+            My bets
+          </button>
+        </div>
       </div>
-    </div>
 
-    {/* Table */}
-    <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[800px]">
+      {/* Table */}
+      <div className="overflow-x-auto bg-[#0b0e11] px-4 pb-4">
+        <table className="w-full min-w-[1000px] border-collapse">
           <thead>
-            <tr className="border-b border-[#242D36]">
-              <th className="text-left text-xs font-semibold text-gray-400 pb-3 uppercase">User</th>
-              <th className="text-left text-xs font-semibold text-gray-400 pb-3 uppercase">Date</th>
-              <th className="text-left text-xs font-semibold text-gray-400 pb-3 uppercase">Ticket amount</th>
-              <th className="text-left text-xs font-semibold text-gray-400 pb-3 uppercase">Ticket price</th>
-              <th className="text-left text-xs font-semibold text-gray-400 pb-3 uppercase">Numbers</th>
-              <th className="text-left text-xs font-semibold text-gray-400 pb-3 uppercase">Winning numbers</th>
-              <th className="text-left text-xs font-semibold text-gray-400 pb-3 uppercase">Result</th>
+            <tr className="border-b border-transparent">
+              <th className="py-4 px-4 text-left text-[#475569] text-[10px] font-bold uppercase tracking-wider pl-6">User</th>
+              <th className="py-4 px-4 text-left text-[#475569] text-[10px] font-bold uppercase tracking-wider">Date</th>
+              <th className="py-4 px-4 text-left text-[#475569] text-[10px] font-bold uppercase tracking-wider">Ticket amount</th>
+              <th className="py-4 px-4 text-left text-[#475569] text-[10px] font-bold uppercase tracking-wider">Ticket price</th>
+              <th className="py-4 px-4 text-left text-[#475569] text-[10px] font-bold uppercase tracking-wider">Numbers</th>
+              <th className="py-4 px-4 text-left text-[#475569] text-[10px] font-bold uppercase tracking-wider">Winning numbers</th>
+              <th className="py-4 px-4 text-left text-[#475569] text-[10px] font-bold uppercase tracking-wider">Profit</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="space-y-1">
             {mockPreviousWins.map((win, index) => (
-              <tr key={win.id} className={index !== mockPreviousWins.length - 1 ? "border-b border-[#1A1F26]" : ""}>
-                <td className="py-3">
+              <tr key={index} className="group hover:bg-[#13181D] transition-colors rounded-xl">
+                <td className="py-3 px-4 pl-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-[#242D36] ring-1 ring-[#242D36]">
+                      <img src="/images/lottery.png" alt="User" className="w-full h-full object-cover" />
+                    </div>
+                    <span className="text-white text-[13px] font-bold tracking-wide">{win.user}</span>
+                  </div>
+                </td>
+                <td className="py-3 px-4">
+                  <div className="flex items-center gap-2 text-[#64748B] group-hover:text-gray-400 transition-colors">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-70">
+                      <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor" />
+                      <path d="M12 6V12L16 14" stroke="#0F1318" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-[12px] font-bold">{win.date}</span>
+                  </div>
+                </td>
+                <td className="py-3 px-4">
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 bg-[#2A3441] rounded-full flex items-center justify-center">
-                      <span className="text-xs text-white font-bold">D</span>
-                    </div>
-                    <span className="text-sm text-white font-medium">{win.user}</span>
+                    <img src="/images/ticket-prize-icon.png" alt="Ticket" className="w-4 h-4 object-contain brightness-0 invert opacity-80" style={{ filter: 'brightness(0) saturate(100%) invert(88%) sepia(21%) saturate(935%) hue-rotate(39deg) brightness(103%) contrast(104%)' }} />
+                    <span className="text-white text-[12px] font-bold tracking-wide">{win.ticketAmount}</span>
                   </div>
                 </td>
-                <td className="py-3 text-sm text-gray-400">{win.date}</td>
-                <td className="py-3">
-                  <div className="flex items-center gap-1">
-                    <div className="w-4 h-4 bg-[#BEFF25] rounded flex items-center justify-center">
-                      <span className="text-xs text-black font-bold">2</span>
-                    </div>
-                    <span className="text-sm text-[#BEFF25] font-semibold">{win.ticketAmount}</span>
+                <td className="py-3 px-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-[#EF4444] shadow-[0_0_8px_rgba(239,68,68,0.5)]"></div>
+                    <span className="text-white text-[12px] font-bold tracking-wide">{win.ticketPrice}</span>
                   </div>
                 </td>
-                <td className="py-3">
-                  <span className="text-sm text-red-400 font-semibold">{win.ticketPrice}</span>
-                </td>
-                <td className="py-3">
-                  <div className="flex gap-1">
+                <td className="py-3 px-4">
+                  <div className="flex gap-1.5">
                     {win.numbers.map((num, idx) => (
-                      <div key={idx} className="w-6 h-6 bg-[#FF6B35] rounded flex items-center justify-center">
-                        <span className="text-xs text-white font-bold">{num}</span>
+                      <div key={idx} className="w-[22px] h-[22px] rounded-[6px] bg-gradient-to-t from-[#B0451B] to-[#F17538] border-t border-[#FF9F7A]/50 flex items-center justify-center shadow-lg">
+                        <span className="text-white text-[11px] font-black drop-shadow-md">{num}</span>
                       </div>
                     ))}
                   </div>
                 </td>
-                <td className="py-3">
-                  <div className="flex gap-1">
+                <td className="py-3 px-4">
+                  <div className="flex gap-1.5">
                     {win.winningNumbers.map((num, idx) => (
-                      <div key={idx} className="w-6 h-6 bg-[#FF6B35] rounded flex items-center justify-center">
-                        <span className="text-xs text-white font-bold">{num}</span>
+                      <div key={idx} className="w-[22px] h-[22px] rounded-[6px] bg-gradient-to-t from-[#B0451B] to-[#F17538] border-t border-[#FF9F7A]/50 flex items-center justify-center shadow-lg">
+                        <span className="text-white text-[11px] font-black drop-shadow-md">{num}</span>
                       </div>
                     ))}
                   </div>
                 </td>
-                <td className="py-3">
-                  <div className="flex items-center gap-1">
-                    <div className="w-4 h-4 bg-[#BEFF25] rounded-full flex items-center justify-center">
-                      <span className="text-xs text-black font-bold">$</span>
-                    </div>
-                    <span className="text-sm text-[#BEFF25] font-bold">{win.result}</span>
+                <td className="py-3 px-4">
+                  <div className="flex items-center gap-2 whitespace-nowrap">
+                    <div className="w-4 h-4 rounded-full bg-[#BEFF25] flex justify-center items-center text-[#13181D] font-black text-[12px] shadow-[0_0_8px_rgba(190,255,37,0.4)]">+</div>
+                    <span className="text-white text-[12px] font-bold tracking-wide whitespace-nowrap">+ {win.result}</span>
                   </div>
                 </td>
               </tr>
@@ -260,91 +272,129 @@ const PreviousWinsTable = () => (
 );
 
 const LotteryCardComponent = ({ card }: { card: LotteryCard }) => {
+  const isComingSoon = card.status === 'Coming soon';
+
   const getStatusStyles = (status: string) => {
     switch (status) {
       case 'Active':
         return {
+          container: 'border-[#BEFF25] shadow-[0_0_20px_rgba(190,255,37,0.15)] bg-[#BEFF25]/[0.02]',
           badge: 'bg-[#BEFF25] text-[#13181D]',
           button: 'bg-[#BEFF25] hover:bg-[#a3d91d] text-[#13181D] shadow-[0_4px_0_0_#8fb810]',
-          buttonText: 'Participate'
+          buttonText: 'Participate',
+          glow: 'from-[#BEFF25]/40 via-[#BEFF25]/10 to-transparent',
+          badgeText: 'ACTIVE'
         };
       case 'Expired':
         return {
-          badge: 'bg-[#374151] text-gray-300',
-          button: 'bg-[#1F2937] text-gray-500 cursor-not-allowed border border-[#374151]',
-          buttonText: 'Result pending'
+          container: 'border-[#242D36] bg-[#1A1F26]',
+          badge: 'bg-[#2A3441] text-[#94A3B8]',
+          button: 'bg-[#1F2937] text-[#64748B] cursor-not-allowed border border-[#2A3441]',
+          buttonText: 'Result pending',
+          glow: '',
+          badgeText: 'EXPIRED'
         };
       case 'Next round':
         return {
+          container: 'border-[#9333EA] shadow-[0_0_20px_rgba(147,51,234,0.2)] bg-[#9333EA]/[0.02]',
           badge: 'bg-[#9333EA] text-white',
           button: 'bg-[#BEFF25] hover:bg-[#a3d91d] text-[#13181D] shadow-[0_4px_0_0_#8fb810]',
-          buttonText: 'Participate'
+          buttonText: 'Participate',
+          glow: 'from-[#9333EA]/40 via-[#9333EA]/10 to-transparent',
+          badgeText: 'NEXT ROUND'
         };
       case 'Coming soon':
         return {
-          badge: 'bg-[#F59E0B] text-white',
-          button: 'bg-[#374151] text-gray-400 cursor-not-allowed border border-[#374151]',
-          buttonText: card.timeLeft || 'Coming soon'
+          container: 'border-[#242D36] bg-[#1A1F26] flex flex-col justify-center items-center',
+          badge: 'bg-[#F97316] text-[#13181D]', // Orange badge
+          button: 'bg-[#1F2937] text-[#4B5563] border border-[#2A3441] cursor-not-allowed uppercase text-[10px] font-bold tracking-wider',
+          buttonText: 'Participate',
+          glow: '',
+          badgeText: 'COMING SOON'
         };
       default:
         return {
+          container: 'border-[#242D36]',
           badge: 'bg-gray-500 text-white',
           button: 'bg-gray-500 text-white',
-          buttonText: status
+          buttonText: status,
+          glow: '',
+          badgeText: status
         };
     }
   };
 
   const styles = getStatusStyles(card.status);
 
-  return (
-    <div className="bg-[#1A1F26] rounded-2xl p-3 sm:p-4 border border-[#242D36] relative overflow-hidden flex flex-col gap-3 sm:gap-4 group hover:border-[#3A4651] transition-all">
-      {/* Header: Badge & Block Number */}
-      <div className="flex justify-between items-center">
-        <span className={`px-2.5 py-1 rounded-md text-[10px] sm:text-xs font-bold uppercase tracking-wider ${styles.badge}`}>
-          {card.status}
+  if (isComingSoon) {
+    return (
+      <div className={`rounded-2xl p-4 border relative overflow-hidden flex flex-col items-center justify-between text-center min-h-[220px] ${styles.container}`}>
+        <span className={`px-2 py-0.5 rounded-sm text-[10px] font-black uppercase tracking-wide mb-4 ${styles.badge}`}>
+          {styles.badgeText}
         </span>
-        <div className="flex items-center gap-1.5 opacity-60">
-          <span className="text-[10px] sm:text-xs font-medium text-gray-400">Block</span>
-          <span className="text-xs sm:text-sm font-bold text-white">{card.blockNumber}</span>
+
+        <div className="flex flex-col items-center gap-1 mb-6">
+          <span className="text-[#94A3B8] text-[9px] uppercase font-bold tracking-widest">Block</span>
+          <span className="text-white text-2xl font-black">{card.blockNumber}</span>
+          <span className="text-[#94A3B8] text-[11px] font-medium mt-1">{card.timeLeft}</span>
+        </div>
+
+        <button className={`w-full py-3 rounded-xl ${styles.button}`}>
+          {styles.buttonText}
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`rounded-2xl p-3 sm:p-4 border relative overflow-hidden flex flex-col gap-3 sm:gap-4 group transition-all min-h-[220px] ${styles.container}`}>
+      {/* Top Glow Gradient */}
+      {styles.glow && (
+        <div className={`absolute top-0 left-0 w-full h-24 bg-gradient-to-b ${styles.glow} pointer-events-none`}></div>
+      )}
+
+      {/* Header: Badge & Block Number */}
+      <div className="flex justify-between items-center z-10">
+        <span className={`px-2.5 py-1 rounded-sm text-[10px] sm:text-[11px] font-black uppercase tracking-wider ${styles.badge}`}>
+          {styles.badgeText}
+        </span>
+        <div className="flex flex-col items-end leading-tight">
+          <span className="text-[9px] font-bold text-[#64748B] uppercase tracking-wider">Block</span>
+          <span className="text-sm font-bold text-white">{card.blockNumber}</span>
         </div>
       </div>
 
       {/* Pools Section - Split Cards */}
-      <div className="grid grid-cols-2 gap-2 sm:gap-3">
+      <div className="grid grid-cols-2 gap-2 sm:gap-3 flex-1 relative z-10">
         {/* Jackpot Box - Purple */}
-        <div className="bg-gradient-to-br from-[#4C1D95] to-[#7C3AED] rounded-xl p-2 sm:p-3 relative overflow-hidden flex flex-col justify-center min-h-[80px] sm:min-h-[100px]">
-          {/* Background Glow */}
-          <div className="absolute top-0 right-0 w-16 h-16 bg-purple-500/20 blur-xl rounded-full -mr-8 -mt-8"></div>
+        <div className="bg-[#1E1B2E] rounded-xl p-2 sm:p-3 relative overflow-hidden flex flex-col justify-end min-h-[80px] sm:min-h-[100px] border border-[#4C1D95]/30 group-hover:border-[#4C1D95]/60 transition-colors">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#2E1065]/40 rounded-xl"></div>
+          <span className="text-[9px] sm:text-[10px] font-bold text-[#C4B5FD] uppercase mb-0.5 relative z-10 tracking-wide">Jackpot :</span>
+          <span className="text-lg sm:text-[20px] font-black text-white relative z-10 leading-none">{card.jackpot}</span>
 
-          <span className="text-[10px] sm:text-xs font-medium text-purple-200 mb-0.5 sm:mb-1 relative z-10">Jackpot :</span>
-          <span className="text-lg sm:text-2xl font-black text-white relative z-10">{card.jackpot || '0'}</span>
-
-          {/* Image */}
-          <div className="absolute -right-1 -bottom-2 w-12 h-12 sm:w-16 sm:h-16 opacity-100">
-            <img src="/images/lottery.png" alt="Jackpot" className="w-full h-full object-contain drop-shadow-lg transform rotate-12" />
+          {/* 3D Bag Image */}
+          <div className="absolute -right-1 top-1 w-12 h-12 sm:w-16 sm:h-16 z-20 pointer-events-none">
+            <img src="/images/lottery.png" alt="Jackpot" className="w-full h-full object-contain drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]" />
           </div>
         </div>
 
         {/* Prize Pool Box - Green */}
-        <div className="bg-gradient-to-br from-[#4D7C0F] to-[#65A30D] rounded-xl p-2 sm:p-3 relative overflow-hidden flex flex-col justify-center min-h-[80px] sm:min-h-[100px]">
-          {/* Background Glow */}
-          <div className="absolute top-0 right-0 w-16 h-16 bg-lime-400/20 blur-xl rounded-full -mr-8 -mt-8"></div>
+        <div className="bg-[#142111] rounded-xl p-2 sm:p-3 relative overflow-hidden flex flex-col justify-end min-h-[80px] sm:min-h-[100px] border border-[#365314]/30 group-hover:border-[#365314]/60 transition-colors">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#14532D]/40 rounded-xl"></div>
+          <span className="text-[9px] sm:text-[10px] font-bold text-[#D9F99D] uppercase mb-0.5 relative z-10 tracking-wide">Prize Pool :</span>
+          <span className="text-lg sm:text-[20px] font-black text-white relative z-10 leading-none">{card.prizePool}</span>
 
-          <span className="text-[10px] sm:text-xs font-medium text-lime-100 mb-0.5 sm:mb-1 relative z-10">Prize Pool :</span>
-          <span className="text-lg sm:text-2xl font-black text-white relative z-10">{card.prizePool || '0'}</span>
-
-          {/* Image */}
-          <div className="absolute -right-1 -bottom-2 w-12 h-12 sm:w-16 sm:h-16 opacity-100">
-            <img src="/images/gift-icon-removebg-preview.png" alt="Prize" className="w-full h-full object-contain drop-shadow-lg transform -rotate-6" />
+          {/* 3D Gift Image */}
+          <div className="absolute -right-2 top-0 w-12 h-12 sm:w-16 sm:h-16 z-20 pointer-events-none">
+            <img src="/images/gift-icon-removebg-preview.png" alt="Prize" className="w-full h-full object-contain drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]" />
           </div>
         </div>
       </div>
 
       {/* Action Button */}
       <button
-        className={`w-full py-2.5 sm:py-3 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wide transition-all active:scale-[0.98] ${styles.button}`}
-        disabled={card.status === 'Expired' || card.status === 'Coming soon'}
+        className={`w-full py-3 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wide transition-all active:scale-[0.98] z-10 ${styles.button}`}
+        disabled={card.status === 'Expired'}
       >
         {styles.buttonText}
       </button>
@@ -399,8 +449,8 @@ export default function Lottery({ onLogout, onNavigate, currentPage }: LotteryPr
                       setIsMobileSidebarOpen(false);
                     }}
                     className={`w-full h-16 rounded-xl p-4 flex items-center gap-4 transition-all ${currentPage === 'home'
-                        ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
-                        : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
+                      : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
                       }`}
                   >
                     <img src="/images/home-icon.png" alt="Home" className="w-7 h-7 object-contain" />
@@ -414,8 +464,8 @@ export default function Lottery({ onLogout, onNavigate, currentPage }: LotteryPr
                       setIsMobileSidebarOpen(false);
                     }}
                     className={`w-full h-16 rounded-xl p-4 flex items-center gap-4 transition-all ${currentPage === 'lottery'
-                        ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
-                        : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
+                      : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
                       }`}
                   >
                     <img src="/images/lottery-icon.png" alt="Lottery" className="w-7 h-7 object-contain" />
@@ -429,8 +479,8 @@ export default function Lottery({ onLogout, onNavigate, currentPage }: LotteryPr
                       setIsMobileSidebarOpen(false);
                     }}
                     className={`w-full h-16 rounded-xl p-4 flex items-center gap-4 transition-all ${currentPage === 'results'
-                        ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
-                        : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
+                      : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
                       }`}
                   >
                     <img src="/images/checkmark-badge-icon.svg" alt="Results" className="w-7 h-7 object-contain" />
@@ -444,8 +494,8 @@ export default function Lottery({ onLogout, onNavigate, currentPage }: LotteryPr
                       setIsMobileSidebarOpen(false);
                     }}
                     className={`w-full h-16 rounded-xl p-4 flex items-center gap-4 transition-all ${currentPage === 'leaders'
-                        ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
-                        : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
+                      : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
                       }`}
                   >
                     <img src="/images/champion-icon.svg" alt="Leaders" className="w-7 h-7 object-contain" />
@@ -459,8 +509,8 @@ export default function Lottery({ onLogout, onNavigate, currentPage }: LotteryPr
                       setIsMobileSidebarOpen(false);
                     }}
                     className={`w-full h-16 rounded-xl p-4 flex items-center gap-4 transition-all ${currentPage === 'affiliate'
-                        ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
-                        : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
+                      : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
                       }`}
                   >
                     <img src="/images/user-multiple-icon.svg" alt="Affiliate" className="w-7 h-7 object-contain" />
@@ -474,8 +524,8 @@ export default function Lottery({ onLogout, onNavigate, currentPage }: LotteryPr
                       setIsMobileSidebarOpen(false);
                     }}
                     className={`w-full h-16 rounded-xl p-4 flex items-center gap-4 transition-all ${currentPage === 'faq'
-                        ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
-                        : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
+                      : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
                       }`}
                   >
                     <img src="/images/chat-question-icon.svg" alt="FAQ" className="w-7 h-7 object-contain" />
@@ -532,7 +582,7 @@ export default function Lottery({ onLogout, onNavigate, currentPage }: LotteryPr
 
             {/* Live & Upcoming Section */}
             <div className="mb-6 sm:mb-8">
-              <div className="flex items-center gap-2 mb-4 sm:mb-6">
+              <div className="flex items-center justify-center gap-2 mb-4 sm:mb-6">
                 <div className="w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-r from-green-400 to-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-400/33">
                   <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6 1L7.09 4.26L11 4.27L8 6.14L8.91 9.09L6 7.77L3.09 9.09L4 6.14L1 4.27L4.91 4.26L6 1Z" fill="white" />
