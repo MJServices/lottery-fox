@@ -13,15 +13,15 @@ interface HallOfFameProps {
 export default function HallOfFame({ onLogout, onNavigate, currentPage }: HallOfFameProps) {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
-  // Leaderboard data matching the screenshot
+  // Leaderboard data
   const leaderboardData = [
-    { rank: 4, user: 'JackJa', purchased: '549 USD', tickets: '2 tickets', prize: '549 USD' },
-    { rank: 5, user: 'JackJa', purchased: '549 USD', tickets: '2 tickets', prize: '549 USD' },
-    { rank: 6, user: 'JackJa', purchased: '549 USD', tickets: '2 tickets', prize: '549 USD' },
-    { rank: 7, user: 'JackJa', purchased: '549 USD', tickets: '2 tickets', prize: '549 USD' },
-    { rank: 8, user: 'JackJa', purchased: '549 USD', tickets: '2 tickets', prize: '549 USD' },
-    { rank: 9, user: 'JackJa', purchased: '549 USD', tickets: '2 tickets', prize: '549 USD' },
-    { rank: 10, user: 'JackJa', purchased: '549 USD', tickets: '2 tickets', prize: '549 USD' },
+    { rank: 4, user: 'jackie', purchased: '+ 569 USD', tickets: '2 tickets', prize: '+ 569 USD' },
+    { rank: 5, user: 'jackie', purchased: '+ 569 USD', tickets: '2 tickets', prize: '+ 569 USD' },
+    { rank: 6, user: 'jackie', purchased: '+ 569 USD', tickets: '2 tickets', prize: '+ 569 USD' },
+    { rank: 7, user: 'jackie', purchased: '+ 569 USD', tickets: '2 tickets', prize: '+ 569 USD' },
+    { rank: 8, user: 'jackie', purchased: '+ 569 USD', tickets: '2 tickets', prize: '+ 569 USD' },
+    { rank: 9, user: 'jackie', purchased: '+ 569 USD', tickets: '2 tickets', prize: '+ 569 USD' },
+    { rank: 10, user: 'jackie', purchased: '+ 569 USD', tickets: '2 tickets', prize: '+ 569 USD' },
   ];
 
   return (
@@ -42,304 +42,221 @@ export default function HallOfFame({ onLogout, onNavigate, currentPage }: HallOf
       )}
 
       <div className="flex flex-col lg:flex-row min-h-[calc(100vh-60px)] md:min-h-[calc(100vh-74px)]">
-        {/* Desktop Sidebar - Hidden on mobile, visible on desktop */}
+        {/* Desktop Sidebar */}
         <div className="hidden lg:block">
           <Sidebar onNavigate={onNavigate} currentPage={currentPage} onLogout={onLogout} />
         </div>
 
-        {/* Main Content - Full width on mobile, flexible on desktop */}
+        {/* Main Content */}
         <div className="flex-1 flex flex-col xl:flex-row">
-          {/* Hall of Fame Content */}
           <div className="flex-1 overflow-y-auto pb-20 lg:pb-0">
             <div className="p-4 sm:p-6 lg:p-8">
               <div className="max-w-7xl mx-auto">
-                {/* Page Title */}
-                <div className="mb-6 lg:mb-8">
-                  <h1 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-2">
-                    Hall of Fame
-                  </h1>
-                  <p className="text-[#A2B4C6] text-sm lg:text-base">
-                    Celebrate our biggest winners and top performers
-                  </p>
-                </div>
 
-                {/* Hero Section with Hall of Fame Image - Clean background only */}
-                <div className="relative rounded-lg sm:rounded-2xl mb-4 sm:mb-6 lg:mb-8 overflow-hidden" style={{ minHeight: '300px' }}>
-                  {/* Background Image - No overlay text */}
-                  <div className="absolute inset-0">
-                    <img
-                      src="/images/hall of fame.png"
-                      alt="Hall of Fame Background"
-                      className="w-full h-full object-cover"
-                    />
-                    {/* Overlay to hide the "HALL OF FAME" text in the image */}
+                {/* Hero Section */}
+                <div className="relative mb-8 text-center pt-8">
+                  <h1 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-wide drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">Hall of Fame</h1>
 
+                  <div className="relative w-full max-w-4xl mx-auto md:h-[350px] flex items-end justify-center pb-4">
+                    {/* Using hall of fame.png as the character/hero image */}
+                    <img src="/images/hall of fame.png" alt="Hall of Fame" className="w-auto h-full max-h-[280px] md:max-h-[380px] object-contain drop-shadow-2xl z-10 relative" />
+
+                    {/* Glow Effect behind fox */}
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[300px] h-[300px] bg-[#BEFF25] opacity-10 blur-[90px] rounded-full pointer-events-none"></div>
                   </div>
-                </div>
 
-                {/* Achievement buttons section - completely separate from image */}
-                <div className="mb-4 sm:mb-6 lg:mb-8">
-                  <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 mb-4 sm:mb-6 lg:mb-8 px-2">
-                    <button className="bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 rounded-md sm:rounded-lg text-xs sm:text-sm lg:text-base font-bold text-white hover:opacity-90 transition-opacity shadow-lg">
+                  {/* Stats Tabs */}
+                  <div className="flex flex-wrap justify-center gap-2 mt-[-20px] relative z-20">
+                    <button className="bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] text-white px-4 md:px-6 py-2.5 rounded-lg font-bold text-xs md:text-sm shadow-lg hover:brightness-110 transition-all uppercase tracking-wide">
                       Biggest single win
                     </button>
-                    <button className="bg-[#2A2F36] px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 rounded-md sm:rounded-lg text-xs sm:text-sm lg:text-base font-bold text-gray-300 hover:bg-[#3A3F46] transition-colors shadow-lg">
+                    <button className="bg-[#1A1F26] border border-[#2A3441] text-[#94A3B8] px-4 md:px-6 py-2.5 rounded-lg font-bold text-xs md:text-sm hover:text-white hover:border-[#334155] transition-all uppercase tracking-wide">
                       Most Free Tickets
                     </button>
-                    <button className="bg-[#2A2F36] px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 rounded-md sm:rounded-lg text-xs sm:text-sm lg:text-base font-bold text-gray-300 hover:bg-[#3A3F46] transition-colors shadow-lg">
-                      Referrer King
+                    <button className="bg-[#1A1F26] border border-[#2A3441] text-[#94A3B8] px-4 md:px-6 py-2.5 rounded-lg font-bold text-xs md:text-sm hover:text-white hover:border-[#334155] transition-all uppercase tracking-wide">
+                      Refferral King
                     </button>
-                    <button className="bg-[#2A2F36] px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 rounded-md sm:rounded-lg text-xs sm:text-sm lg:text-base font-bold text-gray-300 hover:bg-[#3A3F46] transition-colors shadow-lg">
-                      Most wins in 24h!
+                    <button className="bg-[#1A1F26] border border-[#2A3441] text-[#94A3B8] px-4 md:px-6 py-2.5 rounded-lg font-bold text-xs md:text-sm hover:text-white hover:border-[#334155] transition-all uppercase tracking-wide">
+                      Most wins in 24H
                     </button>
                   </div>
                 </div>
 
-                {/* Trophy cards section - completely separate from image */}
-                <div className="mb-6 sm:mb-8 lg:mb-8">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-2">
-                    {/* Gold Trophy */}
-                    <div className="bg-gradient-to-b from-[#2A2F36] to-[#1A1F26] rounded-lg sm:rounded-xl p-4 sm:p-5 lg:p-6 border border-[#3A3F46] relative shadow-2xl">
-                      {/* Trophy Icon positioned above card */}
-                      <div className="absolute -top-8 sm:-top-10 lg:-top-12 left-1/2 transform -translate-x-1/2 z-10">
-                        <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 flex items-center justify-center">
-                          <div className="text-4xl sm:text-5xl lg:text-6xl drop-shadow-2xl">🏆</div>
-                        </div>
-                      </div>
-                      <div className="pt-6 sm:pt-7 lg:pt-8">
-                        <div className="flex items-center justify-center gap-2 mb-2 sm:mb-3">
-                          <img src="/images/profile-avatar.png" alt="BONUSes" className="w-5 h-5 sm:w-6 sm:h-6 rounded-full" />
-                          <span className="text-orange-400 font-bold text-xs sm:text-sm">BONUSes</span>
-                        </div>
-                        <div className="flex items-center justify-center gap-2 text-green-400">
-                          <span className="text-lg sm:text-xl lg:text-2xl">💰</span>
-                          <span className="font-bold text-sm sm:text-base lg:text-lg">549 USD</span>
-                        </div>
-                      </div>
+                {/* Top 3 Trophies Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto mt-16">
+                  {/* Card 2 (Left) */}
+                  <div className="bg-gradient-to-b from-[#1F252E] to-[#13181D] rounded-2xl p-6 border border-[#2A3441] relative mt-8 pt-12 flex flex-col items-center shadow-xl">
+                    <div className="absolute -top-10">
+                      <img src="/images/trophy.png" alt="Trophy" className="w-24 h-auto drop-shadow-xl filter grayscale-[0.4] brightness-90" />
                     </div>
-
-                    {/* Silver Trophy */}
-                    <div className="bg-gradient-to-b from-[#2A2F36] to-[#1A1F26] rounded-lg sm:rounded-xl p-4 sm:p-5 lg:p-6 border border-[#3A3F46] relative shadow-2xl">
-                      {/* Trophy Icon positioned above card */}
-                      <div className="absolute -top-8 sm:-top-10 lg:-top-12 left-1/2 transform -translate-x-1/2 z-10">
-                        <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 flex items-center justify-center">
-                          <div className="text-4xl sm:text-5xl lg:text-6xl filter grayscale brightness-125 drop-shadow-2xl">🏆</div>
-                        </div>
-                      </div>
-                      <div className="pt-6 sm:pt-7 lg:pt-8">
-                        <div className="flex items-center justify-center gap-2 mb-2 sm:mb-3">
-                          <img src="/images/profile-avatar.png" alt="BONUSes" className="w-5 h-5 sm:w-6 sm:h-6 rounded-full" />
-                          <span className="text-orange-400 font-bold text-xs sm:text-sm">BONUSes</span>
-                        </div>
-                        <div className="flex items-center justify-center gap-2 text-red-400">
-                          <span className="text-lg sm:text-xl lg:text-2xl">🔴</span>
-                          <span className="font-bold text-sm sm:text-base lg:text-lg">549 USD</span>
-                        </div>
-                      </div>
+                    <div className="flex items-center gap-3 mb-5 mt-4">
+                      <img src="/images/profile-avatar-56586a.png" className="w-10 h-10 rounded-full border-2 border-[#FF6F3F]" alt="Avatar" />
+                      <span className="text-white font-bold text-lg tracking-wide">BONUSss</span>
                     </div>
+                    <div className="bg-[#1A1F26] rounded-xl px-4 py-2.5 flex items-center gap-2 border border-[#333D49] min-w-[140px] justify-center">
+                      <div className="w-6 h-6 rounded-full bg-[#3D2C28] flex items-center justify-center border border-[#6B3D30]">
+                        <span className="text-[#FF6F3F] text-[10px]">●</span>
+                      </div>
+                      <span className="text-gray-200 font-bold text-sm">569 USD</span>
+                    </div>
+                  </div>
 
-                    {/* Bronze Trophy */}
-                    <div className="bg-gradient-to-b from-[#2A2F36] to-[#1A1F26] rounded-lg sm:rounded-xl p-4 sm:p-5 lg:p-6 border border-[#3A3F46] relative shadow-2xl sm:col-span-2 lg:col-span-1">
-                      {/* Trophy Icon positioned above card */}
-                      <div className="absolute -top-8 sm:-top-10 lg:-top-12 left-1/2 transform -translate-x-1/2 z-10">
-                        <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 flex items-center justify-center">
-                          <div className="text-4xl sm:text-5xl lg:text-6xl filter sepia brightness-90 saturate-150 drop-shadow-2xl">🏆</div>
-                        </div>
+                  {/* Card 1 (Center - Biggest) */}
+                  <div className="bg-gradient-to-b from-[#252C36] to-[#161B22] rounded-2xl p-8 border border-[#364152] relative mt-0 pt-14 flex flex-col items-center shadow-2xl z-10 transform md:scale-105">
+                    <div className="absolute -top-12">
+                      <img src="/images/trophy.png" alt="Trophy" className="w-28 h-auto drop-shadow-2xl" />
+                    </div>
+                    <div className="flex items-center gap-3 mb-5 mt-4">
+                      <img src="/images/profile-avatar-56586a.png" className="w-12 h-12 rounded-full border-2 border-[#FF6F3F]" alt="Avatar" />
+                      <span className="text-white font-bold text-xl tracking-wide">BONUSss</span>
+                    </div>
+                    <div className="bg-[#1A1F26] rounded-xl px-5 py-3 flex items-center gap-2 border border-[#333D49] min-w-[160px] justify-center shadow-inner">
+                      <div className="w-6 h-6 rounded-full bg-[#3D2C28] flex items-center justify-center border border-[#6B3D30]">
+                        <span className="text-[#FF6F3F] text-[10px]">●</span>
                       </div>
-                      <div className="pt-6 sm:pt-7 lg:pt-8">
-                        <div className="flex items-center justify-center gap-2 mb-2 sm:mb-3">
-                          <img src="/images/profile-avatar.png" alt="BONUSes" className="w-5 h-5 sm:w-6 sm:h-6 rounded-full" />
-                          <span className="text-orange-400 font-bold text-xs sm:text-sm">BONUSes</span>
-                        </div>
-                        <div className="flex items-center justify-center gap-2 text-orange-400">
-                          <span className="text-lg sm:text-xl lg:text-2xl">🟠</span>
-                          <span className="font-bold text-sm sm:text-base lg:text-lg">549 USD</span>
-                        </div>
+                      <span className="text-white font-black text-base">569 USD</span>
+                    </div>
+                  </div>
+
+                  {/* Card 3 (Right) */}
+                  <div className="bg-gradient-to-b from-[#1F252E] to-[#13181D] rounded-2xl p-6 border border-[#2A3441] relative mt-8 pt-12 flex flex-col items-center shadow-xl">
+                    <div className="absolute -top-10">
+                      <img src="/images/trophy.png" alt="Trophy" className="w-24 h-auto drop-shadow-xl filter sepia-[0.6] brightness-90" />
+                    </div>
+                    <div className="flex items-center gap-3 mb-5 mt-4">
+                      <img src="/images/profile-avatar-56586a.png" className="w-10 h-10 rounded-full border-2 border-[#FF6F3F]" alt="Avatar" />
+                      <span className="text-white font-bold text-lg tracking-wide">BONUSss</span>
+                    </div>
+                    <div className="bg-[#1A1F26] rounded-xl px-4 py-2.5 flex items-center gap-2 border border-[#333D49] min-w-[140px] justify-center">
+                      <div className="w-6 h-6 rounded-full bg-[#3D2C28] flex items-center justify-center border border-[#6B3D30]">
+                        <span className="text-[#FF6F3F] text-[10px]">●</span>
                       </div>
+                      <span className="text-gray-200 font-bold text-sm">569 USD</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Leaderboard Table - Mobile Responsive */}
-                <div className="bg-[#1A1F26] rounded-lg sm:rounded-xl overflow-hidden shadow-xl mb-6 sm:mb-8 lg:mb-12">
-                  {/* Desktop Table Header */}
-                  <div className="hidden sm:grid grid-cols-5 gap-4 p-3 sm:p-4 bg-[#2A2F36] text-gray-400 font-bold text-xs sm:text-sm">
-                    <div>Place</div>
+                {/* Leaderboard Table */}
+                <div className="bg-[#161B22] rounded-xl overflow-hidden border border-[#242D36] shadow-lg">
+                  {/* Header */}
+                  <div className="hidden md:grid grid-cols-5 p-4 bg-[#1A1F26] border-b border-[#242D36] text-[11px] uppercase tracking-wider text-[#64748B] font-extrabold">
+                    <div className="pl-6">Place</div>
                     <div>User</div>
                     <div>Purchased</div>
                     <div>Tickets</div>
-                    <div>Prize</div>
+                    <div>Price</div>
                   </div>
 
-                  {/* Mobile Header */}
-                  <div className="sm:hidden bg-[#2A2F36] p-3 text-gray-400 font-bold text-xs text-center">
-                    Leaderboard
-                  </div>
-
-                  {/* Table Rows */}
-                  <div className="divide-y divide-[#2A2F36]">
-                    {leaderboardData.map((item, index) => (
-                      <div key={index} className="hover:bg-[#242932] transition-colors">
-                        {/* Desktop Layout */}
-                        <div className="hidden sm:grid grid-cols-5 gap-4 p-3 sm:p-4">
-                          <div className="flex items-center gap-2">
-                            <span className="text-white font-bold text-sm">{item.rank}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <img src="/images/profile-avatar.png" alt={item.user} className="w-5 h-5 sm:w-6 sm:h-6 rounded-full" />
-                            <span className="text-white font-medium text-sm">{item.user}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                            <span className="text-white text-sm">{item.purchased}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                            <span className="text-white text-sm">{item.tickets}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                            <span className="text-white text-sm">{item.prize}</span>
+                  {/* Rows */}
+                  <div className="divide-y divide-[#1E262E]">
+                    {leaderboardData.map((item) => (
+                      <div key={item.rank} className="grid grid-cols-1 md:grid-cols-5 p-4 items-center hover:bg-[#1C2229] transition-colors group gap-4 md:gap-0">
+                        {/* Rank */}
+                        <div className="flex items-center justify-between md:justify-start md:pl-6 w-full md:w-auto">
+                          <span className="md:hidden text-[#64748B] text-xs font-bold uppercase">Place</span>
+                          <div className="w-8 h-8 bg-[#242932] rounded flex items-center justify-center font-bold text-white text-sm border border-[#333D49]">
+                            {item.rank}
                           </div>
                         </div>
 
-                        {/* Mobile Layout */}
-                        <div className="sm:hidden p-4 space-y-2">
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2">
-                              <span className="text-white font-bold text-lg">#{item.rank}</span>
-                              <img src="/images/profile-avatar.png" alt={item.user} className="w-6 h-6 rounded-full" />
-                              <span className="text-white font-medium">{item.user}</span>
-                            </div>
+                        {/* User */}
+                        <div className="flex items-center justify-between md:justify-start gap-3 w-full md:w-auto">
+                          <span className="md:hidden text-[#64748B] text-xs font-bold uppercase">User</span>
+                          <div className="flex items-center gap-3">
+                            <img src="/images/profile-avatar-56586a.png" className="w-8 h-8 rounded-full" alt={item.user} />
+                            <span className="text-white font-bold text-sm">{item.user}</span>
                           </div>
-                          <div className="grid grid-cols-3 gap-2 text-xs">
-                            <div className="text-center">
-                              <div className="text-gray-400">Purchased</div>
-                              <div className="text-white font-medium">{item.purchased}</div>
-                            </div>
-                            <div className="text-center">
-                              <div className="text-gray-400">Tickets</div>
-                              <div className="text-white font-medium">{item.tickets}</div>
-                            </div>
-                            <div className="text-center">
-                              <div className="text-gray-400">Prize</div>
-                              <div className="text-white font-medium">{item.prize}</div>
-                            </div>
+                        </div>
+
+                        {/* Purchased */}
+                        <div className="flex items-center justify-between md:justify-start gap-2 w-full md:w-auto">
+                          <span className="md:hidden text-[#64748B] text-xs font-bold uppercase">Purchased</span>
+                          <div className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-[#BEFF25] shadow-[0_0_8px_0_#BEFF25]"></span>
+                            <span className="text-white font-bold text-sm tracking-wide">{item.purchased}</span>
+                          </div>
+                        </div>
+
+                        {/* Tickets */}
+                        <div className="flex items-center justify-between md:justify-start gap-2 w-full md:w-auto">
+                          <span className="md:hidden text-[#64748B] text-xs font-bold uppercase">Tickets</span>
+                          <div className="flex items-center gap-2">
+                            <img src="/images/ticket-prize-icon.png" className="w-4 h-4 object-contain opacity-80" alt="Ticket" />
+                            <span className="text-white font-bold text-sm">{item.tickets}</span>
+                          </div>
+                        </div>
+
+                        {/* Prize */}
+                        <div className="flex items-center justify-between md:justify-start gap-2 w-full md:w-auto">
+                          <span className="md:hidden text-[#64748B] text-xs font-bold uppercase">Price</span>
+                          <div className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-[#BEFF25] shadow-[0_0_8px_0_#BEFF25]"></span>
+                            <span className="text-white font-bold text-sm tracking-wide">{item.prize}</span>
                           </div>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
 
-          {/* Right Sidebar - Online Chat exactly as shown */}
-          <div className="hidden xl:block w-80 bg-[#1A1F26] border-l border-[#2A2F36]">
-            <div className="p-4">
+          {/* Right Sidebar - Online Chat */}
+          <div className="hidden xl:block w-[350px] bg-[#1A1F26] border-l border-[#2A2F36] flex-shrink-0">
+            <div className="p-4 h-full flex flex-col">
               {/* Online Chat Header */}
-              <div className="bg-gradient-to-r from-purple-600 to-purple-800 rounded-lg p-4 mb-4 relative overflow-hidden">
-                <div className="flex items-center gap-3">
-                  <img src="/images/fox-character.svg" alt="Chat Fox" className="w-12 h-12" />
-                  <div>
-                    <div className="text-white font-bold text-lg">ONLINE</div>
-                    <div className="text-white font-bold text-lg">CHAT</div>
+              <div className="rounded-2xl p-5 mb-4 relative overflow-hidden h-[120px] flex items-center shadow-lg" style={{ background: 'linear-gradient(135deg, #6D28D9 0%, #4C1D95 100%)' }}>
+                <div className="relative z-10 flex flex-col">
+                  <h2 className="text-2xl font-black italic text-white leading-none tracking-tighter drop-shadow-md">ONLINE</h2>
+                  <h2 className="text-2xl font-black italic text-white leading-none tracking-tighter drop-shadow-md">CHAT</h2>
+
+                  <div className="mt-2 flex items-center gap-2 bg-[#000000]/30 w-fit px-2 py-1 rounded backdrop-blur-sm">
+                    <span className="w-2 h-2 bg-[#BEFF25] rounded-full animate-pulse shadow-[0_0_8px_#BEFF25]"></span>
+                    <span className="text-white text-xs font-bold">544</span>
                   </div>
                 </div>
-                <div className="absolute top-2 right-2 bg-green-400 text-black px-2 py-1 rounded text-xs font-bold">
-                  544
-                </div>
+                <img src="/images/lottery-hero-fox.png" className="absolute right-[-40px] bottom-[-40px] w-48 object-contain transform -scale-x-100 opacity-20 mix-blend-overlay" alt="Decor" />
+                <img src="/images/chat-background-70d50f.png" className="absolute right-[-10px] bottom-[-10px] w-28 object-contain" alt="Chat Fox" />
               </div>
 
-              {/* Chat Messages */}
-              <div className="space-y-3 mb-4 max-h-96 overflow-y-auto">
-                <div className="flex items-start gap-2">
-                  <img src="/images/profile-avatar.png" alt="User" className="w-6 h-6 rounded-full flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="text-orange-400 text-xs font-bold mb-1">dealer just pulled 21 again</div>
-                    <div className="text-gray-400 text-xs">10m</div>
+              {/* Footer Links - Reusing the chat internals */}
+              <div className="flex-1 overflow-y-auto space-y-4 mb-4 pr-2 custom-scrollbar">
+                {[1, 2, 3, 4, 5, 6, 7].map((_, i) => (
+                  <div key={i} className="flex gap-3 group">
+                    <img src="/images/profile-avatar.png" className="w-8 h-8 rounded-full ring-2 ring-transparent group-hover:ring-[#FF4B0F]/50 transition-all" alt="User" />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-baseline justify-between">
+                        <p className="text-[#FF9F43] text-xs font-bold mb-0.5 truncate">jackie</p>
+                        <span className="text-[#4B5563] text-[10px]">12:03</span>
+                      </div>
+                      <p className="text-gray-300 text-xs leading-snug break-words">dealer just pulled 21 again</p>
+                    </div>
                   </div>
-                </div>
-
-                <div className="flex items-start gap-2">
-                  <img src="/images/profile-avatar.png" alt="User" className="w-6 h-6 rounded-full flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="text-green-400 text-xs font-bold mb-1">dealer just pulled 21 twice in a row, I swear every time I join</div>
-                    <div className="text-gray-400 text-xs">10m</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2">
-                  <img src="/images/profile-avatar.png" alt="User" className="w-6 h-6 rounded-full flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="text-blue-400 text-xs font-bold mb-1">live bj still paying a bit</div>
-                    <div className="text-gray-400 text-xs">10m</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2">
-                  <img src="/images/profile-avatar.png" alt="User" className="w-6 h-6 rounded-full flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="text-purple-400 text-xs font-bold mb-1">happens to everyone</div>
-                    <div className="text-gray-400 text-xs">10m</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2">
-                  <img src="/images/profile-avatar.png" alt="User" className="w-6 h-6 rounded-full flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="text-orange-400 text-xs font-bold mb-1">anyone tried that new cyber slot, both said but I feel like it's rigging sweating fest</div>
-                    <div className="text-gray-400 text-xs">10m</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2">
-                  <img src="/images/profile-avatar.png" alt="User" className="w-6 h-6 rounded-full flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="text-white text-xs font-bold mb-1">slowly down 40 and betting myself "one more spin" like an idiot</div>
-                    <div className="text-gray-400 text-xs">10m</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2">
-                  <img src="/images/profile-avatar.png" alt="User" className="w-6 h-6 rounded-full flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="text-gray-300 text-xs font-bold mb-1">finally a normal hand, felt illegal after that start</div>
-                    <div className="text-gray-400 text-xs">10m</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2">
-                  <img src="/images/profile-avatar.png" alt="User" className="w-6 h-6 rounded-full flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="text-orange-400 text-xs font-bold mb-1">dealer just pulled 21 again</div>
-                    <div className="text-gray-400 text-xs">10m</div>
+                ))}
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#FF9F43] flex items-center justify-center text-white font-bold text-xs ring-2 ring-[#1A1F26]">CR</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-baseline justify-between">
+                      <p className="text-[#FF9F43] text-xs font-bold mb-0.5">cryptoWolf</p>
+                      <span className="text-[#4B5563] text-[10px]">12:03</span>
+                    </div>
+                    <p className="text-gray-300 text-xs leading-snug break-words">live bj still paying a bit</p>
                   </div>
                 </div>
               </div>
 
-              {/* Chat Input */}
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  placeholder="Type a message..."
-                  className="flex-1 bg-[#2A2F36] border border-[#3A3F46] rounded-lg px-3 py-2 text-white text-sm placeholder-gray-400 focus:outline-none focus:border-orange-400"
-                />
-                <button className="bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] px-4 py-2 rounded-lg text-white font-bold hover:opacity-90 transition-opacity">
-                  Send
-                </button>
+              <div className="mt-auto pt-4 border-t border-[#2A3441]">
+                <div className="relative">
+                  <input type="text" placeholder="Placeholder" className="w-full bg-[#0b0e11] border border-[#2A3441] rounded-lg py-3 px-4 pr-20 text-sm text-white focus:outline-none focus:border-[#FF4B0F] placeholder-gray-600 transition-colors" />
+                  <button className="absolute right-1 top-1 bottom-1 bg-[#FF4B0F] hover:bg-[#E03E00] text-white px-4 rounded-md text-xs font-bold transition-colors shadow-lg shadow-orange-900/20">
+                    Send
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Mobile Chat Button - Show on mobile only */}
-        <div className="xl:hidden border-t border-[#242D36] bg-[#13181D] p-3 pb-20">
-          <button className="w-full p-3 text-left text-white font-bold text-sm bg-gradient-to-r from-[#9726E3] to-[#FF4B0F] rounded-lg hover:opacity-90 transition-opacity flex items-center justify-between">
-            <span>💬 Open Chat</span>
-            <span className="text-xs opacity-80">544 online</span>
-          </button>
         </div>
       </div>
 
@@ -348,77 +265,35 @@ export default function HallOfFame({ onLogout, onNavigate, currentPage }: HallOf
         <MobileNavbar onNavigate={onNavigate} currentPage={currentPage} />
       </div>
 
-      {/* Full Width Footer Section */}
-      <footer className="bg-[#1A1F26] border-t border-[#2A2F36] w-full">
-        <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {/* Logo and Description */}
-            <div className="sm:col-span-2 lg:col-span-1">
-              <div className="flex items-center mb-3 sm:mb-4">
-                <img src="/images/fox-logo.svg" alt="Fox Logo" className="w-6 h-6 sm:w-8 sm:h-8 mr-2" />
-                <span className="text-lg sm:text-xl font-bold text-white font-sans">LOTTERY</span>
+      {/* Footer */}
+      <footer className="bg-[#1A1F26] border-t border-[#2A2F36] py-8 w-full mt-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-2">
+              <img src="/images/fox-logo.svg" className="w-8 h-8" />
+              <span className="text-2xl font-black text-white tracking-tighter">LOTTERY</span>
+            </div>
+
+            <div className="flex gap-8 text-xs font-bold text-gray-400 uppercase tracking-wide">
+              <a href="#" className="hover:text-white transition-colors">About</a>
+              <a href="#" className="hover:text-white transition-colors">Help</a>
+              <a href="#" className="hover:text-white transition-colors">Developers</a>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="w-8 h-8 bg-[#2A3441] rounded flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#334155] transition-all cursor-pointer">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" /></svg>
               </div>
-              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
-                Experience the thrill of winning with Fox Lottery. Fair, transparent, and exciting lottery games with amazing prizes.
-              </p>
-            </div>
-
-            {/* About Links */}
-            <div>
-              <h3 className="text-white font-bold mb-3 sm:mb-4 text-sm sm:text-base">About</h3>
-              <ul className="space-y-1 sm:space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">Refund policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">Terms & Conditions</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">Privacy Policy</a></li>
-              </ul>
-            </div>
-
-            {/* Help Links */}
-            <div>
-              <h3 className="text-white font-bold mb-3 sm:mb-4 text-sm sm:text-base">Help</h3>
-              <ul className="space-y-1 sm:space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">Troubleshooting</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">Affiliate</a></li>
-              </ul>
-            </div>
-
-            {/* Developers Links */}
-            <div>
-              <h3 className="text-white font-bold mb-3 sm:mb-4 text-sm sm:text-base">Developers</h3>
-              <ul className="space-y-1 sm:space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">GitHub</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">Bug Bounty</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">Audits</a></li>
-              </ul>
+              <div className="w-8 h-8 bg-[#2A3441] rounded flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#334155] transition-all cursor-pointer">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
+              </div>
+              <div className="w-8 h-8 bg-[#2A3441] rounded flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#334155] transition-all cursor-pointer">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.996 0c-6.628 0-12 5.372-12 12s5.372 12 12 12 12-5.372 12-12-5.372-12-12-12zm4.496 16.591l-1.649-5.118 4.29-3.264h-5.268l-1.869-5.429-1.869 5.429h-5.268l4.29 3.264-1.649 5.118 4.496-3.327 4.496 3.327z" /></svg>
+              </div>
             </div>
           </div>
-
-          {/* Bottom Footer */}
-          <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-[#2A2F36] flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
-              © 2024 Fox Lottery. All rights reserved.
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-3 sm:gap-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                </svg>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
-                </svg>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z" />
-                </svg>
-              </a>
-              <button className="bg-[#2A2F36] hover:bg-[#3A3F46] px-3 sm:px-4 py-1.5 sm:py-2 rounded-md sm:rounded-lg text-white text-xs sm:text-sm font-medium transition-colors">
-              </button>
-            </div>
+          <div className="mt-8 border-t border-[#2A3441] pt-4 text-center text-[10px] text-gray-500">
+            © 2024 Fox Lottery. All rights reserved.
           </div>
         </div>
       </footer>

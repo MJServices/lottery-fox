@@ -37,27 +37,36 @@ export default function MainContent() {
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#FFB366] to-transparent opacity-[0.07] rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+            {/* New Green Gradient for Verify Button Area */}
+            <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#BEFF25] opacity-[0.25] rounded-full blur-3xl -mr-12 -mb-12 pointer-events-none"></div>
 
-            {/* Floating Coins - Decorative - Smaller */}
+            {/* Floating Coins - Decorative */}
             <div className="absolute top-4 right-8 w-8 h-8 animate-pulse pointer-events-none z-0" style={{ animationDuration: '3s' }}>
               <img src="/images/awards-coin-1.png" alt="" className="w-full h-full object-contain opacity-90 rotate-12 drop-shadow-lg" />
             </div>
-            <div className="absolute bottom-6 right-20 w-10 h-10 animate-bounce pointer-events-none z-0" style={{ animationDuration: '4s' }}>
+            <div className="absolute bottom-6 right-24 w-10 h-10 animate-bounce pointer-events-none z-0" style={{ animationDuration: '4s' }}>
               <img src="/images/awards-coin-2.png" alt="" className="w-full h-full object-contain drop-shadow-xl -rotate-12 opacity-80" />
+            </div>
+            {/* New Coins */}
+            <div className="absolute top-12 right-2 w-6 h-6 animate-pulse pointer-events-none z-0" style={{ animationDuration: '5s' }}>
+              <img src="/images/awards-coin-1.png" alt="" className="w-full h-full object-contain opacity-60 -rotate-45 blur-[1px]" />
+            </div>
+            <div className="absolute -bottom-2 right-12 w-12 h-12 animate-bounce pointer-events-none z-0" style={{ animationDuration: '6s' }}>
+              <img src="/images/awards-coin-2.png" alt="" className="w-full h-full object-contain opacity-40 rotate-45 blur-[2px]" />
+            </div>
+            <div className="absolute top-16 right-36 w-8 h-8 animate-pulse pointer-events-none z-0" style={{ animationDuration: '7s' }}>
+              <img src="/images/awards-coin-1.png" alt="" className="w-full h-full object-contain opacity-20 -rotate-12 blur-[1px]" />
             </div>
 
             <div className="relative z-10 font-sans w-full">
 
               {/* Block Number & Label */}
               <div className="mb-6 relative">
-                <div className="flex items-center gap-2 mb-1 opacity-80">
-                  <div className="w-3 h-3 rounded-full bg-[#FF9F43] flex items-center justify-center">
-                    <span className="text-black text-[8px] font-bold">₿</span>
-                  </div>
-                  <h3 className="text-[#A2B4C6] text-[8px] font-bold uppercase tracking-[0.2em]">LATEST BITCOIN BLOCK</h3>
-                </div>
-                <div className="text-white text-[20px] md:text-[24px] font-black tracking-tight leading-none drop-shadow-md">
+                <div className="text-white text-[21px] md:text-[24px] font-black tracking-tight leading-none drop-shadow-md">
                   4390J3
+                </div>
+                <div className="flex items-center gap-2 mb-1 opacity-80 m-1 ">
+                  <h3 className="text-[#A2B4C6] text-[11px] font-bold uppercase tracking-[0.2em] ">LATEST BITCOIN BLOCK #</h3>
                 </div>
               </div>
 
@@ -71,6 +80,7 @@ export default function MainContent() {
                         : 'bg-[#242D36] border-[#374151]'
                         }`}>
                         <span className={`text-[8px] md:text-[9px] font-extrabold ${['K', 'J', '5', '3', '8', '9'].includes(digit) ? 'text-[#FF0C4]' : 'text-white'}`}>{digit}</span>
+
                       </div>
                     ))}
                   </div>
@@ -127,9 +137,7 @@ export default function MainContent() {
               {/* Star Boxes */}
               {[1, 2, 3, 4].map((_, i) => (
                 <div key={i} className="w-[40px] md:w-[48px] h-[48px] md:h-[56px] bg-[#1F262E] border border-[#2A3441] rounded shadow-inner flex items-center justify-center">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#333D49" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.62L12 2L9.19 8.62L2 9.24L7.45 13.97L5.82 21L12 17.27Z" fill="#525D68" />
-                  </svg>
+                  <img src="/images/star-icon.png" alt="Star" className="w-19 h-19 object-contain opacity-90" />
                 </div>
               ))}
             </div>
@@ -144,81 +152,98 @@ export default function MainContent() {
       <div className="mb-6 md:mb-8">
         <h3 className="text-[#64748B] text-[13px] md:text-[14px] font-bold mb-3 md:mb-4">Prizes if your digit match</h3>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
-          {/* 2 Digit Match - Dark Blue/Gray */}
-          <div className="bg-[#1A2027] rounded-xl p-3 md:p-4 border border-[#2A3441] flex flex-col items-center justify-center relative overflow-hidden h-[120px] md:h-[130px]">
-            <div className="w-[50px] md:w-[60px] h-[24px] md:h-[28px] bg-[#2B3540] rounded flex items-center justify-center mb-1.5 border border-[#46566B]">
-              <span className="text-white text-[12px] md:text-[13px] font-bold">2</span>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-1 w-full">
+          {/* 2 Digit Match */}
+          <div className="bg-[#0b0e11] rounded-xl p-3 md:p-4 border border-[#1E262E] flex flex-col items-center justify-center relative overflow-hidden h-[130px] md:h-[140px] group">
+            {/* Spotlight */}
+            <div className="absolute top-0 inset-x-0 h-[50px] bg-gradient-to-b from-[#334155]/20 to-transparent blur-xl"></div>
+
+            <div className="w-[50px] md:w-[60px] h-[26px] md:h-[30px] bg-gradient-to-b from-[#334155] to-[#475569] rounded-lg flex items-center justify-center mb-3 border-t border-[#64748B]/50 shadow-[0_4px_12px_rgba(0,0,0,0.3)] relative z-10">
+              <span className="text-white text-[13px] md:text-[14px] font-black drop-shadow-sm">2</span>
             </div>
-            <p className="text-[#64748B] text-[10px] md:text-[11px] font-bold uppercase mb-3 text-center leading-tight">Digit match</p>
-            <div className="flex items-center gap-2">
-              <img src="/images/ticket-prize-icon.png" alt="Free" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+
+            <p className="text-white text-[10px] md:text-[11px] font-medium mb-4 text-center relative z-10">Digit match</p>
+
+            <div className="flex items-center gap-3 relative z-10">
+              <img src="/images/ticket-prize-icon.png" alt="Free" className="w-5 h-5 md:w-6 md:h-6 object-contain drop-shadow-md" />
               <div>
-                <p className="text-[#64748B] text-[8px] md:text-[9px] font-bold uppercase leading-none">Prize</p>
+                <p className="text-[#64748B] text-[8px] md:text-[9px] font-bold uppercase leading-none mb-0.5">Prize</p>
                 <p className="text-white text-[11px] md:text-[12px] font-bold leading-none">Free ticket</p>
               </div>
             </div>
           </div>
 
-          {/* 3 Digit Match - Orange */}
-          <div className="bg-[#1A2027] rounded-xl p-3 md:p-4 border border-[#A16207]/30 flex flex-col items-center justify-center relative overflow-hidden h-[120px] md:h-[130px]">
-            <div className="absolute top-0 left-0 w-full h-[60px] bg-gradient-to-b from-[#A16207]/20 to-transparent"></div>
-            <div className="w-[50px] md:w-[60px] h-[24px] md:h-[28px] bg-[#92400E] rounded flex items-center justify-center mb-1.5 border border-[#D97706] relative z-10">
-              <span className="text-white text-[12px] md:text-[13px] font-bold">3</span>
+          {/* 3 Digit Match */}
+          <div className="bg-[#0b0e11] rounded-xl p-3 md:p-4 border border-[#1E262E] flex flex-col items-center justify-center relative overflow-hidden h-[130px] md:h-[140px] group">
+            <div className="absolute top-0 inset-x-0 h-[50px] bg-gradient-to-b from-[#F59E0B]/30 to-transparent blur-xl"></div>
+
+            <div className="w-[50px] md:w-[60px] h-[26px] md:h-[30px] bg-gradient-to-b from-[#92400E] to-[#D97706] rounded-lg flex items-center justify-center mb-3 border-t border-[#F59E0B]/50 shadow-[0_4px_12px_rgba(0,0,0,0.3)] relative z-10">
+              <span className="text-white text-[13px] md:text-[14px] font-black drop-shadow-sm">3</span>
             </div>
-            <p className="text-white text-[10px] md:text-[11px] font-bold uppercase mb-3 text-center leading-tight relative z-10">Digit match</p>
-            <div className="flex items-center gap-2 relative z-10">
-              <img src="/images/coin-prize-icon.png" alt="Coin" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+
+            <p className="text-white text-[10px] md:text-[11px] font-medium mb-4 text-center relative z-10">Digit match</p>
+
+            <div className="flex items-center gap-3 relative z-10">
+              <img src="/images/coin-prize-icon.png" alt="Coin" className="w-5 h-5 md:w-6 md:h-6 object-contain drop-shadow-md" />
               <div>
-                <p className="text-[#64748B] text-[8px] md:text-[9px] font-bold uppercase leading-none">Prize</p>
+                <p className="text-[#64748B] text-[8px] md:text-[9px] font-bold uppercase leading-none mb-0.5">Prize</p>
                 <p className="text-white text-[11px] md:text-[12px] font-bold leading-none">$300</p>
               </div>
             </div>
           </div>
 
-          {/* 4 Digit Match - Red/Orange */}
-          <div className="bg-[#1A2027] rounded-xl p-3 md:p-4 border border-[#EA580C]/30 flex flex-col items-center justify-center relative overflow-hidden h-[120px] md:h-[130px]">
-            <div className="absolute top-0 left-0 w-full h-[60px] bg-gradient-to-b from-[#EA580C]/20 to-transparent"></div>
-            <div className="w-[50px] md:w-[60px] h-[24px] md:h-[28px] bg-[#C2410C] rounded flex items-center justify-center mb-1.5 border border-[#F97316] relative z-10">
-              <span className="text-white text-[12px] md:text-[13px] font-bold">4</span>
+          {/* 4 Digit Match */}
+          <div className="bg-[#0b0e11] rounded-xl p-3 md:p-4 border border-[#1E262E] flex flex-col items-center justify-center relative overflow-hidden h-[130px] md:h-[140px] group">
+            <div className="absolute top-0 inset-x-0 h-[50px] bg-gradient-to-b from-[#F97316]/30 to-transparent blur-xl"></div>
+
+            <div className="w-[50px] md:w-[60px] h-[26px] md:h-[30px] bg-gradient-to-b from-[#C2410C] to-[#FB923C] rounded-lg flex items-center justify-center mb-3 border-t border-[#FDBA74]/50 shadow-[0_4px_12px_rgba(0,0,0,0.3)] relative z-10">
+              <span className="text-white text-[13px] md:text-[14px] font-black drop-shadow-sm">4</span>
             </div>
-            <p className="text-white text-[10px] md:text-[11px] font-bold uppercase mb-3 text-center leading-tight relative z-10">Digit match</p>
-            <div className="flex items-center gap-2 relative z-10">
-              <img src="/images/coin-prize-icon.png" alt="Coin" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+
+            <p className="text-white text-[10px] md:text-[11px] font-medium mb-4 text-center relative z-10">Digit match</p>
+
+            <div className="flex items-center gap-3 relative z-10">
+              <img src="/images/coin-prize-icon.png" alt="Coin" className="w-5 h-5 md:w-6 md:h-6 object-contain drop-shadow-md" />
               <div>
-                <p className="text-[#64748B] text-[8px] md:text-[9px] font-bold uppercase leading-none">Prize</p>
+                <p className="text-[#64748B] text-[8px] md:text-[9px] font-bold uppercase leading-none mb-0.5">Prize</p>
                 <p className="text-white text-[11px] md:text-[12px] font-bold leading-none">$3 000</p>
               </div>
             </div>
           </div>
 
-          {/* 5 Digit Match - Green */}
-          <div className="bg-[#1A2027] rounded-xl p-3 md:p-4 border border-[#65A30D]/30 flex flex-col items-center justify-center relative overflow-hidden h-[120px] md:h-[130px]">
-            <div className="absolute top-0 left-0 w-full h-[60px] bg-gradient-to-b from-[#65A30D]/20 to-transparent"></div>
-            <div className="w-[50px] md:w-[60px] h-[24px] md:h-[28px] bg-[#4D7C0F] rounded flex items-center justify-center mb-1.5 border border-[#84CC16] relative z-10">
-              <span className="text-[#13181D] text-[12px] md:text-[13px] font-bold">5</span>
+          {/* 5 Digit Match */}
+          <div className="bg-[#0b0e11] rounded-xl p-3 md:p-4 border border-[#1E262E] flex flex-col items-center justify-center relative overflow-hidden h-[130px] md:h-[140px] group">
+            <div className="absolute top-0 inset-x-0 h-[50px] bg-gradient-to-b from-[#84CC16]/30 to-transparent blur-xl"></div>
+
+            <div className="w-[50px] md:w-[60px] h-[26px] md:h-[30px] bg-gradient-to-b from-[#4D7C0F] to-[#A3E635] rounded-lg flex items-center justify-center mb-3 border-t border-[#BEFF25]/50 shadow-[0_4px_12px_rgba(0,0,0,0.3)] relative z-10">
+              <span className="text-[#0b0e11] text-[13px] md:text-[14px] font-black drop-shadow-sm">5</span>
             </div>
-            <p className="text-white text-[10px] md:text-[11px] font-bold uppercase mb-3 text-center leading-tight relative z-10">Digit match</p>
-            <div className="flex items-center gap-2 relative z-10">
-              <img src="/images/coin-prize-icon.png" alt="Coin" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+
+            <p className="text-white text-[10px] md:text-[11px] font-medium mb-4 text-center relative z-10">Digit match</p>
+
+            <div className="flex items-center gap-3 relative z-10">
+              <img src="/images/coin-prize-icon.png" alt="Coin" className="w-5 h-5 md:w-6 md:h-6 object-contain drop-shadow-md" />
               <div>
-                <p className="text-[#64748B] text-[8px] md:text-[9px] font-bold uppercase leading-none">Prize</p>
+                <p className="text-[#64748B] text-[8px] md:text-[9px] font-bold uppercase leading-none mb-0.5">Prize</p>
                 <p className="text-white text-[11px] md:text-[12px] font-bold leading-none">$50 000</p>
               </div>
             </div>
           </div>
 
-          {/* 6 Digit Match - Purple */}
-          <div className="bg-[#1A2027] rounded-xl p-3 md:p-4 border border-[#7E22CE]/30 flex flex-col items-center justify-center relative overflow-hidden h-[120px] md:h-[130px] col-span-2 md:col-span-1">
-            <div className="absolute top-0 left-0 w-full h-[60px] bg-gradient-to-b from-[#7E22CE]/20 to-transparent"></div>
-            <div className="w-[50px] md:w-[60px] h-[24px] md:h-[28px] bg-[#6B21A8] rounded flex items-center justify-center mb-1.5 border border-[#A855F7] relative z-10">
-              <span className="text-white text-[12px] md:text-[13px] font-bold">6</span>
+          {/* 6 Digit Match */}
+          <div className="bg-[#0b0e11] rounded-xl p-3 md:p-4 border border-[#1E262E] flex flex-col items-center justify-center relative overflow-hidden h-[130px] md:h-[140px] col-span-2 md:col-span-1 group">
+            <div className="absolute top-0 inset-x-0 h-[50px] bg-gradient-to-b from-[#A855F7]/30 to-transparent blur-xl"></div>
+
+            <div className="w-[50px] md:w-[60px] h-[26px] md:h-[30px] bg-gradient-to-b from-[#6B21A8] to-[#C084FC] rounded-lg flex items-center justify-center mb-3 border-t border-[#E879F9]/50 shadow-[0_4px_12px_rgba(0,0,0,0.3)] relative z-10">
+              <span className="text-white text-[13px] md:text-[14px] font-black drop-shadow-sm">6</span>
             </div>
-            <p className="text-white text-[10px] md:text-[11px] font-bold uppercase mb-3 text-center leading-tight relative z-10">Digit match</p>
-            <div className="flex items-center gap-2 relative z-10">
-              <img src="/images/coin-prize-icon.png" alt="Jackpot" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+
+            <p className="text-white text-[10px] md:text-[11px] font-medium mb-4 text-center relative z-10">Digit match</p>
+
+            <div className="flex items-center gap-3 relative z-10">
+              <img src="/images/coin-prize-icon.png" alt="Jackpot" className="w-5 h-5 md:w-6 md:h-6 object-contain drop-shadow-md" />
               <div>
-                <p className="text-[#64748B] text-[8px] md:text-[9px] font-bold uppercase leading-none">Prize</p>
+                <p className="text-[#64748B] text-[8px] md:text-[9px] font-bold uppercase leading-none mb-0.5">Prize</p>
                 <p className="text-white text-[11px] md:text-[12px] font-bold leading-none">Jackpot</p>
               </div>
             </div>
