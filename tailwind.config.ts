@@ -21,9 +21,10 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        'montserrat': ['Inter', 'var(--font-montserrat)', 'Montserrat', 'sans-serif'],
-        'gilroy': ['Inter', 'sans-serif'],
-        'sans': ['Inter', 'var(--font-montserrat)', 'Montserrat', 'sans-serif'],
+        'luckiest': ['Luckiest Guy', 'cursive'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'gilroy': ['Montserrat', 'sans-serif'], // Fallback to Montserrat since Gilroy is premium
+        'sans': ['Montserrat', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(circle at 50% 50%, var(--tw-gradient-stops))',

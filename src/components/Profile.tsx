@@ -7,6 +7,7 @@ import { Page } from '../types';
 import MobileNavbar from './MobileNavbar';
 import SupportTicketDetail from './SupportTicketDetail';
 import CreateTicket from './CreateTicket';
+import ReferAFriend from './ReferAFriend';
 
 interface ProfileProps {
   onLogout: () => void;
@@ -769,307 +770,36 @@ export default function Profile({ onLogout, onNavigate, currentPage }: ProfilePr
 
               {/* Refer a Friend Tab */}
               {activeTab === 'refer' && (
-                <>
-                  {/* Stats Cards */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-8">
-                    {/* Balance Card */}
-                    <div className="bg-[#1A2027] rounded-xl p-5 border border-[#242D36] hover:border-[#3A4651] transition-colors">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 h-8 bg-[#8FD811] rounded-lg flex items-center justify-center">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-[#A2B4C6] text-sm font-medium">Total balance</span>
-                      </div>
-                      <div className="text-2xl lg:text-3xl font-bold text-white">12 900 485</div>
-                    </div>
-
-                    {/* Spent Card */}
-                    <div className="bg-[#1A2027] rounded-xl p-5 border border-[#242D36] hover:border-[#3A4651] transition-colors">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 h-8 bg-[#FF6B35] rounded-lg flex items-center justify-center">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-[#A2B4C6] text-sm font-medium">Total spent</span>
-                      </div>
-                      <div className="text-2xl lg:text-3xl font-bold text-white">1 900</div>
-                    </div>
-
-                    {/* Tickets Card */}
-                    <div className="bg-[#1A2027] rounded-xl p-5 border border-[#242D36] hover:border-[#3A4651] transition-colors">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 h-8 bg-[#9A76FF] rounded-lg flex items-center justify-center">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-[#A2B4C6] text-sm font-medium">Purchasing tickets</span>
-                      </div>
-                      <div className="text-2xl lg:text-3xl font-bold text-white">24 569</div>
-                    </div>
-
-                    {/* Winnings Card */}
-                    <div className="bg-[#1A2027] rounded-xl p-5 border border-[#242D36] hover:border-[#3A4651] transition-colors">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 h-8 bg-[#FFD700] rounded-lg flex items-center justify-center">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 9l6 6 6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-[#A2B4C6] text-sm font-medium">Total winnings</span>
-                      </div>
-                      <div className="text-2xl lg:text-3xl font-bold text-white">1 699</div>
-                    </div>
-                  </div>
-
-                  {/* Profile Banner Image - Full Width */}
-                  <img
-                    src="/images/profile-bannner.png"
-                    alt="Profile Banner"
-                    className="w-full h-auto object-cover mb-8"
-                  />
-
-                  {/* Rewards Section */}
-                  <div className="mb-8">
-                    {/* Rewards You Can Earn */}
-                    <div className="bg-[#1A2027] rounded-xl p-6 border border-[#242D36] mb-8">
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-[#FF6B35] rounded-lg flex items-center justify-center">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-bold text-white">Rewards You Can Earn</h3>
-                            <p className="text-[#A2B4C6] text-sm">Unlock free tickets & USDT by inviting friends</p>
-                          </div>
-                        </div>
-
-                        {/* Progress Card - Right Side */}
-                        <div className="hidden lg:block bg-gradient-to-br from-[#FF6B35] to-[#FFB366] rounded-xl p-6 relative overflow-hidden" style={{ width: '320px' }}>
-                          {/* Background Banner Image */}
-                          <div className="absolute inset-0">
-                            <img
-                              src="/images/profile-bannner.png"
-                              alt="Profile Banner"
-                              className="w-full h-full object-cover rounded-xl"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B35]/70 to-[#FFB366]/60 rounded-xl"></div>
-                          </div>
-
-                          {/* Background coin decoration */}
-                          <div className="absolute top-4 right-4 w-12 h-12 bg-yellow-300/30 rounded-full blur-lg"></div>
-                          <div className="absolute bottom-2 left-4 w-8 h-8 bg-orange-300/30 rounded-full blur-md"></div>
-
-                          <div className="relative z-10 text-center text-white">
-                            <div className="w-16 h-16 mx-auto mb-3 bg-white/20 rounded-full flex items-center justify-center">
-                              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="white" />
-                              </svg>
-                            </div>
-                            <h4 className="text-lg font-bold mb-1">Invite 3 Friends & Get 2 Free Tickets</h4>
-                            <p className="text-white/80 text-sm mb-4">2 / 3 friends invited</p>
-
-                            {/* Progress bar */}
-                            <div className="w-full bg-white/20 rounded-full h-2 mb-4">
-                              <div className="bg-white h-2 rounded-full" style={{ width: '66%' }}></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Rewards Grid */}
-                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                        {/* 1 Friend Reward */}
-                        <div className="bg-[#242D36] rounded-xl p-4 text-center">
-                          <div className="w-12 h-12 mx-auto mb-3 bg-[#8FD811] rounded-lg flex items-center justify-center">
-                            <span className="text-[#253703] font-bold text-lg">1</span>
-                          </div>
-                          <div className="text-white font-medium text-sm mb-1">1 Friend</div>
-                          <div className="text-white font-medium text-sm mb-2">Invited</div>
-                          <div className="flex items-center justify-center gap-1 mb-2">
-                            <div className="w-4 h-4 bg-[#8FD811] rounded flex items-center justify-center">
-                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 6L9 17l-5-5" stroke="#253703" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
-                            </div>
-                            <span className="text-[#8FD811] font-bold text-xs">1 Free Ticket</span>
-                          </div>
-                        </div>
-
-                        {/* 3 Friend Reward */}
-                        <div className="bg-[#242D36] rounded-xl p-4 text-center">
-                          <div className="w-12 h-12 mx-auto mb-3 bg-[#FF6B35] rounded-lg flex items-center justify-center">
-                            <span className="text-white font-bold text-lg">3</span>
-                          </div>
-                          <div className="text-white font-medium text-sm mb-1">3 Friend</div>
-                          <div className="text-white font-medium text-sm mb-2">Invited</div>
-                          <div className="flex items-center justify-center gap-1 mb-2">
-                            <div className="w-4 h-4 bg-[#FF6B35] rounded flex items-center justify-center">
-                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 6L9 17l-5-5" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
-                            </div>
-                            <span className="text-[#FF6B35] font-bold text-xs">3 Free Ticket</span>
-                          </div>
-                        </div>
-
-                        {/* 5 Friend Reward */}
-                        <div className="bg-[#242D36] rounded-xl p-4 text-center">
-                          <div className="w-12 h-12 mx-auto mb-3 bg-[#9A76FF] rounded-lg flex items-center justify-center">
-                            <span className="text-white font-bold text-lg">5</span>
-                          </div>
-                          <div className="text-white font-medium text-sm mb-1">5 Friend</div>
-                          <div className="text-white font-medium text-sm mb-2">Invited</div>
-                          <div className="flex items-center justify-center gap-1 mb-2">
-                            <div className="w-4 h-4 bg-[#9A76FF] rounded flex items-center justify-center">
-                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 6L9 17l-5-5" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
-                            </div>
-                            <span className="text-[#9A76FF] font-bold text-xs">5 Free Ticket</span>
-                          </div>
-                        </div>
-
-                        {/* 10 Friend Reward */}
-                        <div className="bg-[#242D36] rounded-xl p-4 text-center">
-                          <div className="w-12 h-12 mx-auto mb-3 bg-[#9A76FF] rounded-lg flex items-center justify-center">
-                            <span className="text-white font-bold text-lg">10</span>
-                          </div>
-                          <div className="text-white font-medium text-sm mb-1">10 Friend</div>
-                          <div className="text-white font-medium text-sm mb-2">Invited</div>
-                          <div className="flex items-center justify-center gap-1 mb-2">
-                            <div className="w-4 h-4 bg-[#9A76FF] rounded flex items-center justify-center">
-                              <span className="text-white font-bold text-[8px]">$</span>
-                            </div>
-                            <span className="text-[#9A76FF] font-bold text-xs">$10 USDT</span>
-                          </div>
-                        </div>
-
-                        {/* 25 Friend Reward */}
-                        <div className="bg-[#242D36] rounded-xl p-4 text-center">
-                          <div className="w-12 h-12 mx-auto mb-3 bg-[#9A76FF] rounded-lg flex items-center justify-center">
-                            <span className="text-white font-bold text-lg">25</span>
-                          </div>
-                          <div className="text-white font-medium text-sm mb-1">25 Friend</div>
-                          <div className="text-white font-medium text-sm mb-2">Invited</div>
-                          <div className="flex items-center justify-center gap-1 mb-2">
-                            <div className="w-4 h-4 bg-[#00F2FF] rounded flex items-center justify-center">
-                              <span className="text-[#003A3D] font-bold text-[8px]">$</span>
-                            </div>
-                            <span className="text-[#00F2FF] font-bold text-xs">$30 USDT</span>
-                          </div>
-                          <div className="text-[#00F2FF] text-xs">12 tickets</div>
-                        </div>
-                      </div>
-
-                      {/* Mobile Progress Card */}
-                      <div className="lg:hidden mt-6 bg-gradient-to-br from-[#FF6B35] to-[#FFB366] rounded-xl p-6 relative overflow-hidden">
-                        {/* Background Banner Image */}
-                        <div className="absolute inset-0">
-                          <img
-                            src="/images/profile-bannner.png"
-                            alt="Profile Banner"
-                            className="w-full h-full object-cover rounded-xl"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B35]/70 to-[#FFB366]/60 rounded-xl"></div>
-                        </div>
-
-                        <div className="absolute top-4 right-4 w-12 h-12 bg-yellow-300/30 rounded-full blur-lg"></div>
-                        <div className="relative z-10 text-center text-white">
-                          <div className="w-16 h-16 mx-auto mb-3 bg-white/20 rounded-full flex items-center justify-center">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="white" />
-                            </svg>
-                          </div>
-                          <h4 className="text-lg font-bold mb-1">Invite 3 Friends & Get 2 Free Tickets</h4>
-                          <p className="text-white/80 text-sm mb-4">2 / 3 friends invited</p>
-
-                          <div className="w-full bg-white/20 rounded-full h-2 mb-4">
-                            <div className="bg-white h-2 rounded-full" style={{ width: '66%' }}></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Your Invited Friends */}
-                  <div className="bg-[#1A2027] rounded-xl p-6 border border-[#242D36]">
-                    <h2 className="text-lg font-bold text-white mb-6">Your Invited Friends</h2>
-
-                    {/* Table Header */}
-                    <div className="hidden md:grid grid-cols-4 gap-4 pb-4 border-b border-[#242D36] text-[#A2B4C6] text-sm font-medium">
-                      <div>User</div>
-                      <div>Date</div>
-                      <div>Total reward</div>
-                      <div>Ticket amount</div>
-                    </div>
-
-                    {/* Table Rows */}
-                    <div className="space-y-4 mt-4">
-                      {[1, 2, 3, 4, 5, 6].map((_, index) => (
-                        <div key={index} className="grid grid-cols-1 md:grid-cols-4 gap-4 py-3 text-sm">
-                          <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 bg-[#FF6B35] rounded-full flex items-center justify-center">
-                              <span className="text-white font-bold text-xs">J</span>
-                            </div>
-                            <div>
-                              <div className="text-white font-medium">james</div>
-                              <div className="text-[#A2B4C6] text-xs md:hidden">2 min ago</div>
-                            </div>
-                          </div>
-                          <div className="text-[#A2B4C6] hidden md:block">2 min ago</div>
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-[#8FD811] rounded-full"></div>
-                            <span className="text-[#8FD811] font-bold">+ 500 USD</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-[#8FD811] rounded-full"></div>
-                            <span className="text-white">2 tickets</span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* View More Button */}
-                    <div className="flex justify-center mt-6">
-                      <button className="px-6 py-3 bg-[#2A3441] border border-[#3A4651] rounded-lg text-[#A2B4C6] hover:text-white hover:bg-[#3A4651] transition-all font-medium">
-                        View more
-                      </button>
-                    </div>
-                  </div>
-                </>
+                <ReferAFriend />
               )}
-            </div>
-          </div>
+
+
+
+            </div >
+          </div >
 
           {/* Chat - Hidden on mobile/tablet, visible on desktop */}
-          <div className="hidden xl:block">
+          < div className="hidden xl:block" >
             <Chat />
-          </div>
-        </div>
+          </div >
+        </div >
 
         {/* Mobile Chat Button - Show on mobile only */}
-        <div className="xl:hidden border-t border-[#242D36] bg-[#13181D] p-3 sm:p-4">
+        < div className="xl:hidden border-t border-[#242D36] bg-[#13181D] p-3 sm:p-4" >
           <button className="w-full p-3 sm:p-4 text-left text-white font-bold text-sm sm:text-base bg-gradient-to-r from-[#9726E3] to-[#FF4B0F] rounded-lg hover:opacity-90 transition-opacity flex items-center justify-between">
             <span>💬 Open Chat</span>
             <span className="text-xs sm:text-sm opacity-80">544 online</span>
           </button>
-        </div>
-      </div>
+        </div >
+      </div >
 
       {/* Mobile Navbar */}
-      <MobileNavbar onNavigate={onNavigate} currentPage={currentPage} />
+      < MobileNavbar onNavigate={onNavigate} currentPage={currentPage} />
 
       {/* Footer - Add bottom padding for mobile navbar */}
-      <div className="pb-20 lg:pb-0">
+      < div className="pb-20 lg:pb-0" >
         <Footer />
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }

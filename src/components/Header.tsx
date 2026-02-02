@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { User } from '../types';
-import { TwitterIcon } from './SocialIcons';
 import { GameIcon, ChatQuestionIcon, CursorInfoIcon, CheckmarkBadgeIcon } from './Icons';
 import WalletModal from './WalletModal';
 import SignUpModal from './SignUpModal';
@@ -93,7 +92,10 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
             alt="Fox Logo"
             className="mr-1 sm:mr-2 md:mr-3 w-[40px] h-[14px] sm:w-[60px] sm:h-[22px] md:w-[80px] md:h-[29px] lg:w-[100px] lg:h-[36px] flex-shrink-0"
           />
-          <span className="text-[12px] sm:text-[16px] md:text-[20px] lg:text-[24px] xl:text-[28px] font-black text-[#FFFDF8] tracking-[-1%] font-sans whitespace-nowrap">
+          <span
+            className="text-[12px] sm:text-[16px] md:text-[20px] lg:text-[24px] xl:text-[28px] text-[#FFFDF8] tracking-[-1%] whitespace-nowrap lottery-logo"
+            style={{ fontFamily: "'Luckiest Guy', cursive" }}
+          >
             LOTTERY
           </span>
         </div>
@@ -180,21 +182,44 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
         {/* Wallet button */}
         <button
           onClick={handleWalletClick}
-          className="px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#1F1813] to-[#E36826] border border-[#FF833F] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-[#FFF0C4] hover:opacity-90 transition-opacity whitespace-nowrap"
+          className="hidden md:block px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#1F1813] to-[#E36826] border border-[#FF833F] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-[#FFF0C4] hover:opacity-90 transition-opacity whitespace-nowrap"
         >
           Wallet
         </button>
 
-        {/* Log out button */}
+        {/* Log in button */}
         <button
-          onClick={onLogout}
-          className="px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#1F1813] to-[#E36826] border border-[#FF833F] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-[#FFF0C4] hover:opacity-90 transition-opacity whitespace-nowrap"
+          className="px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-[#13181D] border border-[#2A3441] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-[#A2B4C6] hover:text-white hover:border-[#334155] transition-all whitespace-nowrap"
         >
-          Log out
+          Log in
+        </button>
+
+        {/* Sign up button */}
+        <button
+          onClick={() => setIsSignUpModalOpen(true)}
+          className="px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap shadow-[0_2px_10px_rgba(255,75,15,0.2)]"
+        >
+          Sign up
+        </button>
+
+        {/* Blue Icon (Globe/Network) */}
+        <button className="w-8 h-8 rounded-lg bg-gradient-to-b from-[#00C6FB] to-[#005BEA] flex items-center justify-center hover:opacity-90 transition-opacity">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M2 12H22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M12 2A15.3 15.3 0 0 1 16 12A15.3 15.3 0 0 1 12 22A15.3 15.3 0 0 1 8 12A15.3 15.3 0 0 1 12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
+        {/* Purple Icon (Discord/Chat) */}
+        <button className="w-8 h-8 rounded-lg bg-gradient-to-b from-[#9D50E5] to-[#58249F] flex items-center justify-center hover:opacity-90 transition-opacity">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
+          </svg>
         </button>
 
         {/* Gift Icon Highlight */}
-        <div className="relative group cursor-pointer hover:scale-105 transition-transform mx-0.5">
+        <div className="hidden md:block relative group cursor-pointer hover:scale-105 transition-transform mx-0.5">
           <img
             src="/images/gift-icon-removebg-preview.png"
             alt="Gift"
@@ -205,34 +230,12 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
         {/* Deposit button */}
         <button
           onClick={handleDepositClick}
-          className="px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap"
+          className="hidden md:block px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap"
         >
           Deposit
         </button>
 
-        {/* Social icons - Hidden on mobile */}
-        <div className="hidden md:flex gap-1 lg:gap-2 ml-1 lg:ml-2">
-          <div className="w-7 h-7 lg:w-9 lg:h-9 bg-gradient-to-b from-[#00AAFF] to-[#90DAFF] rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer">
-            <TwitterIcon className="w-3.5 h-3.5 lg:w-5 lg:h-5 text-white" />
-          </div>
 
-        </div>
-
-
-
-        {/* Profile image - Hidden on mobile */}
-        <div className="hidden sm:block w-7 h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 ml-1 sm:ml-2 flex-shrink-0">
-          <button
-            onClick={() => onNavigate && onNavigate('profile')}
-            className="w-full h-full rounded-full overflow-hidden hover:opacity-90 transition-opacity cursor-pointer border-2 border-transparent hover:border-[#FF4B0F]"
-          >
-            <img
-              src="/images/profile-avatar.png"
-              alt="Your Profile"
-              className="w-full h-full object-cover"
-            />
-          </button>
-        </div>
       </div>
 
       {/* Wallet Modal - Only show if not on awards page */}

@@ -43,147 +43,178 @@ export default function VerifyResults({ onLogout, onNavigate, currentPage }: Ver
           <div className="flex-1 overflow-y-auto pb-20 lg:pb-0">
             <div className="p-4 sm:p-6 lg:p-8">
               <div className="max-w-7xl mx-auto">
-                {/* Page Title */}
-                <div className="mb-6 lg:mb-8">
-                  <h1 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-2">
-                    Verify Results
-                  </h1>
-                  <p className="text-[#A2B4C6] text-sm lg:text-base">
-                    Check results on the website and compare them to blockchain
-                  </p>
-                </div>
-
-                {/* Verify Results Image */}
-                <div className="mb-8">
+                {/* Hero Section */}
+                <div className="mb-8 rounded-3xl overflow-hidden">
                   <img
                     src="/images/verify-t.png"
                     alt="Verify Results"
-                    className="w-full h-auto object-contain rounded-2xl"
+                    className="w-full h-auto object-cover"
                   />
                 </div>
 
-                {/* Filter Buttons */}
-                <div className="flex gap-4 mb-8 flex-wrap">
-                  <button className="px-4 py-2 bg-[#8FD811] text-[#253703] rounded-lg font-medium text-sm hover:opacity-90 transition-opacity">
-                    Select from the draw
-                  </button>
-                  <button className="px-4 py-2 bg-[#2A2F36] text-[#A2B4C6] rounded-lg font-medium text-sm hover:bg-[#3A3F46] hover:text-white transition-all">
-                    Select from the draw
-                  </button>
-                </div>
-
-                {/* Results Cards */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8">
-                  {/* First BTC Lottery Result */}
-                  <div className="bg-[#1A1F26] rounded-xl p-6 border border-[#2A2F36] hover:border-[#3A3F46] transition-colors">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-lg font-bold text-white">First BTC Lottery Result</h3>
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 bg-[#FF6B35] rounded flex items-center justify-center">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-[#FF6B35] font-bold">484302.44</span>
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      {/* Draw Info */}
-                      <div className="flex items-center gap-3">
-                        <span className="text-[#A2B4C6] text-sm">Draw</span>
-                        <span className="text-white font-medium">484302.44</span>
-                      </div>
-
-                      {/* Blockchain Hash */}
+                {/* Main Content Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] xl:grid-cols-[320px_1fr] gap-6">
+                  {/* Left Column: Search & Filter */}
+                  <div className="bg-[#1A1F26] rounded-2xl p-6 border border-[#242D36] h-fit">
+                    <div className="space-y-6">
+                      {/* Search Input */}
                       <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                          <span className="text-[#A2B4C6] text-sm">Blockchain hash</span>
-                        </div>
-                        <div className="bg-[#2A2F36] rounded-lg p-3 font-mono text-xs text-[#A2B4C6] break-all">
-                          00000000000000000002E6256258<br />
-                          DC5F99A4F7E8C4F79F2B004
+                        <label className="text-[#A2B4C6] text-xs font-bold uppercase tracking-wider">Search for the draw</label>
+                        <div className="relative">
+                          <input
+                            type="text"
+                            placeholder="Enter ID"
+                            className="w-full bg-[#13181D] border border-[#2A3441] rounded-lg px-4 py-3 text-white placeholder-[#525D68] focus:outline-none focus:border-[#FF4B0F] transition-colors"
+                          />
                         </div>
                       </div>
 
-                      {/* Winning Numbers */}
+                      {/* Select Dropdown */}
                       <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                          <span className="text-[#A2B4C6] text-sm">Winning 6-digit number</span>
-                        </div>
-                        <div className="flex gap-2">
-                          {[2, 5, 8, 6, 2, 0].map((num, index) => (
-                            <div key={index} className="w-8 h-8 bg-[#FF6B35] rounded flex items-center justify-center text-white font-bold text-sm">
-                              {num}
-                            </div>
-                          ))}
+                        <label className="text-[#A2B4C6] text-xs font-bold uppercase tracking-wider">Select from the draws</label>
+                        <div className="relative">
+                          <button className="w-full bg-[#13181D] border border-[#2A3441] rounded-lg px-4 py-3 text-white flex items-center justify-between hover:border-[#3A4651] transition-colors">
+                            <span className="font-bold">Draw</span>
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 1.5L6 6.5L11 1.5" stroke="#A2B4C6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Blockchain Result */}
-                  <div className="bg-[#1A1F26] rounded-xl p-6 border border-[#2A2F36] hover:border-[#3A3F46] transition-colors">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-lg font-bold text-white">Blockchain result</h3>
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 bg-[#FF6B35] rounded flex items-center justify-center">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  {/* Right Column: Results */}
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {/* First BTC Lottery Result */}
+                      <div className="bg-[#1A1F26] rounded-t-2xl md:rounded-tr-none md:rounded-l-2xl p-6 border border-[#242D36] relative overflow-hidden">
+                        <h3 className="text-white font-bold mb-6 flex items-center gap-2">
+                          First BTC Lottery Result
+                        </h3>
+
+                        <div className="space-y-5">
+                          {/* Block Number */}
+                          <div className="flex gap-4">
+                            <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" stroke="#FF6B35" strokeWidth="2" />
+                                <path d="M9 10a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z" stroke="#FF6B35" strokeWidth="2" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="text-[#A2B4C6] text-xs mb-1">Block #</div>
+                              <div className="text-white font-bold">494302-44</div>
+                            </div>
+                          </div>
+
+                          {/* Full Block Hash */}
+                          <div className="flex gap-4">
+                            <div className="w-10 h-10 bg-[#00D68F]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" stroke="#00D68F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </div>
+                            <div className="overflow-hidden">
+                              <div className="text-[#A2B4C6] text-xs mb-1">Full block hash</div>
+                              <div className="text-white font-mono text-xs break-all leading-relaxed">
+                                000000000000000000<br />
+                                DCB798A7FE3F22C381791C26DD4 <span className="text-[#FF6B35] bg-[#FF6B35]/10 px-1 rounded">5C4E2E</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Winning Number */}
+                          <div className="flex gap-4">
+                            <div className="w-10 h-10 bg-[#FFD700]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#FFD700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="text-[#A2B4C6] text-xs mb-2">Winning 6-digit number</div>
+                              <div className="flex gap-1">
+                                {['J', '4', 'b', '6', 'J', '0'].map((char, i) => (
+                                  <div key={i} className={`w-8 h-8 ${isNaN(Number(char)) ? 'bg-[#2A3441] text-[#A2B4C6]' : 'bg-[#2A3441] text-[#8FD811]'} rounded flex items-center justify-center font-bold text-sm border border-[#3A4651]`}>
+                                    {char}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Blockchain Result */}
+                      <div className="bg-[#1A1F26] md:rounded-tr-2xl md:rounded-bl-none p-6 border border-[#242D36] border-l-0 relative overflow-hidden">
+                        <h3 className="text-white font-bold mb-6 flex items-center gap-2">
+                          Blockchain result
+                        </h3>
+
+                        <div className="space-y-5">
+                          {/* Block Number */}
+                          <div className="flex gap-4">
+                            <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" stroke="#FF6B35" strokeWidth="2" />
+                                <path d="M9 10a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z" stroke="#FF6B35" strokeWidth="2" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="text-[#A2B4C6] text-xs mb-1">Block #</div>
+                              <div className="text-white font-bold">494302-44</div>
+                            </div>
+                          </div>
+
+                          {/* Full Block Hash */}
+                          <div className="flex gap-4">
+                            <div className="w-10 h-10 bg-[#A2B4C6]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" stroke="#A2B4C6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </div>
+                            <div className="overflow-hidden">
+                              <div className="text-[#A2B4C6] text-xs mb-1">Full block hash</div>
+                              <div className="text-white font-mono text-xs break-all leading-relaxed">
+                                000000000000000000<br />
+                                DCB798A7FE3F22C381791C26DD4 <span className="text-[#FF6B35] bg-[#FF6B35]/10 px-1 rounded">5C4E2E</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Winning Number */}
+                          <div className="flex gap-4">
+                            <div className="w-10 h-10 bg-[#FFD700]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#FFD700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="text-[#A2B4C6] text-xs mb-2">Winning 6-digit number</div>
+                              <div className="flex gap-1">
+                                {['J', '4', 'b', '6', 'J', '0'].map((char, i) => (
+                                  <div key={i} className={`w-8 h-8 ${isNaN(Number(char)) ? 'bg-[#2A3441] text-[#A2B4C6]' : 'bg-[#2A3441] text-[#8FD811]'} rounded flex items-center justify-center font-bold text-sm border border-[#3A4651]`}>
+                                    {char}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Verified Footer */}
+                    <div className="bg-[#2A3441]/50 border border-[#8FD811]/30 rounded-b-2xl md:rounded-2xl p-4 flex items-center justify-center md:col-span-2">
+                      <div className="flex items-center gap-2 text-[#8FD811]">
+                        <div className="w-5 h-5 bg-[#8FD811] rounded-full flex items-center justify-center">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#13181D" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
                           </svg>
                         </div>
-                        <span className="text-[#FF6B35] font-bold">484302.44</span>
+                        <span className="font-bold">Last 6 digit match - block verified</span>
                       </div>
                     </div>
-
-                    <div className="space-y-4">
-                      {/* Block Info */}
-                      <div className="flex items-center gap-3">
-                        <span className="text-[#A2B4C6] text-sm">Block #</span>
-                        <span className="text-white font-medium">484302.44</span>
-                      </div>
-
-                      {/* Blockchain Hash */}
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
-                          <span className="text-[#A2B4C6] text-sm">Blockchain hash</span>
-                        </div>
-                        <div className="bg-[#2A2F36] rounded-lg p-3 font-mono text-xs text-[#A2B4C6] break-all">
-                          00000000000000000002E6256258<br />
-                          DC5F99A4F7E8C4F79F2B004
-                        </div>
-                      </div>
-
-                      {/* Winning Numbers */}
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                          <span className="text-[#A2B4C6] text-sm">Winning 6-digit number</span>
-                        </div>
-                        <div className="flex gap-2">
-                          {[2, 5, 8, 6, 2, 0].map((num, index) => (
-                            <div key={index} className="w-8 h-8 bg-[#FF6B35] rounded flex items-center justify-center text-white font-bold text-sm">
-                              {num}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Verification Status */}
-                <div className="bg-[#1A1F26] rounded-xl p-6 border border-[#2A2F36] mb-8">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 6L9 17l-5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                    <span className="text-green-400 font-bold text-lg">Last 6 digits match - block verified</span>
                   </div>
                 </div>
               </div>
@@ -216,7 +247,7 @@ export default function VerifyResults({ onLogout, onNavigate, currentPage }: Ver
             <div className="sm:col-span-2 lg:col-span-1">
               <div className="flex items-center mb-3 sm:mb-4">
                 <img src="/images/fox-logo.svg" alt="Fox Logo" className="w-6 h-6 sm:w-8 sm:h-8 mr-2" />
-                <span className="text-lg sm:text-xl font-bold text-white font-sans">LOTTERY</span>
+                <span className="text-lg sm:text-xl font-bold text-white font-luckiest">LOTTERY</span>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
                 Experience the thrill of winning with Fox Lottery. Fair, transparent, and exciting lottery games with amazing prizes.

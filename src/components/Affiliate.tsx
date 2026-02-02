@@ -93,8 +93,8 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                       setIsMobileSidebarOpen(false);
                     }}
                     className={`w-full h-14 sm:h-16 rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all ${currentPage === 'home'
-                        ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
-                        : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
+                      : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
                       }`}
                   >
                     <img src="/images/home-icon.png" alt="Home" className="w-6 h-6 sm:w-7 sm:h-7 object-contain" />
@@ -108,8 +108,8 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                       setIsMobileSidebarOpen(false);
                     }}
                     className={`w-full h-14 sm:h-16 rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all ${currentPage === 'lottery'
-                        ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
-                        : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
+                      : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
                       }`}
                   >
                     <img src="/images/lottery-icon.png" alt="Lottery" className="w-6 h-6 sm:w-7 sm:h-7 object-contain" />
@@ -123,8 +123,8 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                       setIsMobileSidebarOpen(false);
                     }}
                     className={`w-full h-14 sm:h-16 rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all ${currentPage === 'results'
-                        ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
-                        : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
+                      : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
                       }`}
                   >
                     <img src="/images/checkmark-badge-icon.svg" alt="Results" className="w-6 h-6 sm:w-7 sm:h-7 object-contain" />
@@ -138,8 +138,8 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                       setIsMobileSidebarOpen(false);
                     }}
                     className={`w-full h-14 sm:h-16 rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all ${currentPage === 'leaders'
-                        ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
-                        : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
+                      : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
                       }`}
                   >
                     <img src="/images/champion-icon.svg" alt="Leaders" className="w-6 h-6 sm:w-7 sm:h-7 object-contain" />
@@ -153,8 +153,8 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                       setIsMobileSidebarOpen(false);
                     }}
                     className={`w-full h-14 sm:h-16 rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all ${currentPage === 'affiliate'
-                        ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
-                        : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
+                      : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
                       }`}
                   >
                     <img src="/images/user-multiple-icon.svg" alt="Affiliate" className="w-6 h-6 sm:w-7 sm:h-7 object-contain" />
@@ -168,8 +168,8 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                       setIsMobileSidebarOpen(false);
                     }}
                     className={`w-full h-14 sm:h-16 rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all ${currentPage === 'faq'
-                        ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
-                        : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] shadow-lg'
+                      : 'bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-gray-700 hover:border-gray-600'
                       }`}
                   >
                     <img src="/images/chat-question-icon.svg" alt="FAQ" className="w-6 h-6 sm:w-7 sm:h-7 object-contain" />
@@ -232,13 +232,13 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
 
                   {/* Form Section */}
                   <div className="flex-1 min-w-0 w-full max-w-lg">
-                    <div className="bg-[#11161B] border border-[#25253F] rounded-lg p-2 sm:p-3 md:p-4 w-full" style={{
+                    <div className="bg-[#11161B] border border-[#25253F] rounded-lg p-3 sm:p-4 md:p-5 w-full h-auto lg:h-[480px] xl:h-[520px] 2xl:h-[560px] flex flex-col justify-center" style={{
                       background: 'linear-gradient(180deg, rgba(37, 37, 63, 1) 0%, rgba(62, 65, 89, 1) 100%)',
                       boxShadow: '0px 2px 0px 0px rgba(40, 40, 69, 0.37)'
                     }}>
                       {/* Form Header */}
-                      <div className="flex justify-between items-center mb-3 sm:mb-4">
-                        <h2 className="text-sm sm:text-base md:text-lg font-bold text-white leading-tight">Apply for Affiliate program</h2>
+                      <div className="flex justify-between items-center mb-2 sm:mb-3">
+                        <h2 className="text-sm sm:text-base font-bold text-white leading-tight">Apply for Affiliate program</h2>
                         <button className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-[#D0D2E9] rounded-md flex items-center justify-center flex-shrink-0 hover:bg-[#B8BAD1] transition-colors">
                           <svg width="10" height="10" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="sm:w-2.5 sm:h-2.5 md:w-3 md:h-3">
                             <path d="M12 4L4 12M4 4L12 12" stroke="#525D68" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -251,23 +251,23 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                         {/* First Row - First Name & Last Name */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
                           <div className="space-y-1">
-                            <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">First name</label>
+                            <label className="text-[11px] sm:text-xs font-semibold text-[#A2B4C6] tracking-tight block">First name</label>
                             <input
                               type="text"
                               placeholder="Enter name"
                               value={formData.firstName}
                               onChange={(e) => handleInputChange('firstName', e.target.value)}
-                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-3 py-2 text-xs font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                             />
                           </div>
                           <div className="space-y-1">
-                            <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Last name</label>
+                            <label className="text-[11px] sm:text-xs font-semibold text-[#A2B4C6] tracking-tight block">Last name</label>
                             <input
                               type="text"
                               placeholder="Enter name"
                               value={formData.lastName}
                               onChange={(e) => handleInputChange('lastName', e.target.value)}
-                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-3 py-2 text-xs font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                             />
                           </div>
                         </div>
@@ -275,23 +275,23 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                         {/* Second Row - Mobile Phone & WhatsApp */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
                           <div className="space-y-1">
-                            <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Mobile phone</label>
+                            <label className="text-[11px] sm:text-xs font-semibold text-[#A2B4C6] tracking-tight block">Mobile phone</label>
                             <input
                               type="tel"
                               placeholder="Enter number"
                               value={formData.mobilePhone}
                               onChange={(e) => handleInputChange('mobilePhone', e.target.value)}
-                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-3 py-2 text-xs font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                             />
                           </div>
                           <div className="space-y-1">
-                            <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Whatsapp</label>
+                            <label className="text-[11px] sm:text-xs font-semibold text-[#A2B4C6] tracking-tight block">Whatsapp</label>
                             <input
                               type="tel"
                               placeholder="Enter number"
                               value={formData.whatsapp}
                               onChange={(e) => handleInputChange('whatsapp', e.target.value)}
-                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-3 py-2 text-xs font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                             />
                           </div>
                         </div>
@@ -299,13 +299,13 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                         {/* Third Row - Telegram */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
                           <div className="space-y-1">
-                            <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Telegram</label>
+                            <label className="text-[11px] sm:text-xs font-semibold text-[#A2B4C6] tracking-tight block">Telegram</label>
                             <input
                               type="text"
                               placeholder="Enter telegram"
                               value={formData.telegram}
                               onChange={(e) => handleInputChange('telegram', e.target.value)}
-                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-3 py-2 text-xs font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                             />
                           </div>
                           <div className="hidden md:block"></div>
@@ -314,59 +314,59 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                         {/* Fourth Row - Website & Email */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
                           <div className="space-y-1">
-                            <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Website</label>
+                            <label className="text-[11px] sm:text-xs font-semibold text-[#A2B4C6] tracking-tight block">Website</label>
                             <input
                               type="url"
                               placeholder="Enter website"
                               value={formData.website}
                               onChange={(e) => handleInputChange('website', e.target.value)}
-                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-3 py-2 text-xs font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                             />
                           </div>
                           <div className="space-y-1">
-                            <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">E-mail</label>
+                            <label className="text-[11px] sm:text-xs font-semibold text-[#A2B4C6] tracking-tight block">E-mail</label>
                             <input
                               type="email"
                               placeholder="Enter e-mail"
                               value={formData.email}
                               onChange={(e) => handleInputChange('email', e.target.value)}
-                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-3 py-2 text-xs font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                             />
                           </div>
                         </div>
 
                         {/* Fifth Row - How do you plan to promote */}
                         <div className="space-y-1">
-                          <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">How do you plan to promote?</label>
+                          <label className="text-[11px] sm:text-xs font-semibold text-[#A2B4C6] tracking-tight block">How do you plan to promote?</label>
                           <input
                             type="text"
                             placeholder="Enter Subject"
                             value={formData.promotion}
                             onChange={(e) => handleInputChange('promotion', e.target.value)}
-                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                            className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-3 py-2 text-xs font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                           />
                         </div>
 
                         {/* Sixth Row - Password & Repeat Password */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
                           <div className="space-y-1">
-                            <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Password</label>
+                            <label className="text-[11px] sm:text-xs font-semibold text-[#A2B4C6] tracking-tight block">Password</label>
                             <input
                               type="password"
                               placeholder="Enter here"
                               value={formData.password}
                               onChange={(e) => handleInputChange('password', e.target.value)}
-                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-3 py-2 text-xs font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                             />
                           </div>
                           <div className="space-y-1">
-                            <label className="text-xs font-semibold text-[#A2B4C6] tracking-tight block">Repeat password</label>
+                            <label className="text-[11px] sm:text-xs font-semibold text-[#A2B4C6] tracking-tight block">Repeat password</label>
                             <input
                               type="password"
                               placeholder="Enter here"
                               value={formData.repeatPassword}
                               onChange={(e) => handleInputChange('repeatPassword', e.target.value)}
-                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
+                              className="w-full bg-[#1E242A] border border-[#2A3441] rounded-md px-3 py-2 text-xs font-bold text-white placeholder-[#525D68] focus:outline-none focus:ring-1 focus:ring-[#FF4B0F] focus:border-[#FF4B0F] transition-all"
                             />
                           </div>
                         </div>
@@ -375,7 +375,7 @@ export default function Affiliate({ onLogout, onNavigate, currentPage }: Affilia
                         <div className="pt-2 sm:pt-3">
                           <button
                             onClick={handleSubmit}
-                            className="w-full bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-md px-3 py-2.5 sm:py-3 text-xs sm:text-sm font-extrabold text-white hover:opacity-90 transition-all active:scale-95 shadow-lg"
+                            className="w-full bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-md px-3 py-3 text-xs sm:text-sm font-extrabold text-white hover:opacity-90 transition-all active:scale-95 shadow-lg"
                           >
                             Send Request
                           </button>

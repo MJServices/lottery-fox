@@ -278,29 +278,29 @@ const LotteryCardComponent = ({ card }: { card: LotteryCard }) => {
     switch (status) {
       case 'Active':
         return {
-          container: 'border-[#BEFF25] shadow-[0_0_20px_rgba(190,255,37,0.15)] bg-[#BEFF25]/[0.02]',
+          container: 'border-[#BEFF25] shadow-[0_0_20px_rgba(190,255,37,0.25)] bg-gradient-to-b from-[#BEFF25]/20 to-[#BEFF25]/5',
           badge: 'bg-[#BEFF25] text-[#13181D]',
           button: 'bg-[#BEFF25] hover:bg-[#a3d91d] text-[#13181D] shadow-[0_4px_0_0_#8fb810]',
           buttonText: 'Participate',
-          glow: 'from-[#BEFF25]/40 via-[#BEFF25]/10 to-transparent',
+          glow: 'from-[#BEFF25]/60 via-[#BEFF25]/10 to-transparent',
           badgeText: 'ACTIVE'
         };
       case 'Expired':
         return {
-          container: 'border-[#242D36] bg-[#1A1F26]',
-          badge: 'bg-[#2A3441] text-[#94A3B8]',
+          container: 'border-[#334155] bg-gradient-to-b from-[#334155]/20 to-[#1A1F26]',
+          badge: 'bg-[#334155] text-[#94A3B8]',
           button: 'bg-[#1F2937] text-[#64748B] cursor-not-allowed border border-[#2A3441]',
           buttonText: 'Result pending',
-          glow: '',
+          glow: 'from-[#475569]/20 to-transparent',
           badgeText: 'EXPIRED'
         };
       case 'Next round':
         return {
-          container: 'border-[#9333EA] shadow-[0_0_20px_rgba(147,51,234,0.2)] bg-[#9333EA]/[0.02]',
-          badge: 'bg-[#9333EA] text-white',
+          container: 'border-[#A855F7] shadow-[0_0_20px_rgba(168,85,247,0.25)] bg-gradient-to-b from-[#A855F7]/20 to-[#A855F7]/5',
+          badge: 'bg-[#A855F7] text-white',
           button: 'bg-[#BEFF25] hover:bg-[#a3d91d] text-[#13181D] shadow-[0_4px_0_0_#8fb810]',
           buttonText: 'Participate',
-          glow: 'from-[#9333EA]/40 via-[#9333EA]/10 to-transparent',
+          glow: 'from-[#A855F7]/60 via-[#A855F7]/10 to-transparent',
           badgeText: 'NEXT ROUND'
         };
       case 'Coming soon':

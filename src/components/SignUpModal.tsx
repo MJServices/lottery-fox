@@ -1,5 +1,7 @@
 
 
+import { createPortal } from 'react-dom';
+
 interface SignUpModalProps {
     isOpen: boolean;
     onClose: () => void;
@@ -8,8 +10,8 @@ interface SignUpModalProps {
 export default function SignUpModal({ isOpen, onClose }: SignUpModalProps) {
     if (!isOpen) return null;
 
-    return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    return createPortal(
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
             {/* Modal Container - Aggressively Reduced Size */}
             <div className="w-full max-w-[750px] h-auto max-h-[85vh] bg-[#1a1f26] rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl relative animate-fadeIn">
 
@@ -121,6 +123,7 @@ export default function SignUpModal({ isOpen, onClose }: SignUpModalProps) {
                     </form>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 }
