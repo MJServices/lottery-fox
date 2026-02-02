@@ -390,8 +390,28 @@ export default function Results({ onLogout, onNavigate, currentPage }: ResultsPr
         <div className="flex-1 flex flex-col xl:flex-row">
           {/* Results Content */}
           <div className="flex-1 p-4 lg:p-6 xl:p-8">
+            {/* Banner Section */}
+            {/* Banner Section */}
+            <div className="w-full mb-8 rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src="/images/banner.png"
+                alt="Lottery Fox Banner"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            {/* Live & Upcoming Header */}
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <div className="text-[#BEFF25]">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+              </div>
+              <span className="text-white font-black text-lg tracking-wide">Live & Upcoming</span>
+            </div>
+
             {/* Tabs */}
-            <div className="flex justify-center mb-8 bg-[#0b0e11] pt-4">
+            <div className="flex justify-center mb-8 pt-0">
               <div className="flex gap-12">
                 {[
                   { id: 'completed', label: 'Completed' },

@@ -97,24 +97,23 @@ export default function ReferAFriend() {
 
                     <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
                         {[
-                            { friends: 1, type: '1 Free Ticket', active: true },
-                            { friends: 3, type: '2 Free Ticket', active: true, current: true },
-                            { friends: 5, type: '3 Free Ticket', active: false },
-                            { friends: 10, type: '$10 USDT', active: false },
-                            { friends: 25, type: '$30 USDT + 2 tickets', active: false },
+                            { friends: 1, type: '1 Free Ticket', active: true, color: 'bg-[#00C3FF]' },
+                            { friends: 3, type: '2 Free Ticket', active: true, current: true, color: 'bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F]' },
+                            { friends: 5, type: '3 Free Ticket', active: false, color: 'bg-gradient-to-b from-[#1A131F] to-[#9726E3]' },
+                            { friends: 10, type: '$10 USDT', active: false, color: 'bg-gradient-to-b from-[#1A131F] to-[#9726E3]' },
+                            { friends: 25, type: '$30 USDT+2 tickets', active: false, color: 'bg-gradient-to-b from-[#1A131F] to-[#9726E3]' },
                         ].map((reward, i) => (
                             <div key={i} className={`flex-shrink-0 min-w-[140px] p-3 rounded-lg border ${reward.current ? 'bg-[#FF4B0F]/10 border-[#FF4B0F]' : 'bg-[#2A3441] border-[#3A4651]'
                                 }`}>
                                 <div className="flex items-center gap-2 mb-2">
-                                    <div className={`w-8 h-8 rounded flex items-center justify-center ${reward.active ? 'bg-[#9726E3]' : 'bg-[#3A4651]'
-                                        }`}>
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /></svg>
+                                    <div className={`w-8 h-8 rounded flex items-center justify-center ${reward.color}`}>
+                                        <img src="/images/result-profile.png" alt="Profile" className="w-5 h-5 object-contain brightness-0 invert" />
                                     </div>
-                                    <div className="text-[10px] font-bold text-white leading-tight">
+                                    <div className="text-xs font-bold text-white leading-tight">
                                         {reward.friends} friend<br />invited
                                     </div>
                                 </div>
-                                <div className={`px-2 py-1 rounded text-[10px] font-bold inline-flex items-center gap-1 ${reward.current ? 'bg-[#FF4B0F] text-white' : reward.active ? 'bg-[#8FD811] text-[#13181D]' : 'bg-[#13181D] text-[#A2B4C6]'
+                                <div className={`px-2 py-1 rounded text-xs font-bold inline-flex items-center gap-1 ${reward.current ? 'bg-[#FF4B0F] text-white' : reward.active ? 'bg-[#8FD811] text-[#13181D]' : 'bg-[#13181D] text-[#A2B4C6]'
                                     }`}>
                                     <span>🎟️</span> {reward.type}
                                 </div>
