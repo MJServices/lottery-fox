@@ -195,12 +195,19 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
         </button>
 
         {/* Sign up button */}
-        <button
-          onClick={() => setIsSignUpModalOpen(true)}
-          className="px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap shadow-[0_2px_10px_rgba(255,75,15,0.2)]"
-        >
-          Sign up
-        </button>
+        <div className="relative inline-block">
+          <img
+            src="/images/gift-icon-removebg-preview.png"
+            alt="Gift"
+            className="absolute -left-2 -top-2.5 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 object-contain z-10 pointer-events-none drop-shadow-[0_0_8px_rgba(255,165,0,0.6)]"
+          />
+          <button
+            onClick={() => setIsSignUpModalOpen(true)}
+            className="px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap shadow-[0_2px_10px_rgba(255,75,15,0.2)]"
+          >
+            Sign up
+          </button>
+        </div>
 
         {/* Blue Icon (Globe/Network) */}
         <button className="w-8 h-8 rounded-lg bg-gradient-to-b from-[#00C6FB] to-[#005BEA] flex items-center justify-center hover:opacity-90 transition-opacity">
@@ -218,14 +225,7 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
           </svg>
         </button>
 
-        {/* Gift Icon Highlight */}
-        <div className="hidden md:block relative group cursor-pointer hover:scale-105 transition-transform mx-0.5">
-          <img
-            src="/images/gift-icon-removebg-preview.png"
-            alt="Gift"
-            className="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-[0_0_8px_rgba(255,165,0,0.6)] animate-pulse"
-          />
-        </div>
+
 
         {/* Deposit button */}
         <button
