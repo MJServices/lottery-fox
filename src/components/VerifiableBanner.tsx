@@ -2,7 +2,7 @@
 
 const VerifiableBanner = () => {
     return (
-        <div className="w-full relative overflow-hidden rounded-xl bg-gradient-to-r from-[#3E7B06] to-[#60AA0D] p-4 flex items-center justify-between shadow-lg border border-[#6ABF10]/30 min-h-[80px]">
+        <div className="w-full relative overflow-hidden rounded-[20px] bg-gradient-to-r from-[#3E7B06] to-[#60AA0D] p-4 flex items-center justify-between shadow-lg border border-[#6ABF10]/30 min-h-[80px]">
             {/* Background Decorative Elements */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
@@ -18,9 +18,9 @@ const VerifiableBanner = () => {
                 {/* Center Image (Absolute positioned to overlap slightly or flow naturally) */}
                 {/* Using absolute positioning to center it visually if needed, or flex. 
             Based on screenshot, it sits between text and button. */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none">
+                <div className="flex items-center justify-center pointer-events-none flex-shrink-0 mx-2">
                     <img
-                        src="/images/checkmark-badge-icon.svg"
+                        src="/images/verify-label.png"
                         alt="Verifiable Badge"
                         className="h-16 w-16 md:h-20 md:w-20 object-contain drop-shadow-xl filter brightness-110"
                     />

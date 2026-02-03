@@ -28,7 +28,7 @@ export default function MainContent() {
         {/* Right Column */}
         <div className="xl:col-span-1 flex flex-col gap-4 md:gap-6 w-full max-w-full">
           {/* Lucky Hour Card - 100% Accurate Figma Design */}
-          <div className="hidden lg:block w-full overflow-hidden">
+          <div className="hidden lg:block w-full overflow-hiddn">
             <LuckyHourCard />
           </div>
 
