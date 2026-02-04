@@ -566,7 +566,7 @@ export default function Lottery({ onLogout, onNavigate, currentPage }: LotteryPr
             <div className="relative mb-6 sm:mb-8 w-full">
               {/* Banner Background Image - Full width */}
               <img
-                src="/images/lottery-banner.png"
+                src="/images/lottery-hero-main.png"
                 alt="Lottery Banner"
                 className="w-full h-auto rounded-xl"
                 style={{

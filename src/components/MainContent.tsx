@@ -6,11 +6,11 @@ import LotteryRounds from './LotteryRounds';
 
 export default function MainContent() {
   return (
-    <main className="flex-1 bg-[#13181D] p-3 md:p-4 lg:p-6 overflow-x-hidden">
+    <main className="flex-1 bg-[#13181D] p-3 md:p-4 lg:py-6 lg:pl-2 lg:pr-2 overflow-x-hidden">
       {/* Main Content Grid - Responsive Layout */}
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8 w-full">
+      <div className="grid grid-cols-1 xl:grid-cols-5 gap-1 mb-6 md:mb-8 w-full">
         {/* Left Column - Main Lottery Card + Bitcoin Block */}
-        <div className="xl:col-span-2 w-full max-w-full overflow-hidden space-y-4 md:space-y-6">
+        <div className="xl:col-span-3 w-full max-w-full overflow-hidden space-y-4 md:space-y-6">
 
           {/* Coded Hero Component - Visible on ALL devices */}
           <div className="w-full">
@@ -26,47 +26,43 @@ export default function MainContent() {
         </div>
 
         {/* Right Column */}
-        <div className="xl:col-span-1 flex flex-col gap-4 md:gap-6 w-full max-w-full">
+        <div className="xl:col-span-2 flex flex-col gap-2 w-full max-w-full">
           {/* Lucky Hour Card - 100% Accurate Figma Design */}
           <div className="hidden lg:block w-full overflow-hiddn">
             <LuckyHourCard />
           </div>
 
           {/* Latest Bitcoin Block - Positioned in Right Column */}
-          <div className="bg-[#1A1F26] rounded-xl p-4 border border-[#2A3441] relative overflow-hidden w-full min-h-[140px] flex flex-col justify-between group shadow-lg">
+          <div className="bg-[#1A1F26] rounded-xl p-4 border border-[#2A3441] relative overflow-hidden w-full min-h-[110px] flex flex-col justify-between group shadow-lg">
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#FFB366] to-transparent opacity-[0.07] rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
             {/* New Green Gradient for Verify Button Area */}
             <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#BEFF25] opacity-[0.25] rounded-full blur-3xl -mr-12 -mb-12 pointer-events-none"></div>
 
-            {/* Floating Coins - Decorative */}
-            <div className="absolute top-4 right-8 w-8 h-8 animate-pulse pointer-events-none z-0" style={{ animationDuration: '3s' }}>
-              <img src="/images/awards-coin-1.png" alt="" className="w-full h-full object-contain opacity-90 rotate-12 drop-shadow-lg" />
+            {/* Floating Bitcoins - Decorative */}
+            {/* Top Left Coin - Large & Blurred */}
+            <div className="absolute top-2 right-24 w-12 h-12 animate-pulse pointer-events-none z-0" style={{ animationDuration: '4s' }}>
+              <img src="/images/awards-coin-1.png" alt="" className="w-full h-full object-contain opacity-60 -rotate-[30deg] blur-[1px]" />
             </div>
-            <div className="absolute bottom-6 right-24 w-10 h-10 animate-bounce pointer-events-none z-0" style={{ animationDuration: '4s' }}>
-              <img src="/images/awards-coin-2.png" alt="" className="w-full h-full object-contain drop-shadow-xl -rotate-12 opacity-80" />
+            {/* Middle Coin - Small & Sharp */}
+            <div className="absolute top-14 right-14 w-5 h-5 animate-bounce pointer-events-none z-0" style={{ animationDuration: '5s' }}>
+              <img src="/images/awards-coin-1.png" alt="" className="w-full h-full object-contain opacity-90 rotate-12 drop-shadow-md" />
             </div>
-            {/* New Coins */}
-            <div className="absolute top-12 right-2 w-6 h-6 animate-pulse pointer-events-none z-0" style={{ animationDuration: '5s' }}>
-              <img src="/images/awards-coin-1.png" alt="" className="w-full h-full object-contain opacity-60 -rotate-45 blur-[1px]" />
-            </div>
-            <div className="absolute -bottom-2 right-12 w-12 h-12 animate-bounce pointer-events-none z-0" style={{ animationDuration: '6s' }}>
-              <img src="/images/awards-coin-2.png" alt="" className="w-full h-full object-contain opacity-40 rotate-45 blur-[2px]" />
-            </div>
-            <div className="absolute top-16 right-36 w-8 h-8 animate-pulse pointer-events-none z-0" style={{ animationDuration: '7s' }}>
-              <img src="/images/awards-coin-1.png" alt="" className="w-full h-full object-contain opacity-20 -rotate-12 blur-[1px]" />
+            {/* Bottom Coin - Large & Prominent */}
+            <div className="absolute -bottom-2 right-20 w-14 h-14 animate-pulse pointer-events-none z-0" style={{ animationDuration: '3s' }}>
+              <img src="/images/awards-coin-1.png" alt="" className="w-full h-full object-contain opacity-100 rotate-[15deg] drop-shadow-xl" />
             </div>
 
             <div className="relative z-10 font-sans w-full">
 
               {/* Block Number & Label */}
-              <div className="mb-6 relative">
+              <div className="mb-1 relative">
                 <div className="text-white text-[21px] md:text-[24px] font-black tracking-tight leading-none drop-shadow-md">
                   4390J3
                 </div>
                 <div className="flex items-center gap-2 mb-1 opacity-80 m-1 ">
-                  <h3 className="text-[#A2B4C6] text-[11px] font-bold uppercase tracking-[0.2em] ">LATEST BITCOIN BLOCK #</h3>
+                  <h3 className="text-[#A2B4C6] text-[11px] font-extrabold uppercase tracking-[0.1em] ">LATEST BITCOIN BLOCK #</h3>
                 </div>
               </div>
 
@@ -89,14 +85,6 @@ export default function MainContent() {
 
                 {/* Live & Verify - Stacked Right */}
                 <div className="flex flex-col items-end gap-2 mb-0.5">
-                  <div className="flex items-center gap-1 bg-[#BEFF25]/10 px-1.5 py-0.5 rounded-full border border-[#BEFF25]/20">
-                    <div className="relative flex h-1 w-1">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#BEFF25] opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-1 w-1 bg-[#BEFF25]"></span>
-                    </div>
-                    <span className="text-[#BEFF25] text-[7px] font-bold uppercase tracking-wider">Live</span>
-                  </div>
-
                   <button className="bg-[#BEFF25] hover:bg-[#aef50a] text-[#13181D] px-3 py-1.5 rounded-lg text-[8px] font-extrabold shadow-[0_2px_0_0_#8fb810] transition-all hover:-translate-y-0.5 active:translate-y-0 active:shadow-none uppercase tracking-wider min-w-[60px]">
                     Verify
                   </button>
@@ -292,7 +280,7 @@ export default function MainContent() {
                     <td className="py-3 px-6">
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg overflow-hidden bg-[#242D36] border border-[#333D49]">
-                          <img src="/images/profile-avatar.png" alt="User" className="w-full h-full object-cover" />
+                          <img src="/images/snack-fox-card-164b66.png" alt="User" className="w-full h-full object-cover" />
                         </div>
                         <span className="text-white text-[12px] font-bold">0xA9f</span>
                       </div>
@@ -310,25 +298,34 @@ export default function MainContent() {
                     {/* Ticket Amount */}
                     <td className="py-3 px-6">
                       <div className="flex items-center gap-2">
-                        <img src="/images/ticket-prize-icon.png" alt="Ticket" className="w-4 h-4 object-contain brightness-0 invert opacity-60" /> {/* Placeholder icon styling */}
+                        <img src="/images/ticket_icon.png" alt="Ticket" className="w-4 h-4" /> {/* Placeholder icon styling */}
                         <span className="text-white text-[12px] font-bold">2 tickets</span>
                       </div>
                     </td>
                     {/* Ticket Price */}
                     <td className="py-3 px-6">
                       <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded-full bg-[#EF4444] border border-[#F87171] flex flex-col justify-center items-center shadow-[0_0_8px_rgba(239,68,68,0.4)]"></div>
+                        <img src="/images/ticket_price.png" alt="" className='w-4 h-4' />
                         <span className="text-white text-[12px] font-bold">569 USD</span>
                       </div>
                     </td>
                     {/* Numbers */}
                     <td className="py-3 px-6">
                       <div className="flex gap-1">
-                        {['5', '3', '8', '9', 'K', 'J'].map((d, index) => (
-                          <div key={index} className="w-[20px] h-[20px] rounded-[4px] bg-gradient-to-b from-[#9F3513] to-[#E36826] border border-[#FF8962] flex items-center justify-center shadow-sm">
-                            <span className="text-[#FFF0C4] text-[10px] font-extrabold">{d}</span>
-                          </div>
-                        ))}
+                        {['5', '3', '8', '9', 'K', 'J'].map((d, index) => {
+                          if (index === 1 || index === 2 || index === 4) {
+                            return (
+                              <div key={index} className="w-[20px] h-[20px] rounded-[4px] bg-gradient-to-b flex items-center justify-center shadow-sm">
+                                <span className="text-[#FFF0C4] text-[10px] font-extrabold">{d}</span>
+                              </div>
+                            )
+                          }
+                          return (
+                            <div key={index} className="w-[20px] h-[20px] rounded-[4px] bg-gradient-to-b from-[#9F3513] to-[#E36826] border border-[#FF8962] flex items-center justify-center shadow-sm">
+                              <span className="text-[#FFF0C4] text-[10px] font-extrabold">{d}</span>
+                            </div>
+                          )
+                        })}
                       </div>
                     </td>
                     {/* Winning Numbers */}
@@ -344,7 +341,7 @@ export default function MainContent() {
                     {/* Profit */}
                     <td className="py-3 px-6">
                       <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded-full bg-[#BEFF25] flex justify-center items-center text-black font-bold text-[10px]">+</div>
+                        <img src="/images/ticket_price.png" alt="" className='w-4 h-4' />
                         <span className="text-white text-[12px] font-bold">+ 569 USD</span>
                       </div>
                     </td>

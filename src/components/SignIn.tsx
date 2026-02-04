@@ -41,28 +41,9 @@ export default function SignIn({ onSwitchToSignUp, onSignInSuccess, onForgotPass
           </svg>
         </button>
 
-        {/* Left Side - Green Banner */}
-        <div className="hidden md:flex w-[40%] bg-[#84CC16] relative flex-col items-center justify-center overflow-hidden p-4 text-center">
-          {/* Background Pattern */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('/images/pattern.png')]"></div>
-
-          {/* Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-full">
-            <span className="bg-[#2A2A2A] text-white text-[9px] font-bold px-2 py-0.5 rounded mb-2 uppercase tracking-widest leading-none">Welcome Back</span>
-
-            <h2 className="text-white text-xl font-black leading-tight mb-3 drop-shadow-md">
-              Login to Continue<br />Winning Big!
-            </h2>
-
-            {/* Floating Elements (Smaller) */}
-            <img src="/images/awards-coin-1.png" className="absolute top-8 left-2 w-6 animate-pulse" />
-            <img src="/images/awards-coin-2.png" className="absolute bottom-16 right-2 w-6 animate-bounce" />
-
-            {/* Fox Image - Matching Sign Up Style */}
-            <div className="mt-1 w-full max-w-[140px]">
-              <img src="/images/awards-fox-main.png" className="w-full object-contain grayscale-[20%] drop-shadow-lg" />
-            </div>
-          </div>
+        {/* Left Side - Image */}
+        <div className="hidden md:block w-[40%] bg-white relative">
+          <img src="/images/image.png" alt="Welcome Back" className="w-full h-full object-cover" />
         </div>
 
         {/* Right Side - Form - Aggressively Compact Layout */}

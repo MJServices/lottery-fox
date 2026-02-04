@@ -101,13 +101,13 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
         </div>
 
         {/* Navigation Menu - Hidden on mobile and tablet */}
-        <nav className="hidden xl:flex items-center gap-4 lg:gap-6 2xl:gap-8 min-w-0">
+        <nav className="hidden xl:flex items-center gap-2 2xl:gap-8 min-w-0">
           <div
             onClick={() => handleNavClick('play-now', 'home')}
             className="relative flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity group"
           >
             <GameIcon className="w-4 h-4 flex-shrink-0" />
-            <span className={`text-[12px] lg:text-[13px] font-bold whitespace-nowrap ${currentPage === 'home' ? 'text-white' : 'text-white'
+            <span className={`text-[10px] lg:text-[11px] font-bold whitespace-nowrap ${currentPage === 'home' ? 'text-white' : 'text-white'
               }`}>Play now</span>
             {/* Animated underline */}
             <div className={`absolute bottom-[-8px] left-0 h-0.5 bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] transition-all duration-300 ${activeNavItem === 'play-now' || currentPage === 'home' ? 'w-full' : 'w-0 group-hover:w-full'
@@ -119,7 +119,7 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
             className="relative flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity group"
           >
             <ChatQuestionIcon className="w-4 h-4 flex-shrink-0" />
-            <span className={`text-[12px] lg:text-[13px] font-bold whitespace-nowrap ${currentPage === 'how-it-works' ? 'text-white' : 'text-[#A2B4C6]'
+            <span className={`text-[10px] lg:text-[11px] font-bold whitespace-nowrap ${currentPage === 'how-it-works' ? 'text-white' : 'text-[#A2B4C6]'
               }`}>How it works</span>
             {/* Animated underline */}
             <div className={`absolute bottom-[-8px] left-0 h-0.5 bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] transition-all duration-300 ${activeNavItem === 'how-it-works' || currentPage === 'how-it-works' ? 'w-full' : 'w-0 group-hover:w-full'
@@ -131,7 +131,7 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
             className="relative flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity group"
           >
             <CursorInfoIcon className="w-4 h-4 flex-shrink-0" />
-            <span className={`text-[12px] lg:text-[13px] font-bold whitespace-nowrap ${currentPage === 'faq' ? 'text-white' : 'text-[#A2B4C6]'
+            <span className={`text-[10px] lg:text-[11px] font-bold whitespace-nowrap ${currentPage === 'faq' ? 'text-white' : 'text-[#A2B4C6]'
               }`}>FAQ</span>
             {/* Animated underline */}
             <div className={`absolute bottom-[-8px] left-0 h-0.5 bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] transition-all duration-300 ${activeNavItem === 'faq' || currentPage === 'faq' ? 'w-full' : 'w-0 group-hover:w-full'
@@ -143,7 +143,7 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
             className="relative flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity group"
           >
             <CheckmarkBadgeIcon className="w-4 h-4 flex-shrink-0" />
-            <span className={`text-[12px] lg:text-[13px] font-bold whitespace-nowrap ${currentPage === 'hallOfFame' ? 'text-white' : 'text-[#A2B4C6]'
+            <span className={`text-[10px] lg:text-[11px] font-bold whitespace-nowrap ${currentPage === 'hallOfFame' ? 'text-white' : 'text-[#A2B4C6]'
               }`}>Hall of Fame</span>
             {/* Animated underline */}
             <div className={`absolute bottom-[-8px] left-0 h-0.5 bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] transition-all duration-300 ${activeNavItem === 'hall-of-fame' || currentPage === 'hallOfFame' ? 'w-full' : 'w-0 group-hover:w-full'
@@ -157,7 +157,7 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0">
               <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" />
             </svg>
-            <span className={`text-[12px] lg:text-[13px] font-bold whitespace-nowrap ${currentPage === 'awards' ? 'text-white' : 'text-[#A2B4C6]'
+            <span className={`text-[10px] lg:text-[11px] font-bold whitespace-nowrap ${currentPage === 'awards' ? 'text-white' : 'text-[#A2B4C6]'
               }`}>Awards</span>
             {/* Animated underline */}
             <div className={`absolute bottom-[-8px] left-0 h-0.5 bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] transition-all duration-300 ${activeNavItem === 'awards' || currentPage === 'awards' ? 'w-full' : 'w-0 group-hover:w-full'
@@ -169,7 +169,7 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
             className="relative flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity group"
           >
             <CheckmarkBadgeIcon className="w-4 h-4 flex-shrink-0" />
-            <span className="text-[12px] lg:text-[13px] font-bold text-[#A2B4C6] whitespace-nowrap">Verify results</span>
+            <span className="text-[10px] lg:text-[11px] font-bold text-[#A2B4C6] whitespace-nowrap">Verify results</span>
             {/* Animated underline */}
             <div className={`absolute bottom-[-8px] left-0 h-0.5 bg-gradient-to-r from-[#FF4B0F] to-[#FF6F3F] transition-all duration-300 ${activeNavItem === 'verify-results' || currentPage === 'verify-results' ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></div>
@@ -199,11 +199,11 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
           <img
             src="/images/gift-icon-removebg-preview.png"
             alt="Gift"
-            className="absolute -left-2 -top-2.5 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 object-contain z-10 pointer-events-none drop-shadow-[0_0_8px_rgba(255,165,0,0.6)]"
+            className="absolute top-[4px] w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 object-contain z-10 pointer-events-none drop-shadow-[0_0_8px_rgba(255,165,0,0.6)]"
           />
           <button
             onClick={() => setIsSignUpModalOpen(true)}
-            className="px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap shadow-[0_2px_10px_rgba(255,75,15,0.2)]"
+            className="w-[95px] md:w-[115px] left-[5px] px-3 sm:px-4 md:px-5 py-2.5 md:py-3 bg-gradient-to-b from-[#FF4B0F] to-[#FF6F3F] border border-[#FF8962] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap shadow-[0_2px_10px_rgba(255,75,15,0.2)]"
           >
             Sign up
           </button>
@@ -211,7 +211,7 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
 
         {/* Blue Icon (Globe/Network) */}
         <button className="w-8 h-8 rounded-lg bg-gradient-to-b from-[#00C6FB] to-[#005BEA] flex items-center justify-center hover:opacity-90 transition-opacity">
-          <img src="/images/icon-2.png" alt="Globe" className="w-full h-50 object-contain" />
+          <img src="/images/icon-2.png" alt="Globe" className="w-full h-6 object-contain" />
         </button>
 
         {/* Purple Icon (Discord/Chat) */}

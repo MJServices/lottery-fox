@@ -55,7 +55,6 @@ export default function HallOfFame({ onLogout, onNavigate, currentPage }: HallOf
 
                 {/* Hero Section */}
                 <div className="relative mb-8 text-center pt-8">
-                  <h1 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-wide drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">Hall of Fame</h1>
 
                   <div className="relative w-full max-w-4xl mx-auto md:h-[350px] flex items-end justify-center pb-4">
                     {/* Using hall of fame.png as the character/hero image */}

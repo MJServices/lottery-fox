@@ -2,7 +2,7 @@ export default function LuckyHourCard() {
   return (
     <div className="relative w-full max-w-[521px] mx-auto">
       {/* Responsive container that maintains aspect ratio */}
-      <div className="relative w-full rounded-lg sm:rounded-xl overflow-hidden" style={{ aspectRatio: '521/293' }}>
+      <div className="relative w-full rounded-lg sm:rounded-xl overflow-hidden">
         {/* Use the complete Figma image for 100% accuracy */}
         <img
           src="/images/lucky-hour-card.png"
