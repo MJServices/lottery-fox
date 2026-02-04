@@ -191,7 +191,7 @@ export default function Header({ onLogout, onNavigate, currentPage }: HeaderProp
         <button
           className="px-2 sm:px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-b from-[#1F1813] to-[#E36826] border border-[#2A3441] rounded-lg text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] font-bold text-[#A2B4C6] hover:text-white hover:border-[#334155] transition-all whitespace-nowrap"
         >
-          Log in
+          Sign in
         </button>
 
         {/* Sign up button */}
